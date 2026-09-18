@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>How HIPAA Compliant Email Works | MDofficeMail</title>
+  <meta name="description" content="How MDofficeMail keeps email HIPAA compliant end to end: SSL at the sender's side, automatic MDVault encryption for outside recipients, and secure delivery on both ends.">
+  <meta name="keywords" content="how hipaa compliant email works, hipaa secure email, encrypted email service, MDVault">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/mdomfeatures.css" rel="stylesheet">
+	<link href="assets/css/faxtonefaq.css" rel="stylesheet">
+<style>
+.feature-rows {
+    display: grid;
+    grid-template-columns: none;
+    gap: none;
+}
+     .faq-section {
+            padding: 20px;
+        }
+
+        .faq-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .faq-title span {
+            display: inline-block;
+            color: #0d6efd;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .faq-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1d2939;
+            margin-bottom: 12px;
+        }
+
+        .faq-title p {
+            color: #667085;
+            font-size: 16px;
+        
+            margin: auto;
+        }
+
+        /* Accordion */
+
+        .custom-accordion {
+          margin: 0 auto;
+        }
+
+        .custom-accordion .accordion-item {
+            border: 1px solid #e4e7ec;
+            border-radius: 12px !important;
+            margin-bottom: 15px;
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(16, 24, 40, 0.04);
+        }
+
+        .custom-accordion .accordion-button {
+            background: #ffffff;
+    color: #1d2939;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 13px 17px;
+    border: 0;
+    box-shadow: none !important;
+        }
+
+        .custom-accordion .accordion-button:hover {
+            color: #0d6efd;
+        }
+
+        /* Remove Bootstrap default background */
+
+        .custom-accordion .accordion-button:not(.collapsed) {
+            background: #ffffff;
+            color: #0d6efd;
+        }
+
+        /* Custom plus/minus icon */
+
+        .custom-accordion .accordion-button::after {
+            width: 32px;
+            height: 32px;
+            background-image: none;
+            content: "+";
+            font-size: 25px;
+            font-weight: 400;
+            color: #667085;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f2f4f7;
+            transition: all 0.3s ease;
+        }
+
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            content: "−";
+            background: #eaf2ff;
+            color: #0d6efd;
+            transform: rotate(0deg);
+        }
+
+        /* Body */
+
+        .custom-accordion .accordion-body {
+            padding: 0 25px 25px 25px;
+            color: #667085;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Smooth border when opened */
+
+        .custom-accordion .accordion-collapse {
+            border-top: 1px solid transparent;
+        }
+
+        .custom-accordion .accordion-item:has(.accordion-button:not(.collapsed)) {
+            border-color: #cfe0ff;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 767px) {
+
+            .faq-section {
+                padding: 50px 15px;
+            }
+
+            .faq-title h2 {
+                font-size: 28px;
+            }
+
+            .custom-accordion .accordion-button {
+                font-size: 15px;
+                padding: 18px;
+            }
+
+            .custom-accordion .accordion-body {
+                padding: 0 18px 20px;
+                font-size: 14px;
+            }
+
+        }
+		
+
+</style>
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+       
+       <img src="assets/img/logo-t.png" alt=""> 
+	<span class="logotrans">MD OfficeMail</span>
+	  <span class="logocap"><small style="color:#fff;"><br>HIPAA Compliant Communication</small></span>
+        
+      </a>
+<!-- <div class="top-pill"> -->
+
+
+    <!-- <a href="aboutus.html">About</a> -->
+	 <!-- <span>|</span> -->
+    <!-- <a href="contactus.html">Contact</a> -->
+	 <!-- <span>|</span> -->
+    <!-- <a href="#">Login</a> -->
+	 <!-- <span>|</span> -->
+    <!-- <a href="#">Help</a> -->
+<!-- </div> -->
+
+<div class="top-pill">
+    <a href="aboutus.html">About</a>
+    <span>|</span>
+
+    <a href="contactus.html">Contact</a>
+    <span>|</span>
+
+    <div class="dropdown1">
+        <a href="#">Login  <i class="bi bi-chevron-down toggle-dropdown" style="font-size:10px;"></i></a>
+        <div class="dropdown-menu2">
+            <a href="#">Webmail Login</a>
+            <a href="#">Account Administration/Billing</a>
+        </div>
+    </div>
+
+    <span>|</span>
+
+    <div class="dropdown1">
+        <a href="#">Help  <i class="bi bi-chevron-down toggle-dropdown"  style="font-size:10px;"></i></a>
+        <div class="dropdown-menu2">
+            <a href="#">Webmail Help</a>
+            <a href="#">Online Help/Support</a>
+            <a href="#">Download Quick Start Guide</a>
+			<a href="#">iPhone Setup Guide</a>
+			<a href="#">Android Setup Guide</a>
+            <a href="#">Support Request</a>
+        </div>
+    </div>
+</div>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+		  <li class="dropdown"><a href="index.html#mousedown"><span>MD Officemail</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+			  <li><a href="mdomfeatures.html">Features</a></li>
+			   <li><a href="mdomhowitworks.html">How It works</a></li>
+			    <li><a href="mdomhipaa.html">HIPAA</a></li>
+				 <li><a href="mdomcustomization.html">Customization</a></li> 
+             
+            </ul>
+          </li>
+		    <li class="dropdown"><a href="index.html#faxtone"><span>Faxtone</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+             <li><a href="faxtonefeatures.html">Features</a></li>
+			   <li><a href="faxtonehowitworks.html">How It works</a></li>
+			   
+				 <li><a href="faxtonefaq.html" class="active">Faq</a></li> 
+            </ul>
+          </li>
+		    <li class="dropdown"><a href="index.html#patientforms"><span>Secure Web Forms</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="secureforms.html">Secure Forms</a></li> 
+            </ul>
+          </li>	
+          <li><a href="index.html#pricing">Pricing & Signup</a></li>          
+     
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+    </div>
+  </header>
+
+  <main class="main hipaa-page-main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+             <li><a href="index.html">Home</a></li>
+            <li ><a href="index.html#mousedown">Faxtone</a></li>
+            <li class="current">FAQ</li>
+          </ol>
+        </nav>		
+      </div>
+	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; padding-bottom:0px;">
+      <div class="container">
+        <div class="hipaa-intro-inner">
+		<h1>FAQ</h1>
+             </div>
+      </div>
+    </section>
+    </div><!-- End Page Title -->
+
+<section class="features-body">
+      <div class="container">
+
+        <!-- Mobile section pills -->
+        <nav class="features-nav-mobile">
+            <a href="#security">Security & Compliance</a>
+            <a href="#usability">Usability & Convenience</a>
+            <a href="#other">Other Features</a>
+        </nav>
+
+        <div class="features-layout">
+
+          <aside class="features-nav">
+            <span class="features-nav-label">On this page</span>
+            <ul>
+                    <li><a href="#security">Set-up & Free Trial <em>8</em></a></li>
+                    <li><a href="#usability">Security & Compliance <em>14</em></a></li>
+                    <li><a href="#other">How we can help <em>5</em></a></li>
+            </ul>
+
+       
+            <div class="features-nav-cta" >
+              <p>Questions about HIPAA compliance for your practice?</p>
+              <a href="#" class="features-nav-btn" style="padding:8px 0px;">Talk to us</a>
+            </div>
+          </aside>
+
+          <div class="features-content">
+
+        <section id="security" class="feature-block">
+            <header class="feature-block-head">
+                <span class="feature-block-index">01</span>
+                <div>
+                    <h2>Set-up & Free Trial</h2>
+                 </div>
+            </header>
+            <div class="feature-rows">
+<!-- first tab -->
+
+<section id="faq" class="faq-section" style="padding:0px;">          
+          <div class="accordion custom-accordion" id="howItWorksFaq">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                 Is it necessary to sign up for MDofficeMail email account along with Faxtone?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">The answer is Yes and No, based on your requirement. If you are looking only for a HIPAA compliant solution, a) To use Email to Fax and Fax to Email feature, you need to have a secure and HIPAA compliant email account. b) If you want to send and receive faxes only by logging into our web-portal, you need not have a secure email account.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How do I sign up for a Faxtone account?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">You can sign up from the Subscription page. Select required number of fax lines, email accounts, add-ons, and follow the links to our secure site to make a payment. Once the credit card is authorized your account is created, which you can start using immediately. Details of the account, Quick Start Guide and other information will be emailed to your present email address. In addition you can take the help of our customer support.<br><br>
+
+With your subscription you will get 25 bonus "Transmission Credits". To purchase more credits you need to log in to our web portal.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                 Do you offer free trial?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">Yes, you can try Faxtone for 30 days without any obligation. Please click here to signup for fully functional free trial of Faxtone and MDofficeMail email. You will get 25 "Transmission Credts' with your trial account. You need to purchase Transmission Credits if you need more during trial period. You need to provide your credit card information. This is to prevent spam. We take the security of clients very seriously.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  How can I convert my Trial Account into a Regular Account?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">Your trial will automatically gets converted in to regular account at the end of trial period and your credit card on file will be charged with the monthly subscription amount. In case you want to cancel your trial account you need to contact us over phone before the end of trial period.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                What are "Transmission Credits", how much do they cost and how to purchase them?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">
+<ol>
+<li>"Transmission Credits" are required to send and receive faxes using Faxtone, the secure fax service.</li>
+<li>One credit is required to send or receive one page.</li>
+<li>Each Transmission Credit costs as low as $0.04 (4 cents).</li>
+<li>You can recharge your account log into web-portal and click on "Recharge" button.</li>
+<li>While recharging you can select the option for auto- refill. Account will be refilled when available credits depletes to 50.</li>
+</ol>
+				</div>
+              </div>
+            </div>
+
+
+    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                 Can I still use my current MDofficeMail email address with Faxtone?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">Yes, you can do that without any problem. However we suggest you to have a different email id for sending and receiving faxes.</div>
+              </div>
+            </div>
+
+
+    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+               Do I need to download or install any software to use Faxtone service?
+                </button>
+              </h2>
+              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">Absolutely nothing. No downloads, plug-ins, or installations are necessary.</div>
+              </div>
+            </div>
+			
+			    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                 Does the Faxtone service work with my PC/email software/OS?
+                </button>
+              </h2>
+              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#howItWorksFaq">
+                <div class="accordion-body">MDofficeMail works with almost all the systems:
+				
+				<ul>
+				<li>Web Browsers: Internet Explorer 6 and above, Firefox, Apple,  Safari, Google Chrome, Netscape Communicator, Mozilla, AOL, Opera, Red Hat, Linux,  Konqeror, Camino.</li>
+<li>Email Clients: Outlook & Outlook Express, Windows Mail, Thunderbird, Netscape Communicator, Eudora, Apple Mail (MacOS 10.2 or later), Mac-Entourage v.x for MacOS X.</li>
+<li>Mobile: MDofficeMail also works with iPhone, iPad, Android, Palm and Windows Mobile.</li>
+				</ul>
+				</div>
+              </div>
+            </div>
+			
+			
+          </div>
+        </section>
+<!-- first tab -->
+            </div>
+        </section>
+
+        <section id="usability" class="feature-block">
+            <header class="feature-block-head">
+                <span class="feature-block-index">02</span>
+                <div>
+                    <h2>Security & Compliance</h2>
+                 
+                </div>
+            </header>
+            <div class="feature-rows">
+        <section id="faq" class="faq-section" style="padding:0px;">          
+          <div class="accordion custom-accordion" id="Compliance">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                How does the security work, resulting in HIPAA compliant Fax?
+                </button>
+              </h2>
+              <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">
+				Security and encryption is enforced without any compromise for all the emails sent from MDofficeMail (for email to fax and Fax to email). An SSL (or TLS) session is initiated before any login or password information is exchanged well before any data is transmitted. Server certificates we use are 100% secure using RSA-powered TLS (Transport Layer Security).
+<br><br>
+In case of Faxtone users who are not using MDofficeMail email account, Fax to email is very much secure and HIPAA compliant since encrypted messages with fax as attachment are sent without any compromise. However email to fax may not be sucure and HIPAA compliant if MDofficeMail email is not used.
+				</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq22">
+            Do you support International incoming faxes?
+                </button>
+              </h2>
+              <div id="faq22" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+           <div class="accordion-body">Local and toll free fax numbers will accept incoming faxes from any origin including an international origin. However, international senders will incur regular charges irrespective of whether yours is a local number or toll free number.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq33">
+               What type of phone number will I get?
+                </button>
+              </h2>
+             <div id="faq33" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+             <div class="accordion-body">You can choose a local phone number in the supported area code as well as Toll-Free (800, 888, 877, 866) numbers. These are regular phone numbers just like any other US phone number.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq44">
+                 Can I select my number?
+                </button>
+              </h2>
+              <div id="faq44" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+             <div class="accordion-body">Yes. During signup process you will be asked to check whether fax number with your area code is available or not. After signing up you can log into Faxtone web-portal and select the number from the list of available numbers.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq55">
+             Can I transfer my exisitng fax/phone number to your service?
+                </button>
+              </h2>
+              <div id="faq55" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">We support porting in local geographical areas that we serve. You can check the possibility of porting your number from our website. We do support porting of toll-free fax number too. There is a one-time fee of $20.00 to offset our costs for porting your number, payable only after successful porting of your number. Please note that you must sign up for Faxtone before you can initiate the porting process.</div>
+              </div>
+            </div>
+
+
+    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq66">
+                 Where can I find the Federal HIPAA HITECH legislation?
+                </button>
+              </h2>
+              <div id="faq66" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+               <div class="accordion-body">
+			   The HITECH legislation is Title XIII of the 2009 American Recovery and Reinvestment act, and can be found here: <a href="http://www.gpo.gov/fdsys/pkg/BILLS-111hr1enr/pdf/BILLS-111hr1enr.pdf" target="_blank">BILLS-111hr1enr.pdf</a>  
+              </div>
+            </div>
+
+
+    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq77">
+             What is your policy about sharing customers fax numbers and email addresses?
+
+                </button>
+              </h2>
+              <div id="faq77" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">We respect your privacy. We never rent, sell or share clients' addresses with anyone.</div>
+              </div>
+            </div>
+			
+			    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq88">
+                Do you support email Legal Archiving of all outbound and inbound faxes?
+
+                </button>
+              </h2>
+              <div id="faq88" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">
+				If you are using MDofficeMail along with Faxtone, all faxes send and received through email are both online and offline archived. As required by HIPAA, all incoming and outgoing emails (secure faxes that are sent using email) are stored in a secure remote server which cannot be edited or deleted. You can subscribe for Legal Archiving at the time of signing up.
+				</div>
+              </div>
+            </div>
+			
+			
+				    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq99">
+                Do you have any limit to the number of pages that can be sent in a single fax message?
+
+                </button>
+              </h2>
+              <div id="faq99" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">As such there is no limit to the number of pages when you are sending through our securr fax web-portal. Please make sure that you have suffcient number of credits available in your account.
+<br><br>
+While using email to fax, you can send email messages with large attachments, up to 20 MB. There is no size limit on receiving fax attachments except the quota limit of your mailbox.</div>
+              </div>
+            </div>
+			
+				    <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq111">
+                How does the spam filter work?
+
+                </button>
+              </h2>
+              <div id="faq111" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">MDofficeMail is having an excellent spam filtration system. First it checks multiple RBL databases and the SPF protocol to see if the sender is known as a spammer, or if the email is coming from an email server that is either a known spam server or a machine that is not properly secured to prevent spam. Then it processes incoming messages through the powerful Spam Assassin system. As a third step, suspicious messages can be challenged by the Friends system, giving senders an opportunity to prove their message is not spam. Using a combination of these systems allows a user to actually stop 100% of spam without false positives.</div>
+              </div>
+            </div>
+
+   <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq222">
+                 How does the virus protection work?
+                </button>
+              </h2>
+              <div id="faq222" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">MDofficeMail uses a powerful server-based system provided by Avasti. This system is certified by ICSA, the same certification authority that approves systems for MacAfee, Norton and a few other major players. Only trust ICSA-Certified virus scan systems. The system is installed on our email servers, so users don’t have to worry with administration or updates.</div>
+              </div>
+            </div>
+   <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq333">
+                What if I use PGP or S/MIME for email encryption?
+
+                </button>
+              </h2>
+              <div id="faq333" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">MDofficeMail supports and supplements PGP or S/MIME encryption. Even if you encrypt email messages with PGP or S/MIME, the message headers still remain open. "To:", "From:", "Subject:" etc. header fields may disclose your identity and contain confidential information. Using a MDofficeMail encrypted tunnel to transport these messages creates an even higher level of security. PGP encryption is supported directly within MDofficeMail classic WebMail interface.</div>
+              </div>
+            </div>
+   <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq444">
+                 How do I manage my Faxtone account and MDofficeMail secure email account(s)?
+
+                </button>
+              </h2>
+              <div id="faq444" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">An account administration control panel that lets you completely manage all of the user-level functions of your MDofficeMail account. For all plans which include multiple accounts, we provide a master email hosting control panel that lets you create, delete, define and manage user email accounts while allowing each individual user to manage all of their own user-level functions. If domain hosting is included in your plan, a domain admin panel is provided which allows user management, routing & filtering, reports, and other domain-level functions.</div>
+              </div>
+            </div>
+			
+			   <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq555">
+                 Do you keep usage logs?
+
+                </button>
+              </h2>
+              <div id="faq555" class="accordion-collapse collapse" data-bs-parent="#Compliance">
+                <div class="accordion-body">Yes, we do record and maintain session logs as required by HIPAA.</div>
+              </div>
+            </div>
+			
+          </div>
+        </section>
+
+            </div>
+        </section>
+
+        <section id="other" class="feature-block">
+            <header class="feature-block-head">
+                <span class="feature-block-index">03</span>
+                <div>
+                    <h2>About us & how we can help</h2>
+             
+                </div>
+            </header>
+            <div class="feature-rows">             
+                <section id="faq" class="faq-section" style="padding:0px;">          
+          <div class="accordion custom-accordion" id="Compliance2">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+             About MDofficeMail
+                </button>
+              </h2>
+              <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#Compliance2">
+                <div class="accordion-body">MDofficeMail was started by a group of young entrepreneurs with ample of experience in serving US Healthcare, and certified in HIPAA Privacy and Security Awareness.
+MDofficeMail is the sister concern of <strong>Vision Infonet Inc, a 12-year-old Illinois corporation</strong> serving US Healthcare with Software Development, Medical Billng, Medical Transcription and other back-office services.<br><br>
+
+Vision Infonet also owns a <strong>50-year-old California LLC, Practice Management System</strong> serving Bay Area physicians for the past 50 years with IT and Billing services.<br><br>
+
+<strong>MDCare EMR/PMS</strong> is one of the software product and service from Vision Infonet. MDCare is a certified, high-end, and web-based software with most advanced features.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqa">
+              What is the url for Technical Support documentation?
+                </button>
+              </h2>
+              <div id="faqa" class="accordion-collapse collapse" data-bs-parent="#Compliance2">
+           <div class="accordion-body">Faxtone Quick Start Guide: https://mdofficemail.com/pdf/Faxtone_Quick_Start_Guide.pdf<br>
+Support Documentation: Please visit http://mdofficemail.com/support/index.html</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqb">
+               Can you set up Faxtone account for me?
+                </button>
+              </h2>
+             <div id="faqb" class="accordion-collapse collapse" data-bs-parent="#Compliance2">
+             <div class="accordion-body">We can assist in configuring your web-portal, email program (Outlook, Windows Mail etc), and set up your domain using Remote Desktop. This is free</div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqc">
+                  Do you provide Technical Support?
+
+                </button>
+              </h2>
+              <div id="faqc" class="accordion-collapse collapse" data-bs-parent="#Compliance2">
+             <div class="accordion-body">
+			 We provide unmatched customer support:<br>
+Email support is available on 24/7 basis (response time ranges between 15 minutes to 12 hours) <br>
+Telephone support is available Mon-Fri from 8.00 AM to 5.00 PM CST<br>
+Chat support is also available.
+			 </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqd">
+             Where are the MDofficeMail email servers located?
+
+                </button>
+              </h2>
+              <div id="faqd" class="accordion-collapse collapse" data-bs-parent="#Compliance2">
+                <div class="accordion-body">MDofficeMail email servers are located in a secure data center attached to our office in Illinois, and California.</div>
+              </div>
+            </div>
+
+			
+          </div>
+        </section>
+
+            </div>
+        </section>
+
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Feature index + content -->
+
+
+  </main>
+ <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="#" class="logo d-flex align-items-center">
+            <span class="sitename">MD OfficeMail</span>
+          </a>
+          <p>The one stop solution for all your office communication. We are secure, we are encrypted and the best part - we make your communication HIPAA Compliant.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="policy.html">Privacy Policy</a></li>
+            <li><a href="https://mdofficemail.com/pdf/quick-start-guide-mdofficemail.pdf" target="_blank">Quick Start Guide</a></li>
+            <li><a href="https://mdofficemail.com/support/index.html" target="_blank">Online Support</a></li>
+            <li><a href="https://mdofficemail.com/help/index.html" target="_blank">Webmail Help</a></li>
+           
+          </ul>
+        </div>
+  <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>2055 Comprehensive Dr,</p>
+          <p>Aurora, IL 60505</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 (877) 477 8999</span></p>
+          <p><strong>Email:</strong> <span>info@mdofficemail.com</span></p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links" style="text-align:center;">
+        <img src="assets/img/HIPAA.png" class="img-fluid" alt="">
+		<img src="assets/img/30-day-refund.png" class="img-fluid" alt="">
+         
+        </div>
+
+      
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MDOfficeMail</strong> <span>All Rights Reserved</span></p>
+     
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

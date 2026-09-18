@@ -1,0 +1,432 @@
+/* ==========================================================
+   MDofficeMail — Privacy Policy Page
+   Same design language as secureforms.css / mdomhipaa.css:
+   sticky section index + numbered content blocks — toned
+   down for a legal/trust page rather than a marketing one.
+========================================================== */
+
+:root {
+    --ink: #0b2138;
+    --brand: #063c6a;
+    --brand-deep: #042b4c;
+    --brand-mid: #0e5f95;
+    --verified: #146c4e;
+    --verified-tint: #eaf5f0;
+    --paper: #f5f8fa;
+    --panel: #ffffff;
+    --line: #e1e8ee;
+    --muted: #5b6b7a;
+}
+
+.policy-page-main {
+    background: var(--paper);
+}
+
+
+/* =========================
+   INTRO BAND
+========================= */
+
+.policy-intro {
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 56px 0 48px;
+}
+
+.policy-intro-inner {
+    max-width: 780px;
+}
+
+.policy-intro .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--verified);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.policy-intro .eyebrow i {
+    font-size: 16px;
+}
+
+.policy-intro h1 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.policy-intro p {
+    color: #2E4256 !important;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =========================
+   LAYOUT: INDEX + CONTENT
+========================= */
+
+.policy-body {
+    padding: 56px 0 20px;
+}
+
+.policy-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+
+/* ---- Sticky section index ---- */
+
+.policy-nav {
+    position: sticky;
+    top: 130px;
+}
+
+.policy-nav-label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.policy-nav ul {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    border-left: 2px solid var(--line);
+}
+
+.policy-nav li {
+    margin: 0;
+}
+
+.policy-nav a {
+    display: block;
+    padding: 9px 0 9px 16px;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    color: var(--ink);
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.policy-nav a:hover {
+    color: var(--brand);
+}
+
+.policy-nav a.is-active {
+    color: var(--brand);
+    border-left-color: var(--brand);
+    font-weight: 700;
+}
+
+.policy-nav-badges {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+}
+
+.policy-nav-badges img {
+    max-height: 52px;
+    width: auto;
+    opacity: .9;
+}
+
+
+/* ---- Mobile pill nav ---- */
+
+.policy-nav-mobile {
+    display: none;
+}
+
+
+/* =========================
+   CONTENT BLOCK (section)
+========================= */
+
+.policy-block {
+    scroll-margin-top: 110px;
+    padding-bottom: 40px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+}
+
+.policy-block:last-child {
+    border-bottom: none;
+}
+
+.policy-block-head {
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+    margin-bottom: 16px;
+}
+
+.policy-block-index {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--brand);
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.policy-block-head h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* =========================
+   PROSE (paragraphs)
+========================= */
+
+.policy-prose {
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.8;
+}
+
+.policy-prose p {
+    margin: 0 0 16px;
+}
+
+.policy-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.policy-prose a {
+    color: var(--brand-mid);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.policy-prose a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---- Core-promise callout ---- */
+
+.policy-callout {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brand);
+    border-radius: 8px;
+    padding: 22px 26px;
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.75;
+}
+
+.policy-callout .tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: var(--brand);
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   HIGHLIGHT ROW (Data Security)
+========================= */
+
+.policy-rows {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.policy-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.policy-row-icon {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: var(--brand);
+    background: var(--paper);
+    border: 1px solid var(--line);
+}
+
+.policy-row.highlight .policy-row-icon {
+    color: #fff;
+    background: var(--verified);
+    border-color: var(--verified);
+}
+
+.policy-row-body p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin: 0;
+}
+
+
+/* =========================
+   CLOSING CTA
+========================= */
+
+.policy-cta {
+    background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 55%, var(--brand-mid) 100%);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-cta-leaf {
+    max-height: 46px;
+    width: auto;
+    margin-bottom: 16px;
+    opacity: .95;
+}
+
+.policy-cta h2 {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.policy-cta p {
+    max-width: 520px;
+    margin: 0 auto 24px;
+    color: rgba(255, 255, 255, .85);
+    font-size: 15.5px;
+}
+
+.policy-cta-btn {
+    display: inline-block;
+    padding: 13px 30px;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.policy-cta-btn:hover {
+    background: #e9f3fa;
+    color: var(--brand-deep);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+    .policy-layout {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .policy-nav {
+        display: none;
+    }
+
+    .policy-nav-mobile {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 0 18px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 70px;
+        background: var(--paper);
+        z-index: 5;
+    }
+
+    .policy-nav-mobile a {
+        flex: none;
+        white-space: nowrap;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--brand);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 7px 14px;
+        text-decoration: none;
+    }
+
+    .policy-intro h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .policy-intro {
+        padding: 40px 0 34px;
+    }
+
+    .policy-intro h1 {
+        font-size: 26px;
+    }
+
+    .policy-intro p {
+        font-size: 15.5px;
+    }
+
+    .policy-body {
+        padding: 34px 0 10px;
+    }
+
+    .policy-block-head {
+        gap: 12px;
+    }
+
+    .policy-block-head h2 {
+        font-size: 19px;
+    }
+
+    .policy-cta h2 {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,304 @@
+/* ==========================================================
+   MDofficeMail — About Us page
+   Reuses color tokens + .hipaa-intro / .hipaa-cta / .how-lede /
+   .how-section-head / .how-stat from mdomhipaa.css and
+   mdomhowitworks.css if present. Self-contained otherwise.
+========================================================== */
+section, .section{
+	padding:20px;
+}
+.about-page {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(245, 248, 250, 0.8));
+    padding: 56px 0 10px;
+}
+
+.about-container {
+
+    margin: 0 auto;
+}
+
+.about-lede {
+    margin-bottom: 36px;
+}
+
+.about-lede p {
+    color: var(--muted);
+    font-size: 16.5px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =========================
+   LOCATIONS STRIP
+========================= */
+
+.about-locations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0 52px;
+}
+
+.about-location {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brand);
+    border-radius: 10px;
+    padding: 18px 22px;
+}
+
+.about-location i {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--brand);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-location .role {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 3px;
+}
+
+.about-location .place {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+
+/* =========================
+   SECTION HEAD (shared shape with how-* pages)
+========================= */
+
+.about-section {
+    padding-bottom: 50px;
+	padding-top: 0px;
+}
+
+.about-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.about-section-head .tag-pill {
+    flex: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--brand);
+    border-radius: 20px;
+    padding: 5px 13px;
+}
+
+.about-section-head h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.about-section-sub {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 640px;
+    margin: 14px 0 28px;
+}
+
+
+/* =========================
+   VALUE CARD GRID (Why MDOM)
+========================= */
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.about-value-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 22px;
+	text-align:center;
+}
+
+.about-value-card .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--paper);
+    color: var(--brand);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.about-value-card h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.about-value-card p {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.65;
+    margin: 0;
+}
+
+
+/* =========================
+   RETENTION STAT
+========================= */
+
+.about-stat {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brand);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-top: 22px;
+}
+
+.about-stat .num {
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--brand);
+    white-space: nowrap;
+}
+
+.about-stat p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ORIGIN STORY
+========================= */
+
+.about-origin {
+    display: flex;
+    gap: 22px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px 32px;
+    align-items: flex-start;
+}
+
+.about-origin i {
+    flex: none;
+    font-size: 26px;
+    color: var(--brand);
+    margin-top: 2px;
+}
+
+.about-origin p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+
+/* =========================
+   REFUND BADGE STRIP
+========================= */
+
+.about-badge {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--verified-tint);
+    border: 1px solid #cfe7db;
+    border-radius: 10px;
+    padding: 16px 22px;
+    margin-top: 40px;
+}
+
+.about-badge img {
+    flex: none;
+    height: 46px;
+    width: auto;
+}
+
+.about-badge p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+.about-badge strong {
+    color: var(--verified);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+    .about-values {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-page {
+        padding: 34px 0 10px;
+    }
+
+    .about-locations {
+        grid-template-columns: 1fr;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-origin {
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .about-badge {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

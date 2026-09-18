@@ -1,0 +1,215 @@
+/* ==========================================================
+   Faxtone — Features Page
+   Self-contained tokens (doesn't depend on other stylesheets).
+   Swap the values below to match your exact brand colors.
+========================================================== */
+
+:root {
+    --brand: #2563EB;
+    --ink: #16212B;
+    --muted: #5B6B76;
+    --line: #E2E6EA;
+    --paper: #F7F9FB;
+    --panel: #FFFFFF;
+}
+
+.features-page-main {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(245, 248, 250, 0.8));
+}
+
+/* =========================
+   INTRO
+========================= */
+.features-intro p {
+    color: #2E4256 !important;
+}
+.features-intro {
+    padding: 40px 0 18px;
+	background-color:transparent;
+}
+
+.features-intro-inner h1 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.features-intro-inner p {
+    color: var(--muted);
+  font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =========================
+   BODY LAYOUT: SIDEBAR + CONTENT
+========================= */
+
+.features-body {
+    padding: 20px 0 70px;
+}
+
+.features-body-inner {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+
+/* =========================
+   SIDEBAR NAV
+========================= */
+
+.features-nav {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.features-nav-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.features-nav a {
+	
+	    display: block;
+    padding: 9px 0 9px 16px;
+    margin-left: -2px;
+    border-left: 2px solid #e1e8ee;
+    color: var(--ink);
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .2s ease;
+	
+
+}
+
+.features-nav a:hover {
+    color: var(--ink);
+}
+
+.features-nav a.is-active {
+    color: #063c6a;
+    border-left-color: #063c6a;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FEATURE BLOCKS
+========================= */
+
+.feature-block {
+    scroll-margin-top: 110px;
+    padding-bottom: 46px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+}
+
+.feature-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.feature-block h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 40px;
+}
+
+.feature-item {
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+}
+
+.feature-item:nth-child(1),
+.feature-item:nth-child(2) {
+    border-top: none;
+}
+
+.feature-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.feature-item p strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+    .features-body-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .features-nav {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 8px;
+    }
+
+    .features-nav-label {
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .features-nav a {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        padding: 4px 0;
+    }
+
+    .features-nav a.is-active {
+        border-left: none;
+        border-bottom-color: var(--brand);
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item:nth-child(2) {
+        border-top: 1px solid var(--line);
+    }
+
+    .features-intro-inner h1 {
+        font-size: 26px;
+    }
+}

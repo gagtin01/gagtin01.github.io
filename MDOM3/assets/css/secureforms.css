@@ -1,0 +1,581 @@
+/* ==========================================================
+   MDofficeMail — HIPAA Email Compliance Page
+   Same design language as mdomfeatures.css: sticky section
+   index + scannable content blocks, styled as a compliance
+   reference rather than a marketing page.
+========================================================== */
+
+:root {
+    --ink: #0b2138;
+    --brand: #063c6a;
+    --brand-deep: #042b4c;
+    --brand-mid: #0e5f95;
+    --verified: #146c4e;
+    --verified-tint: #eaf5f0;
+    --paper: #f5f8fa;
+    --panel: #ffffff;
+    --line: #e1e8ee;
+    --muted: #5b6b7a;
+}
+
+.hipaa-page-main {
+    background: var(--paper);
+}
+
+
+/* =========================
+   INTRO BAND
+========================= */
+
+.hipaa-intro {
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 56px 0 48px;
+}
+
+.hipaa-intro-inner {
+    max-width: 780px;
+}
+
+.hipaa-intro .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--verified);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.hipaa-intro .eyebrow i {
+    font-size: 16px;
+}
+
+.hipaa-intro h1 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.hipaa-intro p {
+    color: #2E4256 !important;
+ font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =========================
+   LAYOUT: INDEX + CONTENT
+========================= */
+
+.hipaa-body {
+    padding: 56px 0 20px;
+}
+
+.hipaa-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+
+/* ---- Sticky section index ---- */
+
+.hipaa-nav {
+    position: sticky;
+    top: 130px;
+}
+
+.hipaa-nav-label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.hipaa-nav ul {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+    border-left: 2px solid var(--line);
+}
+
+.hipaa-nav li {
+    margin: 0;
+}
+
+.hipaa-nav a {
+    display: block;
+    padding: 9px 0 9px 16px;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    color: var(--ink);
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.hipaa-nav a:hover {
+    color: var(--brand);
+}
+
+.hipaa-nav a.is-active {
+    color: var(--brand);
+    border-left-color: var(--brand);
+    font-weight: 700;
+}
+
+.hipaa-nav-cta {
+    background: var(--brand);
+    border-radius: 10px;
+    padding: 20px 20px 22px;
+    color: #fff;
+}
+
+.hipaa-nav-cta p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .88);
+    margin: 0 0 14px;
+}
+
+.hipaa-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14.5px;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: border-color .2s ease;
+	background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 10px !important;
+}
+
+.hipaa-nav-btn:hover {
+    border-color: #fff;
+}
+
+
+/* ---- Mobile pill nav ---- */
+
+.hipaa-nav-mobile {
+    display: none;
+}
+
+
+/* =========================
+   CONTENT BLOCK (section)
+========================= */
+
+.hipaa-block {
+    scroll-margin-top: 110px;
+    padding-bottom: 56px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+	padding-top: 0px;
+}
+
+.hipaa-block:last-child {
+    border-bottom: none;
+}
+
+.hipaa-block-head {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    margin-bottom: 26px;
+}
+
+.hipaa-block-index {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--brand);
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hipaa-block-head h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.hipaa-block-head p {
+    color: var(--muted);
+    font-size: 15.5px;
+    margin: 0;
+    max-width: 640px;
+}
+
+
+/* =========================
+   PROSE (paragraphs, plain text blocks)
+========================= */
+
+.hipaa-prose {
+   
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.75;
+}
+
+.hipaa-prose p {
+    margin: 0 0 16px;
+}
+
+.hipaa-prose a {
+    color: var(--brand-mid);
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.hipaa-prose a:hover {
+    text-decoration: underline;
+}
+
+.hipaa-prose ul {
+    margin: 0 0 16px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.hipaa-prose ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+}
+
+.hipaa-prose ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-mid);
+}
+
+
+/* ---- Definition callout (used for the PHI block) ---- */
+
+.hipaa-callout {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brand);
+    border-radius: 8px;
+    padding: 22px 26px;
+
+}
+
+.hipaa-callout .tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: var(--brand);
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   FEATURE-STYLE ROWS
+   (technical safeguards / compliance list)
+========================= */
+
+.hipaa-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+}
+
+.hipaa-rows.single-col {
+    grid-template-columns: 1fr;
+
+}
+
+.hipaa-row {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+}
+
+.hipaa-rows .hipaa-row:nth-child(1),
+.hipaa-rows .hipaa-row:nth-child(2) {
+    border-top: none;
+}
+
+.hipaa-rows.single-col .hipaa-row:nth-child(2) {
+    border-top: 1px solid var(--line);
+}
+
+.hipaa-row-icon {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: var(--brand);
+    background: var(--paper);
+    border: 1px solid var(--line);
+}
+
+.hipaa-row.highlight .hipaa-row-icon {
+    color: #fff;
+    background: var(--brand);
+    border-color: var(--brand);
+}
+
+.hipaa-row-body h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 16.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 3px 0 6px;
+}
+
+.hipaa-row.highlight .hipaa-row-body h3 {
+    color: var(--brand-deep);
+}
+
+.hipaa-row-body .tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--verified);
+    background: var(--verified-tint);
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-bottom: 7px;
+}
+
+.hipaa-row-body p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--muted);
+    margin: 0;
+}
+
+
+/* =========================
+   FAQ BLOCKS
+========================= */
+
+.hipaa-faq {
+    max-width: 760px;
+}
+
+.hipaa-faq-item {
+    display: flex;
+    gap: 16px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+}
+
+.hipaa-faq-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.hipaa-faq-q {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--brand);
+    background: var(--paper);
+    border: 1px solid var(--line);
+}
+
+.hipaa-faq-body h3 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 16.5px;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.hipaa-faq-body p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0;
+}
+
+.hipaa-faq-body a {
+    color: var(--brand-mid);
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.hipaa-faq-body a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   CLOSING CTA
+========================= */
+
+.hipaa-cta {
+    background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 55%, var(--brand-mid) 100%);
+    padding: 64px 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.hipaa-cta h2 {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.hipaa-cta p {
+    max-width: 560px;
+    margin: 0 auto 26px;
+    color: rgba(255, 255, 255, .85);
+    font-size: 16px;
+}
+
+.hipaa-cta-btn {
+    display: inline-block;
+    padding: 13px 30px;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.hipaa-cta-btn:hover {
+    background: #e9f3fa;
+    color: var(--brand-deep);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+    .hipaa-layout {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .hipaa-nav {
+        display: none;
+    }
+
+    .hipaa-nav-mobile {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 0 18px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 70px;
+        background: var(--paper);
+        z-index: 5;
+    }
+
+    .hipaa-nav-mobile a {
+        flex: none;
+        white-space: nowrap;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--brand);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 7px 14px;
+        text-decoration: none;
+    }
+
+    .hipaa-rows {
+        grid-template-columns: 1fr;
+    }
+
+    .hipaa-rows .hipaa-row:nth-child(2) {
+        border-top: 1px solid var(--line);
+    }
+
+    .hipaa-intro h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .hipaa-intro {
+        padding: 40px 0 34px;
+    }
+
+    .hipaa-intro h1 {
+        font-size: 26px;
+    }
+
+    .hipaa-intro p {
+        font-size: 15.5px;
+    }
+
+    .hipaa-body {
+        padding: 34px 0 10px;
+    }
+
+    .hipaa-block-head {
+        gap: 14px;
+    }
+
+    .hipaa-block-head h2 {
+        font-size: 20px;
+    }
+
+    .hipaa-cta h2 {
+        font-size: 24px;
+    }
+}

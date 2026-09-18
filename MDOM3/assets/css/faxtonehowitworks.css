@@ -1,0 +1,1169 @@
+/* ==========================================================
+   Faxtone — Features Page
+   Self-contained tokens (doesn't depend on other stylesheets).
+   Swap the values below to match your exact brand colors.
+========================================================== */
+
+:root {
+    --brand: #2563EB;
+    --ink: #16212B;
+    --muted: #5B6B76;
+    --line: #E2E6EA;
+    --paper: #F7F9FB;
+    --panel: #FFFFFF;
+}
+
+.features-page-main {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(245, 248, 250, 0.8));
+}
+
+/* =========================
+   INTRO
+========================= */
+.features-intro p {
+    color: #2E4256 !important;
+}
+.features-intro {
+    padding: 40px 0 18px;
+	background-color:transparent;
+}
+
+.features-intro-inner h1 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.features-intro-inner p {
+    color: var(--muted);
+  font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =========================
+   BODY LAYOUT: SIDEBAR + CONTENT
+========================= */
+
+.features-body {
+    padding: 20px 0 70px;
+}
+
+.features-body-inner {
+display: grid;
+    grid-template-columns: 235px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+}
+
+/* .features-content { */
+    /* max-width: 760px; */
+/* } */
+
+.features-content > .feature-block > p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 4px;
+}
+
+
+/* =========================
+   SIDEBAR NAV
+========================= */
+
+.features-nav {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.features-nav-label {
+    font-family: "Poppins", sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.features-nav a {
+	
+	    display: block;
+    padding: 9px 0 9px 16px;
+    margin-left: -2px;
+    border-left: 2px solid #e1e8ee;
+    color: var(--ink);
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .2s ease;
+	
+
+}
+
+.features-nav a:hover {
+    color: var(--ink);
+}
+
+.features-nav a.is-active {
+    color: #063c6a;
+    border-left-color: #063c6a;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FEATURE BLOCKS
+========================= */
+
+.feature-block {
+    scroll-margin-top: 110px;
+    padding-bottom: 46px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+}
+
+.feature-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.feature-block h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 40px;
+}
+
+.feature-item {
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+}
+
+.feature-item:nth-child(1),
+.feature-item:nth-child(2) {
+    border-top: none;
+}
+
+.feature-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.feature-item p strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+
+/* =========================
+   STEP LISTS (How It Works)
+========================= */
+
+.step-list {
+    list-style: none;
+    counter-reset: step;
+    margin: 0 0 8px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-list li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 40px;
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.65;
+}
+
+.step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-list li strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.note-list {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-list li {
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.65;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+    .features-body-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .features-nav {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 8px;
+    }
+
+    .features-nav-label {
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .features-nav a {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        padding: 4px 0;
+    }
+
+    .features-nav a.is-active {
+        border-left: none;
+        border-bottom-color: var(--brand);
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item:nth-child(2) {
+        border-top: 1px solid var(--line);
+    }
+
+    .features-intro-inner h1 {
+        font-size: 26px;
+    }
+}
+
+
+
+
+@-webkit-keyframes bounce {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60% {
+    transform: translateY(-15px);
+  }
+}
+
+@-webkit-keyframes bounce-reverse {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes bounce-reverse {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60% {
+    transform: translateY(15px);
+  }
+}
+
+.faa-bounce.animated,
+.faa-bounce.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-bounce {
+  -webkit-animation: bounce 2s ease infinite;
+          animation: bounce 2s ease infinite;
+}
+
+.faa-bounce.animated.faa-fast,
+.faa-bounce.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-bounce.faa-fast {
+  -webkit-animation: bounce 1s ease infinite;
+          animation: bounce 1s ease infinite;
+}
+
+.faa-bounce.animated.faa-slow,
+.faa-bounce.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-bounce.faa-slow {
+  -webkit-animation: bounce 3s ease infinite;
+          animation: bounce 3s ease infinite;
+}
+
+.faa-bounce.faa-reverse.animated,
+.faa-bounce.faa-reverse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-bounce.faa-reverse {
+  -webkit-animation: bounce-reverse 2s ease infinite;
+          animation: bounce-reverse 2s ease infinite;
+}
+
+.faa-bounce.faa-reverse.animated.faa-fast,
+.faa-bounce.faa-reverse.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-bounce.faa-reverse.faa-fast {
+  -webkit-animation: bounce-reverse 1s ease infinite;
+          animation: bounce-reverse 1s ease infinite;
+}
+
+.faa-bounce.faa-reverse.animated.faa-slow,
+.faa-bounce.faa-reverse.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-bounce.faa-reverse.faa-slow {
+  -webkit-animation: bounce-reverse 3s ease infinite;
+          animation: bounce-reverse 3s ease infinite;
+}
+
+@-webkit-keyframes burst {
+  0% {
+    opacity: .6;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes burst {
+  0% {
+    opacity: .6;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.faa-burst.animated,
+.faa-burst.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-burst {
+  -webkit-animation: burst 2s infinite linear;
+          animation: burst 2s infinite linear;
+}
+
+.faa-burst.animated.faa-fast,
+.faa-burst.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-burst.faa-fast {
+  -webkit-animation: burst 1s infinite linear;
+          animation: burst 1s infinite linear;
+}
+
+.faa-burst.animated.faa-slow,
+.faa-burst.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-burst.faa-slow {
+  -webkit-animation: burst 3s infinite linear;
+          animation: burst 3s infinite linear;
+}
+
+@-webkit-keyframes falling {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes falling-reverse {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes falling-reverse {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.faa-falling.animated,
+.faa-falling.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-falling {
+  -webkit-animation: falling 2s linear infinite;
+          animation: falling 2s linear infinite;
+}
+
+.faa-falling.animated.faa-fast,
+.faa-falling.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-fast {
+  -webkit-animation: falling 1s linear infinite;
+          animation: falling 1s linear infinite;
+}
+
+.faa-falling.animated.faa-slow,
+.faa-falling.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-slow {
+  -webkit-animation: falling 3s linear infinite;
+          animation: falling 3s linear infinite;
+}
+
+.faa-falling.faa-reverse.animated,
+.faa-falling.faa-reverse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-reverse,
+.faa-rising.animated,
+.faa-rising.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-rising {
+  -webkit-animation: falling-reverse 2s linear infinite;
+          animation: falling-reverse 2s linear infinite;
+}
+
+.faa-falling.faa-reverse.animated.faa-fast,
+.faa-falling.faa-reverse.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-reverse.faa-fast,
+.faa-rising.animated.faa-fast,
+.faa-rising.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-rising.faa-fast {
+  -webkit-animation: falling-reverse 1s linear infinite;
+          animation: falling-reverse 1s linear infinite;
+}
+
+.faa-falling.faa-reverse.animated.faa-slow,
+.faa-falling.faa-reverse.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-reverse.faa-slow,
+.faa-rising.animated.faa-slow,
+.faa-rising.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-rising.faa-slow {
+  -webkit-animation: falling-reverse 3s linear infinite;
+          animation: falling-reverse 3s linear infinite;
+}
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.faa-flash.animated,
+.faa-flash.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-flash {
+  -webkit-animation: flash 2s ease infinite;
+          animation: flash 2s ease infinite;
+}
+
+.faa-flash.animated.faa-fast,
+.faa-flash.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-flash.faa-fast {
+  -webkit-animation: flash 1s ease infinite;
+          animation: flash 1s ease infinite;
+}
+
+.faa-flash.animated.faa-slow,
+.faa-flash.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-flash.faa-slow {
+  -webkit-animation: flash 3s ease infinite;
+          animation: flash 3s ease infinite;
+}
+
+@-webkit-keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.faa-float.animated,
+.faa-float.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-float {
+  -webkit-animation: float 2s linear infinite;
+          animation: float 2s linear infinite;
+}
+
+.faa-float.animated.faa-fast,
+.faa-float.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-float.faa-fast {
+  -webkit-animation: float 1s linear infinite;
+          animation: float 1s linear infinite;
+}
+
+.faa-float.animated.faa-slow,
+.faa-float.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-float.faa-slow {
+  -webkit-animation: float 3s linear infinite;
+          animation: float 3s linear infinite;
+}
+
+@-webkit-keyframes horizontal {
+  0%, 12%, 24%, 36%, 100% {
+    transform: translate(0, 0);
+  }
+  6%, 18%, 30% {
+    transform: translate(5px, 0);
+  }
+}
+
+@keyframes horizontal {
+  0%, 12%, 24%, 36%, 100% {
+    transform: translate(0, 0);
+  }
+  6%, 18%, 30% {
+    transform: translate(5px, 0);
+  }
+}
+
+@-webkit-keyframes horizontal-reverse {
+  0%, 12%, 24%, 36%, 100% {
+    transform: translate(0, 0);
+  }
+  6%, 18%, 30% {
+    transform: translate(-5px, 0);
+  }
+}
+
+@keyframes horizontal-reverse {
+  0%, 12%, 24%, 36%, 100% {
+    transform: translate(0, 0);
+  }
+  6%, 18%, 30% {
+    transform: translate(-5px, 0);
+  }
+}
+
+.faa-horizontal.animated,
+.faa-horizontal.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal {
+  -webkit-animation: horizontal 2s ease infinite;
+          animation: horizontal 2s ease infinite;
+}
+
+.faa-horizontal.animated.faa-fast,
+.faa-horizontal.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal.faa-fast {
+  -webkit-animation: horizontal 1s ease infinite;
+          animation: horizontal 1s ease infinite;
+}
+
+.faa-horizontal.animated.faa-slow,
+.faa-horizontal.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal.faa-slow {
+  -webkit-animation: horizontal 3s ease infinite;
+          animation: horizontal 3s ease infinite;
+}
+
+.faa-horizontal.faa-reverse.animated,
+.faa-horizontal.faa-reverse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal.faa-reverse {
+  -webkit-animation: horizontal-reverse 2s ease infinite;
+          animation: horizontal-reverse 2s ease infinite;
+}
+
+.faa-horizontal.faa-reverse.animated.faa-fast,
+.faa-horizontal.faa-reverse.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal.faa-reverse.faa-fast {
+  -webkit-animation: horizontal-reverse 1s ease infinite;
+          animation: horizontal-reverse 1s ease infinite;
+}
+
+.faa-horizontal.faa-reverse.animated.faa-slow,
+.faa-horizontal.faa-reverse.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal.faa-reverse.faa-slow {
+  -webkit-animation: horizontal-reverse 3s ease infinite;
+          animation: horizontal-reverse 3s ease infinite;
+}
+
+@-webkit-keyframes passing {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes passing {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes passing-reverse {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes passing-reverse {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.faa-passing.animated,
+.faa-passing.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-passing {
+  -webkit-animation: passing 2s linear infinite;
+          animation: passing 2s linear infinite;
+}
+
+.faa-passing.animated.faa-fast,
+.faa-passing.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-passing.faa-fast {
+  -webkit-animation: passing 1s linear infinite;
+          animation: passing 1s linear infinite;
+}
+
+.faa-passing.animated.faa-slow,
+.faa-passing.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-passing.faa-slow {
+  -webkit-animation: passing 3s linear infinite;
+          animation: passing 3s linear infinite;
+}
+
+.faa-passing.faa-reverse.animated,
+.faa-passing.faa-reverse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-passing.faa-reverse {
+  -webkit-animation: passing-reverse 2s linear infinite;
+          animation: passing-reverse 2s linear infinite;
+}
+
+.faa-passing.faa-reverse.animated.faa-fast,
+.faa-passing.faa-reverse.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-passing.reverse.faa-fast {
+  -webkit-animation: passing-reverse 1s linear infinite;
+          animation: passing-reverse 1s linear infinite;
+}
+
+.faa-passing.faa-reverse.animated.faa-slow,
+.faa-passing.faa-reverse.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-passing.faa-reverse.faa-slow {
+  -webkit-animation: passing-reverse 3s linear infinite;
+          animation: passing-reverse 3s linear infinite;
+}
+
+@-webkit-keyframes pulse {
+  0%, 100% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
+.faa-pulse.animated,
+.faa-pulse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-pulse {
+  -webkit-animation: pulse 2s linear infinite;
+          animation: pulse 2s linear infinite;
+}
+
+.faa-pulse.animated.faa-fast,
+.faa-pulse.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-pulse.faa-fast {
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
+}
+
+.faa-pulse.animated.faa-slow,
+.faa-pulse.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-pulse.faa-slow {
+  -webkit-animation: pulse 3s linear infinite;
+          animation: pulse 3s linear infinite;
+}
+
+@-webkit-keyframes ring {
+  0% {
+    transform: rotate(-15deg);
+  }
+  2% {
+    transform: rotate(15deg);
+  }
+  4%, 12% {
+    transform: rotate(-18deg);
+  }
+  6%, 14% {
+    transform: rotate(18deg);
+  }
+  8% {
+    transform: rotate(-22deg);
+  }
+  10% {
+    transform: rotate(22deg);
+  }
+  16% {
+    transform: rotate(-12deg);
+  }
+  18% {
+    transform: rotate(12deg);
+  }
+  20%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(-15deg);
+  }
+  2% {
+    transform: rotate(15deg);
+  }
+  4%, 12% {
+    transform: rotate(-18deg);
+  }
+  6%, 14% {
+    transform: rotate(18deg);
+  }
+  8% {
+    transform: rotate(-22deg);
+  }
+  10% {
+    transform: rotate(22deg);
+  }
+  16% {
+    transform: rotate(-12deg);
+  }
+  18% {
+    transform: rotate(12deg);
+  }
+  20%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+.faa-ring.animated,
+.faa-ring.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-ring {
+  -webkit-animation: ring 2s ease infinite;
+          animation: ring 2s ease infinite;
+  transform-origin-x: 50%;
+  transform-origin-y: 0px;
+  transform-origin-z: initial;
+}
+
+.faa-ring.animated.faa-fast,
+.faa-ring.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-ring.faa-fast {
+  -webkit-animation: ring 1s ease infinite;
+          animation: ring 1s ease infinite;
+}
+
+.faa-ring.animated.faa-slow,
+.faa-ring.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-ring.faa-slow {
+  -webkit-animation: ring 3s ease infinite;
+          animation: ring 3s ease infinite;
+}
+
+.faa-shake.animated,
+.faa-shake.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-shake {
+  -webkit-animation: wrench 2.5s ease infinite;
+          animation: wrench 2.5s ease infinite;
+}
+
+.faa-shake.animated.faa-fast,
+.faa-shake.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-shake.faa-fast {
+  -webkit-animation: wrench 1.25s ease infinite;
+          animation: wrench 1.25s ease infinite;
+}
+
+.faa-shake.animated.faa-slow,
+.faa-shake.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-shake.faa-slow {
+  -webkit-animation: wrench 3.75s ease infinite;
+          animation: wrench 3.75s ease infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-359deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-359deg);
+  }
+}
+
+.faa-spin.animated,
+.faa-spin.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-spin {
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+
+.faa-spin.animated.faa-fast,
+.faa-spin.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-spin.faa-fast {
+  -webkit-animation: spin 0.75s linear infinite;
+          animation: spin 0.75s linear infinite;
+}
+
+.faa-spin.animated.faa-slow,
+.faa-spin.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-spin.faa-slow {
+  -webkit-animation: spin 2.25s linear infinite;
+          animation: spin 2.25s linear infinite;
+}
+
+.faa-spin.faa-reverse.animated,
+.faa-spin.faa-reverse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-spin.faa-reverse {
+  -webkit-animation: spin-reverse 1.5s linear infinite;
+          animation: spin-reverse 1.5s linear infinite;
+}
+
+.faa-spin.faa-reverse.animated.faa-fast,
+.faa-spin.faa-reverse.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-spin.faa-reverse.faa-fast {
+  -webkit-animation: spin-reverse 0.75s linear infinite;
+          animation: spin-reverse 0.75s linear infinite;
+}
+
+.faa-spin.faa-reverse.animated.faa-slow,
+.faa-spin.faa-reverse.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-spin.faa-reverse.faa-slow {
+  -webkit-animation: spin-reverse 2.25s linear infinite;
+          animation: spin-reverse 2.25s linear infinite;
+}
+
+@-webkit-keyframes tada {
+  0% {
+    transform: scale(1);
+  }
+  10%, 20% {
+    transform: scale(0.9) rotate(-8deg);
+  }
+  30%, 50%, 70% {
+    transform: scale(1.3) rotate(8deg);
+  }
+  40%, 60% {
+    transform: scale(1.3) rotate(-8deg);
+  }
+  80%, 100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  0% {
+    transform: scale(1);
+  }
+  10%, 20% {
+    transform: scale(0.9) rotate(-8deg);
+  }
+  30%, 50%, 70% {
+    transform: scale(1.3) rotate(8deg);
+  }
+  40%, 60% {
+    transform: scale(1.3) rotate(-8deg);
+  }
+  80%, 100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+.faa-tada.animated,
+.faa-tada.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-tada {
+  -webkit-animation: tada 2s linear infinite;
+          animation: tada 2s linear infinite;
+}
+
+.faa-tada.animated.faa-fast,
+.faa-tada.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-tada.faa-fast {
+  -webkit-animation: tada 1s linear infinite;
+          animation: tada 1s linear infinite;
+}
+
+.faa-tada.animated.faa-slow,
+.faa-tada.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-tada.faa-slow {
+  -webkit-animation: tada 3s linear infinite;
+          animation: tada 3s linear infinite;
+}
+
+@-webkit-keyframes vertical {
+  0%, 8%, 16% {
+    transform: translate(0, -3px);
+  }
+  4%, 12%, 20% {
+    transform: translate(0, 3px);
+  }
+  22%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes vertical {
+  0%, 8%, 16% {
+    transform: translate(0, -3px);
+  }
+  4%, 12%, 20% {
+    transform: translate(0, 3px);
+  }
+  22%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+.faa-vertical.animated,
+.faa-vertical.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-vertical {
+  -webkit-animation: vertical 2s ease infinite;
+          animation: vertical 2s ease infinite;
+}
+
+.faa-vertical.animated.faa-fast,
+.faa-vertical.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-vertical.faa-fast {
+  -webkit-animation: vertical 1s ease infinite;
+          animation: vertical 1s ease infinite;
+}
+
+.faa-vertical.animated.faa-slow,
+.faa-vertical.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-vertical.faa-slow {
+  -webkit-animation: vertical 3s ease infinite;
+          animation: vertical 3s ease infinite;
+}
+
+@-webkit-keyframes wrench {
+  0% {
+    transform: rotate(-12deg);
+  }
+  8% {
+    transform: rotate(12deg);
+  }
+  10%, 28%, 30%, 48%, 50%, 68% {
+    transform: rotate(24deg);
+  }
+  18%, 20%, 38%, 40%, 58%, 60% {
+    transform: rotate(-24deg);
+  }
+  75%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wrench {
+  0% {
+    transform: rotate(-12deg);
+  }
+  8% {
+    transform: rotate(12deg);
+  }
+  10%, 28%, 30%, 48%, 50%, 68% {
+    transform: rotate(24deg);
+  }
+  18%, 20%, 38%, 40%, 58%, 60% {
+    transform: rotate(-24deg);
+  }
+  75%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+.faa-wrench.animated,
+.faa-wrench.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-wrench {
+  -webkit-animation: wrench 2.5s ease infinite;
+          animation: wrench 2.5s ease infinite;
+  transform-origin-x: 90%;
+  transform-origin-y: 35%;
+  transform-origin-z: initial;
+}
+
+.faa-wrench.animated.faa-fast,
+.faa-wrench.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-wrench.faa-fast {
+  -webkit-animation: wrench 1.25s ease infinite;
+          animation: wrench 1.25s ease infinite;
+}
+
+.faa-wrench.animated.faa-slow,
+.faa-wrench.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-wrench.faa-slow {
+  -webkit-animation: wrench 3.75s ease infinite;
+          animation: wrench 3.75s ease infinite;
+}

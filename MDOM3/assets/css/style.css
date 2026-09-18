@@ -1,0 +1,949 @@
+/* ===================================================
+   GENERAL
+=================================================== */
+
+
+.services-section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:left;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:30px;
+    font-weight:700;
+    color:#063c6a;
+    margin-bottom:0px;
+}
+
+.section-title p{
+    color:#6c757d;
+    font-size:18px;
+}
+
+/* ===================================================
+   SERVICE CARD
+=================================================== */
+
+.service-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    border:2px solid transparent;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#063c6a;
+
+    box-shadow:0 25px 45px rgba(6,60,106,.15);
+
+}
+
+.service-card.active{
+
+    border-color:#063c6a;
+
+    background:linear-gradient(180deg,#fff,#eef6ff);
+
+}
+
+.icon{
+
+       width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    background: #063c6a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    margin-bottom: 25px;
+    transition: .35s;
+
+}
+
+.service-card:hover .icon{
+
+    transform:scale(1.08);
+
+}
+
+.service-card h4{
+
+    color:#063c6a;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.service-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ===================================================
+   MEGA PANEL
+=================================================== */
+
+.mega-panel{
+
+    display:none;
+
+    margin-top:35px;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+    animation:fade .35s ease;
+
+}
+
+.mega-panel.show{
+
+    display:block;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================================
+   IMAGE
+=================================================== */
+
+#megaImage{
+
+    width:100%;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+
+}
+
+/* ===================================================
+   CONTENT
+=================================================== */
+
+#megaTitle{
+
+    color:#063c6a;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+#megaDesc{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+/* ===================================================
+   MENU LINKS
+=================================================== */
+
+.mega-links{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px 40px;
+
+    margin-bottom:30px;
+
+}
+
+.mega-links a{
+
+    color:#063c6a;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+    padding-left:18px;
+
+}
+
+.mega-links a::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:#0d6efd;
+
+    font-weight:bold;
+
+}
+
+.mega-links a:hover{
+
+    color:#0d6efd;
+
+    padding-left:24px;
+
+}
+
+/* ===================================================
+   BUTTON
+=================================================== */
+
+.btn-theme{
+
+    display:inline-block;
+
+    background:#063c6a;
+
+    color:#fff;
+
+    padding:14px 36px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn-theme:hover{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media(max-width:991px){
+
+.mega-panel{
+
+padding:30px;
+
+}
+
+#megaImage{
+
+margin-bottom:25px;
+
+}
+
+.mega-links{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:767px){
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+.service-card{
+
+margin-bottom:20px;
+
+}
+
+.service-card h4{
+
+font-size:28px;
+
+}
+
+#megaTitle{
+
+font-size:30px;
+
+}
+
+.btn-theme{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+
+/* added gagan 10 sep 2026 */
+
+.feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 40px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.content-title {
+    position: relative;
+    
+    padding: 0 0 12px 0px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+
+    color: #042C53;
+}
+
+
+.content-title::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+
+    width: 70px;
+    height: 3px;
+
+    border-radius: 10px;
+    background:#075b9d;
+}
+
+/* Dropdown */
+.dropdown1{
+    position:relative;
+	Display:flex;
+}
+
+.dropdown-menu2{
+    position:absolute;
+    top:100%;
+    right:0;
+    min-width:180px;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:6px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    display:none;
+    z-index:999;
+    overflow:hidden;
+}
+
+.dropdown-menu2 a{
+    display:block;
+    padding:10px 15px;
+    color:#333;
+    white-space:nowrap;
+    transition:.3s;
+}
+
+.dropdown-menu2 a:hover{
+    background:#063c6a;
+    color:#fff;
+}
+
+.dropdown1:hover .dropdown-menu2{
+    display:block;
+}
+         /* =====================================================
+           MAIN SECTION
+        ===================================================== */
+
+        .range-section {
+            width: 100%;
+            max-width: 1300px;
+            margin: 30px auto;
+            overflow: hidden;
+            background: #EAF1F8;
+            transition: background-color 0.3s ease;
+			border-radius: 40px;
+			box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+			border:2px solid #fff;
+        }
+
+
+        /* =====================================================
+           TOP 3 TABS
+        ===================================================== */
+
+        .range-tabs {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .range-tab {
+            width: 33.333333%;
+            height: 230px;
+
+            border: 0;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            color: #fff;
+
+            transition:
+                opacity 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .range-tab:hover {
+            opacity: 0.94;
+        }
+
+        .range-tab:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+
+        /* TAB COLORS */
+
+        .range-tab.organic {
+            background: #EAF1F8;
+        }
+
+        .range-tab.luxury {
+            background: #DCE9F5;
+		
+        }
+
+        .range-tab.hybrid {
+            background: #CFE0F0;
+        }
+
+
+        /* =====================================================
+           TAB LOGO
+        ===================================================== */
+
+        .tab-logo {
+            width: 85%;
+            height: 170px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+
+        /* MOONDEW */
+
+        .moondew-logo {
+            position: relative;
+            width: 90%;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .moondew-logo::before {
+            content: "";
+
+            position: absolute;
+
+            top: -15px;
+            left: 10%;
+
+            width: 80%;
+            height: 32px;
+
+            border-top: 4px solid #fff;
+            border-left: 4px solid #fff;
+            border-right: 4px solid #fff;
+        }
+
+        .moondew-logo::after {
+            content: "";
+
+            position: absolute;
+
+            bottom: -15px;
+            left: 10%;
+
+            width: 80%;
+            height: 32px;
+
+            border-bottom: 4px solid #fff;
+            border-left: 4px solid #fff;
+            border-right: 4px solid #fff;
+        }
+
+        .moondew-text {
+            position: relative;
+            z-index: 2;
+
+         
+
+            font-size: 38px;
+            font-weight: 300;
+
+            letter-spacing: 7px;
+            line-height: 1;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           RANGE NAMES
+        ===================================================== */
+
+        .range-name {
+            position: relative;
+            z-index: 2;
+            line-height: 1;
+            font-weight: 500;
+			color:#fff;
+			background-color:#063c6a;
+			border-radius:5px;
+			padding:5px;
+        }
+
+
+        /* ORGANIA */
+
+        .organic-name {
+            font-size: 48px;
+            letter-spacing: -3px;
+        }
+
+        .organic-subtitle {
+            color: #e4df8d;
+        }
+
+
+        /* OPULA */
+
+        .luxury-name {
+            font-family: Georgia, serif;
+
+            font-size: 50px;
+            font-weight: 500;
+
+            color: #f6d77d;
+
+            letter-spacing: 2px;
+        }
+
+    
+
+        /* ELORIS */
+
+        .hybrid-name {
+            font-size: 43px;
+            letter-spacing: 1px;
+        }
+
+    
+
+        .range-subtitle {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 7px;
+
+            font-size: 15px;
+            line-height: 1.15;
+        }
+
+
+        /* =====================================================
+           CONTENT AREA
+        ===================================================== */
+
+        .range-content {
+            padding: 16px 28px 20px;
+        }
+
+
+        /* Hide panels */
+
+        .range-content .content-panel {
+            display: none !important;
+        }
+
+        /* Show selected panel */
+
+        .range-content .content-panel.range-visible {
+            display: block !important;
+        }
+
+
+        /* =====================================================
+           CONTENT TEXT
+        ===================================================== */
+
+        .content-title {
+            margin: 0 0 27px;
+
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .content-description {
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 600;
+			color:#0C447C;
+        }
+
+
+        /* =====================================================
+           FEATURES
+        ===================================================== */
+
+        .feature-list {
+            padding: 0;
+            margin: 0;
+
+            list-style: none;
+        }
+
+        .feature-list li {
+            position: relative;
+			color:#0C447C;
+            padding-left: 28px;
+
+         
+            font-size: 16px;
+            font-weight: 600;
+
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+  content: "›";
+    position: absolute;
+    left: 6px;
+    top: -10px;
+    font-size: 27px;
+    font-weight: 500;
+        }
+
+        .feature-list li span {
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           IMAGE
+        ===================================================== */
+
+        .product-image {
+            display: block;
+
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            border: 5px solid #fff;
+            border-radius: 50px 0px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .range-buttons {
+            display: flex;
+            align-items: center;
+
+            margin-top: -31px;
+        }
+
+        .range-buttons .btn {
+            margin-right: 5px;
+
+            padding: 9px 14px;
+
+            background: #fff;
+            color: #222;
+            z-index: 9999;
+            border: 0;
+            border-radius: 6px;
+
+            font-size: 16px;
+        }
+
+        .range-buttons .btn:hover {
+            background: #eee;
+        }
+
+        .more-btn {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+        }
+
+
+
+.more-btn {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  border-radius: 30px;
+  color: #063c6a;
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+  border:1px solid #063c6a ;
+}
+
+.svgIcon {
+  height: 25px;
+  transition-duration: 1.5s;
+}
+
+.bell path {
+  fill: #fff !important;
+}
+
+.more-btn:hover {
+  
+  transition-duration: .5s;
+  color:#063c6a;
+}
+
+.more-btn:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+
+.more-btn:hover .svgIcon {
+  transform: rotate(250deg);
+  transition-duration: 1.5s;
+}
+
+
+
+
+        /* =====================================================
+           CONTENT BACKGROUND
+        ===================================================== */
+
+        .range-section.luxury-active {
+            background: #DCE9F5;
+        }
+
+        .range-section.hybrid-active {
+            background: #CFE0F0;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 992px) {
+
+            .range-tab {
+                height: 200px;
+            }
+
+            .tab-logo {
+                height: 150px;
+            }
+
+            .moondew-text {
+                font-size: 29px;
+                letter-spacing: 4px;
+            }
+
+            .organic-name {
+                font-size: 38px;
+            }
+
+            .luxury-name {
+                font-size: 40px;
+            }
+
+            .hybrid-name {
+                font-size: 35px;
+            }
+
+            .range-subtitle {
+                font-size: 13px;
+            }
+
+            .product-image {
+                height: 260px;
+            }
+
+            .content-title {
+                font-size: 28px;
+            }
+
+            .content-description {
+                font-size: 14px;
+            }
+
+            .feature-list li {
+                font-size: 14px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 767px) {
+
+            .range-section {
+                margin: 15px 10px;
+            }
+
+            .range-tabs {
+                flex-direction: column;
+            }
+
+            .range-tab {
+                width: 100%;
+                height: 150px;
+            }
+
+            .tab-logo {
+                height: 125px;
+            }
+
+            .moondew-text {
+                font-size: 27px;
+                letter-spacing: 4px;
+            }
+
+            .organic-name {
+                font-size: 34px;
+            }
+
+            .luxury-name {
+                font-size: 36px;
+            }
+
+            .hybrid-name {
+                font-size: 32px;
+            }
+
+            .range-content {
+                padding: 20px;
+            }
+
+            .content-title {
+                font-size: 27px;
+            }
+
+            .content-description {
+                font-size: 14px;
+            }
+
+            .feature-list li {
+                font-size: 14px;
+            }
+
+            .product-image {
+                height: 230px;
+                margin-top: 25px;
+            }
+
+        }

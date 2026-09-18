@@ -1,0 +1,320 @@
+
+.pricing-section {
+    padding: 70px 0;
+	 background:
+        radial-gradient(circle at 10% 10%, rgba(77, 171, 247, 0.12), transparent 35%),
+        radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.10), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(32, 201, 151, 0.08), transparent 40%),
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 50%, #faf8ff 100%);
+
+    min-height: 100vh;
+}
+
+.pricing-card {
+    background: #fff;
+    min-height: 515px;
+    padding: 50px 35px 45px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top colorful line */
+.pricing-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+}
+
+/* Basic */
+.basic::before {
+    background: #4dabf7;
+}
+
+.basic .price-circle {
+    border-color: #4dabf7;
+}
+
+.basic .pricing-btn {
+    background: #4dabf7;
+}
+
+/* Standard */
+.standard::before {
+    background: #8b5cf6;
+}
+
+.standard .price-circle {
+    border-color: #8b5cf6;
+}
+
+.standard .pricing-btn {
+    background: #8b5cf6;
+}
+
+/* Professional */
+.professional::before {
+    background: #20c997;
+}
+
+.professional .price-circle {
+    border-color: #20c997;
+}
+
+.professional .pricing-btn {
+    background: #20c997;
+}
+
+
+/* Hover */
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-title {
+    font-size: 23px;
+    font-weight: 600;
+    color: #172033;
+    margin-bottom: 3px;
+}
+
+.pricing-subtitle {
+    font-size: 13px;
+    color: #8a94a6;
+    margin-bottom: 28px;
+}
+
+.price-circle {
+    width: 140px;
+    height: 140px;
+    border: 1px dashed;
+    border-radius: 50%;
+    margin: 0 auto 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    color: #172033;
+}
+
+.currency {
+    font-size: 14px;
+    margin-right: 3px;
+}
+
+.amount {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.month {
+    font-size: 12px;
+    color: #7d8796;
+    margin-left: 2px;
+}
+
+.pricing-details {
+    min-height: 125px;
+    font-size: 14px;
+    line-height: 2.05;
+    color: #303846;
+}
+
+.pricing-details p {
+    margin: 0;
+}
+
+.pricing-btn {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 11px 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pricing-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    filter: brightness(90%);
+}
+
+
+.pricing-heading {
+    font-size: 34px;
+    font-weight: 600;
+    color: #172033;
+    margin-bottom: 10px;
+}
+
+.pricing-subheading {
+    font-size: 15px;
+    color: #7d8796;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+   .pricing-section {
+            padding: 70px 15px;
+        }
+
+        .pricing-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pricing-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #173b56;
+            margin-bottom: 10px;
+        }
+
+        .pricing-title p {
+            color: #6b7c89;
+            margin: 0;
+        }
+
+        /* Table Card */
+        .pricing-table-wrapper {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(27, 70, 95, 0.10);
+            border: 1px solid #e4edf2;
+        }
+
+        .pricing-table {
+            margin: 0;
+            border-collapse: collapse;
+        }
+
+        .pricing-table th {
+            background: #173f5f;
+            color: #fff;
+            padding: 18px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 0;
+        }
+
+        .pricing-table td {
+            padding: 18px 20px;
+            vertical-align: middle;
+            border-color: #e5edf2;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Plan Name */
+        .plan-name {
+            font-weight: 700;
+            color: #173f5f;
+            font-size: 15px;
+        }
+
+        /* Account */
+        .account-info {
+            color: #536b7a;
+        }
+
+        /* Price */
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #16745b;
+        }
+
+        .price-note {
+            color: #687b87;
+            font-size: 13px;
+        }
+
+        /* Alternating rows */
+        .pricing-table tbody tr:nth-child(odd) {
+            background: #f4f9fc;
+        }
+
+        .pricing-table tbody tr {
+            transition: all 0.25s ease;
+        }
+
+        .pricing-table tbody tr:hover {
+            background: #eaf6f3;
+        
+        }
+
+        /* Contact row */
+        .contact-price {
+            font-weight: 700;
+            color: #d06b2d;
+        }
+
+        /* Archive badge */
+        .archive-badge {
+            display: inline-block;
+            background: #e8f5f1;
+            color: #16745b;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        /* Waived */
+        .old-price {
+            color: #777;
+            text-decoration: line-through;
+            margin-right: 5px;
+        }
+
+        .waived {
+            color: #16745b;
+            font-weight: 700;
+        }
+
+        .star {
+            color: #d06b2d;
+        }
+
+        /* Mobile */
+        @media (max-width: 767px) {
+
+            .pricing-section {
+                padding: 40px 10px;
+            }
+
+            .pricing-title h2 {
+                font-size: 26px;
+            }
+
+            .pricing-table-wrapper {
+                border-radius: 12px;
+            }
+
+            .pricing-table {
+                min-width: 850px;
+            }
+
+            .table-responsive {
+                border-radius: 12px;
+            }
+        }
