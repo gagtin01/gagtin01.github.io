@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Platform Comparison - Speedarp</title>
+
+    <!-- Bootstrap 5.0.0-beta1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+        }
+
+        .comparison-wrapper {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin-bottom: 0;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 9px 12px;
+            vertical-align: middle;
+            border: 1px solid #e9e9e9;
+            line-height: 1.45;
+        }
+
+        .comparison-table thead th {
+            font-weight: 700;
+            color: #222;
+            background: #fff;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        .comparison-table thead th:first-child {
+            width: 24%;
+        }
+
+        .comparison-table thead th:not(:first-child) {
+            width: 19%;
+        }
+
+        .feature {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .platform {
+            font-weight: 700;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 18px;
+            margin-right: 3px;
+            text-align: center;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+
+        .yes {
+            color: #16a34a;
+        }
+
+        .no {
+            color: #b42318;
+        }
+
+        .partial {
+            color: #d19a00;
+        }
+
+        .text-wrap {
+            display: inline;
+        }
+
+        @media (max-width: 767.98px) {
+            body {
+                padding: 15px 8px;
+            }
+
+            .table-responsive {
+                border: 0;
+            }
+
+            .comparison-table {
+                font-size: 11px;
+                min-width: 850px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="comparison-wrapper">
+        <div class="table-responsive">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature / Purpose</th>
+                        <th class="platform">Facebook</th>
+                        <th class="platform">Instagram</th>
+                        <th class="platform">WhatsApp</th>
+                        <th class="platform">Speedarp</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="feature">Primary purpose</td>
+                        <td>Connect with friends, communities<br>&amp; interests</td>
+                        <td>Share photos, videos &amp;<br>lifestyle</td>
+                        <td>Private messaging &amp;<br>group communication</td>
+                        <td>Build and preserve family<br><strong>connections</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Who is it for?</td>
+                        <td>Everyone</td>
+                        <td>Everyone</td>
+                        <td>Everyone</td>
+                        <td>Families &amp; relatives</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family-focused by design</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon yes">✅</span>Yes</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Private family network</td>
+                        <td><span class="icon partial">⚠️</span>Can create groups</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon partial">⚠️</span>Family groups</td>
+                        <td><span class="icon yes">✅</span>Core purpose</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Tree</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family relationships<br>mapped visually</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Cousin-focused features</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Events</td>
+                        <td><span class="icon partial">⚠️</span>General events</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon partial">⚠️</span>Group planning</td>
+                        <td><span class="icon yes">✅</span>Family-specific</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Memories</td>
+                        <td><span class="icon partial">⚠️</span>Mixed with general content</td>
+                        <td><span class="icon partial">⚠️</span>Photo-centric</td>
+                        <td><span class="icon partial">⚠️</span>Scattered in chats</td>
+                        <td><span class="icon yes">✅</span>Organized as family<br>memories</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Heritage / Legacy</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Core feature</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Remembered family<br>members</td>
+                        <td><span class="icon partial">⚠️</span>Profile-based</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Dedicated remembrance</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family occupations /<br>family knowledge</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Occupational Compass</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family traditions &amp; rituals</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Ritual Recorder</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Cousin bonding</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon partial">⚠️</span>Social interaction</td>
+                        <td><span class="icon partial">⚠️</span>Chat interaction</td>
+                        <td><span class="icon yes">✅</span>Designed around it</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family-specific feed</td>
+                        <td><span class="icon no">❌</span>General feed</td>
+                        <td><span class="icon no">❌</span>Algorithmic content</td>
+                        <td><span class="icon no">❌</span>Chat-based</td>
+                        <td><span class="icon yes">✅</span>KinFeed</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family conversations</td>
+                        <td><span class="icon partial">⚠️</span>Groups</td>
+                        <td><span class="icon partial">⚠️</span>DMs</td>
+                        <td><span class="icon yes">✅</span>Excellent</td>
+                        <td><span class="icon yes">✅</span>Family-specific</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
