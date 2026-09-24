@@ -1,0 +1,415 @@
+<html class="no-js" lang="zxx"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Speedarp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/tiny-slider.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+.form-result {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 15px;
+    font-weight: 500;
+    min-height: 0;
+}
+.form-result:empty {
+    margin: 0;
+}
+.form-result-success {
+    color: #1a9d5c;
+}
+.form-result-error {
+    color: #e64848;
+}
+
+
+  .comparison-wrapper {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin-bottom: 0;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 9px 12px;
+            vertical-align: middle;
+            border: 1px solid #e9e9e9;
+            line-height: 1.45;
+        }
+
+        .comparison-table thead th {
+            font-weight: 700;
+            color: #222;
+            background: #fff;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        .comparison-table thead th:first-child {
+            width: 24%;
+        }
+
+        .comparison-table thead th:not(:first-child) {
+            width: 19%;
+        }
+
+        .feature {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .platform {
+            font-weight: 700;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 18px;
+            margin-right: 3px;
+            text-align: center;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+
+        .yes {
+            color: #16a34a;
+        }
+
+        .no {
+            color: #b42318;
+        }
+
+        .partial {
+            color: #d19a00;
+        }
+
+        .text-wrap {
+            display: inline;
+        }
+
+        @media (max-width: 767.98px) {
+            body {
+                padding: 15px 8px;
+            }
+
+            .table-responsive {
+                border: 0;
+            }
+
+            .comparison-table {
+                font-size: 11px;
+                min-width: 850px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 9px;
+            }
+        }
+</style></head>
+
+<body>
+
+
+    <!-- Preloader -->
+    <div class="preloader" style="opacity: 0; display: none;">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+<div class="table-responsive container" >
+            <table class="comparison-table" style="margin-top:50px">
+                <thead>
+                    <tr>
+                        <th>Feature / Purpose</th>
+                        <th class="platform">Facebook</th>
+                        <th class="platform">Instagram</th>
+                        <th class="platform">WhatsApp</th>
+                        <th class="platform">Speedarp</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="feature">Primary purpose</td>
+                        <td>Connect with friends, communities<br>&amp; interests</td>
+                        <td>Share photos, videos &amp;<br>lifestyle</td>
+                        <td>Private messaging &amp;<br>group communication</td>
+                        <td>Build and preserve family<br><strong>connections</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Who is it for?</td>
+                        <td>Everyone</td>
+                        <td>Everyone</td>
+                        <td>Everyone</td>
+                        <td>Families &amp; relatives</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family-focused by design</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon yes">✅</span>Yes</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Private family network</td>
+                        <td><span class="icon partial">⚠️</span>Can create groups</td>
+                        <td><span class="icon no">❌</span>No</td>
+                        <td><span class="icon partial">⚠️</span>Family groups</td>
+                        <td><span class="icon yes">✅</span>Core purpose</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Tree</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family relationships<br>mapped visually</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Cousin-focused features</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Events</td>
+                        <td><span class="icon partial">⚠️</span>General events</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon partial">⚠️</span>Group planning</td>
+                        <td><span class="icon yes">✅</span>Family-specific</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Memories</td>
+                        <td><span class="icon partial">⚠️</span>Mixed with general content</td>
+                        <td><span class="icon partial">⚠️</span>Photo-centric</td>
+                        <td><span class="icon partial">⚠️</span>Scattered in chats</td>
+                        <td><span class="icon yes">✅</span>Organized as family<br>memories</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family Heritage / Legacy</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Core feature</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Remembered family<br>members</td>
+                        <td><span class="icon partial">⚠️</span>Profile-based</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Dedicated remembrance</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family occupations /<br>family knowledge</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Occupational Compass</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family traditions &amp; rituals</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon yes">✅</span>Ritual Recorder</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Cousin bonding</td>
+                        <td><span class="icon no">❌</span></td>
+                        <td><span class="icon partial">⚠️</span>Social interaction</td>
+                        <td><span class="icon partial">⚠️</span>Chat interaction</td>
+                        <td><span class="icon yes">✅</span>Designed around it</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family-specific feed</td>
+                        <td><span class="icon no">❌</span>General feed</td>
+                        <td><span class="icon no">❌</span>Algorithmic content</td>
+                        <td><span class="icon no">❌</span>Chat-based</td>
+                        <td><span class="icon yes">✅</span>KinFeed</td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature">Family conversations</td>
+                        <td><span class="icon partial">⚠️</span>Groups</td>
+                        <td><span class="icon partial">⚠️</span>DMs</td>
+                        <td><span class="icon yes">✅</span>Excellent</td>
+                        <td><span class="icon yes">✅</span>Family-specific</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <!-- Start Header Area -->
+    
+
+    <!-- Start Footer Area -->
+    <footer class="footer" style="margin-top:50px;">
+           <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="left">
+                                <p>Designed and Developed by<a href="#" rel="nofollow" target="_blank">Speedarp</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover" style="display: none;">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/imagesloaded.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        //========= App Screenshort 
+        tns({
+            container: '.screenshort-slider',
+            items: 1,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            controlsText: ['<i class="lni lni-chevron-left"></i>', '<i class="lni lni-chevron-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 3,
+                },
+                992: {
+                    items: 3,
+                },
+                1170: {
+                    items: 4,
+                }
+            }
+        });
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+        //========= Contact form (Web3Forms)
+        (function () {
+            var form = document.getElementById('speedarp-contact-form');
+            var result = document.getElementById('speedarp-form-result');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var formData = new FormData(form);
+                var submitBtn = form.querySelector('button[type="submit"]');
+                var originalBtnText = submitBtn.innerHTML;
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending...';
+                result.className = 'form-result';
+                result.innerHTML = '';
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                })
+                    .then(function (response) { return response.json(); })
+                    .then(function (data) {
+                        if (data.success) {
+                            result.classList.add('form-result-success');
+                            result.innerHTML = 'Thanks! Your message has been sent — we\'ll get back to you soon.';
+                            form.reset();
+                        } else {
+                            result.classList.add('form-result-error');
+                            result.innerHTML = data.message || 'Something went wrong. Please try again.';
+                        }
+                    })
+                    .catch(function () {
+                        result.classList.add('form-result-error');
+                        result.innerHTML = 'Something went wrong. Please check your connection and try again.';
+                    })
+                    .finally(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    });
+            });
+        })();
+    </script>
+
+
+
+
+</body></html>
