@@ -61,33 +61,29 @@ body {
   color: var(--green) !important;
 }
 
-/* Underline indicator (uses ::before so Bootstrap caret on ::after stays visible) */
-.nav-item.dropdown .nav-link::before {
+/* Underline on hover for all main menu items */
+.nav-link::before {
   content: "";
   position: absolute;
   left: 1rem;
   right: 1rem;
-  bottom: 0;  
+  bottom: 0;
+  height: 2px;
+  background: var(--green);
   opacity: 0;
   transform: scaleX(0.6);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.nav-item.dropdown:hover .nav-link::before,
-.nav-item.dropdown .nav-link.show::before {
+.nav-link:hover::before,
+.nav-link.show::before {
   opacity: 1;
   transform: scaleX(1);
 }
 
-/* Keep Bootstrap caret visible and rotate it on hover */
+/* Remove Bootstrap dropdown arrows */
 .navbar .dropdown-toggle::after {
-  transition: transform 0.2s ease;
-  vertical-align: 0.15em;
-}
-
-.navbar .dropdown:hover .dropdown-toggle::after,
-.navbar .dropdown .dropdown-toggle.show::after {
-  transform: rotate(180deg);
+  display: none !important;
 }
 
 .nav-icons a {
@@ -274,13 +270,12 @@ body {
   border-radius: 14px;
   text-decoration: none;
   color: var(--ink);
-  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+  transition: background 0.2s var(--ease);
   margin-bottom: 0.25rem;
 }
 
 .mi:hover {
   background: var(--green-soft);
-  transform: translateX(3px);
 }
 
 /* Brand-specific hover colors */
@@ -291,7 +286,7 @@ body {
   background: #e7effd !important;
 }
 .mcol-opula .mi:hover {
-  background: #fcecf2 !important;
+  background: #fbf2d9 !important;
 }
 
 .mcol-organiq .va {
@@ -301,7 +296,16 @@ body {
   background: #e7effd;
 }
 .mcol-opula .va {
-  background: #fcecf2;
+  background: #fbf2d9;
+}
+
+.mcol-eloris .va:hover {
+  background: #204c97 !important;
+  color: #fff;
+}
+.mcol-opula .va:hover {
+  background: #75002a !important;
+  color: #fff;
 }
 
 .mi-img {
@@ -312,11 +316,6 @@ body {
   background: #f0ebe3;
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: transform 0.25s var(--ease);
-}
-
-.mi:hover .mi-img {
-  transform: scale(1.06);
 }
 
 .mi-body {
@@ -339,6 +338,13 @@ body {
   color: var(--green);
 }
 
+.mcol-eloris .mi:hover .mi-name {
+  color: #204c97;
+}
+.mcol-opula .mi:hover .mi-name {
+  color: #75002a;
+}
+
 .mi-meta {
   font-size: 0.75rem;
   color: var(--muted);
@@ -349,13 +355,17 @@ body {
   opacity: 0;
   color: var(--green);
   font-size: 0.9rem;
-  transform: translateX(-6px);
-  transition: opacity 0.2s, transform 0.2s;
 }
 
 .mi:hover .mi-arrow {
   opacity: 1;
-  transform: translateX(0);
+}
+
+.mcol-eloris .mi:hover .mi-arrow {
+  color: #204c97;
+}
+.mcol-opula .mi:hover .mi-arrow {
+  color: #75002a;
 }
 
 /* View all at bottom of column */
@@ -408,10 +418,6 @@ body {
     border-top: 1px solid var(--line);
     margin-top: 0.4rem;
     padding-top: 0.9rem;
-  }
-
-  .mi:hover {
-    transform: none;
   }
 
   .nav-icons {
@@ -567,7 +573,7 @@ body {
               <div class="mega-cols two">
                 <div class="mcol">
                   <div class="chead">
-                    <span class="ctitle"><span class="dot"></span> Pillows</span>
+                    <img class="brand" src="img/brand-pillows.png" alt="Pillows">
                   </div>
                   <a href="#" class="mi">
                     <img class="mi-img" src="img/p1.png" alt="">
@@ -599,7 +605,7 @@ body {
 
                 <div class="mcol">
                   <div class="chead">
-                    <span class="ctitle"><span class="dot"></span> Bedsheets</span>
+                    <img class="brand" src="img/brand-bedsheets.png" alt="Bedsheets">
                   </div>
                   <a href="#" class="mi">
                     <img class="mi-img" src="img/b2.png" alt="">
@@ -636,7 +642,7 @@ body {
               <div class="mega-cols two">
                 <div class="mcol">
                   <div class="chead">
-                    <span class="ctitle"><span class="dot"></span> Pillows</span>
+                    <img class="brand" src="img/brand-pillows.png" alt="Pillows">
                   </div>
                   <a href="#" class="mi">
                     <img class="mi-img" src="img/p4.png" alt="">
@@ -659,7 +665,7 @@ body {
 
                 <div class="mcol">
                   <div class="chead">
-                    <span class="ctitle"><span class="dot"></span> Bedsheets</span>
+                    <img class="brand" src="img/brand-bedsheets.png" alt="Bedsheets">
                   </div>
                   <a href="#" class="mi">
                     <img class="mi-img" src="img/b1.png" alt="">
