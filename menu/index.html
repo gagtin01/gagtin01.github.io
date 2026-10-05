@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moondew — Mega Menu v2</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1ea;
+  --panel: #ffffff;
+  --ink: #1a1916;
+  --muted: #6e6860;
+  --green: #2a5a4a;
+  --green-soft: #e8f0ec;
+  --accent: #e8c96a;
+  --accent-soft: #f8f0d4;
+  --line: #ebe6db;
+  --shadow: 0 25px 60px -12px rgba(26,25,22,0.14), 0 8px 20px -8px rgba(26,25,22,0.08);
+  --radius: 24px;
+  --radius-sm: 16px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  background: #f4e391;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.navbar-brand img {
+  height: 75px;
+  width: auto;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ink) !important;
+  padding: 1.2rem 1rem !important;
+  letter-spacing: -0.01em;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.show {
+  color: var(--green) !important;
+}
+
+/* Underline indicator (uses ::before so Bootstrap caret on ::after stays visible) */
+.nav-item.dropdown .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;  
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item.dropdown:hover .nav-link::before,
+.nav-item.dropdown .nav-link.show::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Keep Bootstrap caret visible and rotate it on hover */
+.navbar .dropdown-toggle::after {
+  transition: transform 0.2s ease;
+  vertical-align: 0.15em;
+}
+
+.navbar .dropdown:hover .dropdown-toggle::after,
+.navbar .dropdown .dropdown-toggle.show::after {
+  transform: rotate(180deg);
+}
+
+.nav-icons a {
+  color: var(--ink);
+  font-size: 1.15rem;
+  text-decoration: none;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+.nav-icons a:hover {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.cart-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ========== MEGA PANEL ========== */
+.navbar .dropdown-menu.mega-menu {
+  border: none;
+  background: var(--panel);
+  padding: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .navbar .dropdown-menu.mega-menu {
+    display: block;
+    position: absolute;
+    top: calc(100%  - 15px);
+    left: 50%;
+    width: min(1100px, calc(100vw - 2rem));
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 16px) scale(0.98);
+    transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), visibility 0.28s;
+    margin: 0;
+  }
+
+  .navbar .dropdown-menu.mega-sm {
+    width: min(720px, calc(100vw - 2rem));
+  }
+
+  /* Hover bridge */
+  .mega-menu::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    top: -12px;
+    height: 12px;
+  }
+
+  .navbar .dropdown:hover > .dropdown-menu.mega-menu,
+  .navbar .dropdown > .dropdown-menu.mega-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+/* Inner layout */
+.mega-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top accent strip */
+.mega-top {
+  background: linear-gradient(90deg, var(--green-soft) 0%, #f7f4ea 100%);
+  padding: 0.85rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.mega-top-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--green);
+}
+
+.mega-top a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap 0.2s;
+}
+.mega-top a:hover { gap: 0.55rem; }
+
+/* Columns */
+.mega-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 1.4rem 1.2rem 1.5rem;
+}
+
+.mega-cols.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mcol {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mcol + .mcol {
+  border-left: 1px solid var(--line);
+}
+
+/* Brand / category header */
+.chead {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+      border-radius: 5px;
+}
+
+.ctitle {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ctitle .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Product card style */
+.mi {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.55rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+  margin-bottom: 0.25rem;
+}
+
+.mi:hover {
+  background: var(--green-soft);
+  transform: translateX(3px);
+}
+
+/* Brand-specific hover colors */
+.mcol-organiq .mi:hover {
+  background: #e8f0ec !important;
+}
+.mcol-eloris .mi:hover {
+  background: #e7effd !important;
+}
+.mcol-opula .mi:hover {
+  background: #fcecf2 !important;
+}
+
+.mcol-organiq .va {
+  background: #e8f0ec;
+}
+.mcol-eloris .va {
+  background: #e7effd;
+}
+.mcol-opula .va {
+  background: #fcecf2;
+}
+
+.mi-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #f0ebe3;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.25s var(--ease);
+}
+
+.mi:hover .mi-img {
+  transform: scale(1.06);
+}
+
+.mi-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mi-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+
+.mi:hover .mi-name {
+  color: var(--green);
+}
+
+.mi-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.mi-arrow {
+  opacity: 0;
+  color: var(--green);
+  font-size: 0.9rem;
+  transform: translateX(-6px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.mi:hover .mi-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* View all at bottom of column */
+.va {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: var(--green-soft);
+  transition: background 0.2s, color 0.2s, gap 0.2s;
+  align-self: flex-end;
+}
+
+.va:hover {
+  background: var(--green);
+  color: #fff;
+  gap: 0.55rem;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu.mega-menu {
+    border-radius: 16px;
+    margin: 0.4rem 0 0.8rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .mega-top {
+    padding: 0.7rem 1rem;
+  }
+
+  .mega-cols,
+  .mega-cols.two {
+    grid-template-columns: 1fr;
+    padding: 0.8rem 0.6rem 1rem;
+  }
+
+  .mcol {
+    padding: 0.6rem 0.5rem;
+  }
+
+  .mcol + .mcol {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    margin-top: 0.4rem;
+    padding-top: 0.9rem;
+  }
+
+  .mi:hover {
+    transform: none;
+  }
+
+  .nav-icons {
+    margin: 0.6rem 0 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="img/Logo1.png" alt="Moondew">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+
+        <!-- MATTRESSES -->
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mattresses</a>
+          <div class="dropdown-menu mega-menu">
+            <div class="mega-inner">
+              <div class="mega-top">
+                <span class="mega-top-label">Shop by Brand</span>
+                <a href="#">View all mattresses <i class="bi bi-arrow-right"></i></a>
+              </div>
+              <div class="mega-cols">
+                <!-- Organiq -->
+                <div class="mcol mcol-organiq">
+                  <div class="chead">
+                    <img class="brand" src="img/brand-organiq.png" alt="Organiq">
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m1.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Ortho Latex Mattress</span>
+                      <span class="mi-meta">Firm support · Latex</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m2.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Serene Latex Mattress</span>
+                      <span class="mi-meta">Medium · Natural latex</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m3.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Refresh Latex Series</span>
+                      <span class="mi-meta">Cooling · Breathable</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="va">View all Organiq <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <!-- Eloris -->
+                <div class="mcol mcol-eloris">
+                  <div class="chead">
+                    <img class="brand" src="img/brand-eloris.png" alt="Eloris">
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m1.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Mellow Soft Series</span>
+                      <span class="mi-meta">Plush · Memory foam</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m2.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Elite Memory Series</span>
+                      <span class="mi-meta">Premium · Adaptive</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m3.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">HyLatex Series</span>
+                      <span class="mi-meta">Hybrid · Supportive</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+            
+               
+                  <a href="#" class="va">View all Eloris <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <!-- Opula -->
+                <div class="mcol mcol-opula">
+                  <div class="chead">
+                    <img class="brand" src="img/brand-opula.png" alt="Opula">
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m1.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Mellow Soft Series</span>
+                      <span class="mi-meta">Cloud-soft feel</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m2.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Elite Memory Series</span>
+                      <span class="mi-meta">Pressure relief</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/m3.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">HyLatex Series</span>
+                      <span class="mi-meta">Best of both</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="va">View all Opula <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ACCESSORIES -->
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Accessories</a>
+          <div class="dropdown-menu mega-menu mega-sm">
+            <div class="mega-inner">
+              <div class="mega-top">
+                <span class="mega-top-label">Sleep Essentials</span>
+                <a href="#">Shop all accessories <i class="bi bi-arrow-right"></i></a>
+              </div>
+              <div class="mega-cols two">
+                <div class="mcol">
+                  <div class="chead">
+                    <span class="ctitle"><span class="dot"></span> Pillows</span>
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/p1.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Green Latex Standard</span>
+                      <span class="mi-meta">Natural latex</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/p2.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Green Latex Half</span>
+                      <span class="mi-meta">Adjustable height</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/p3.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Green Latex Contour</span>
+                      <span class="mi-meta">Neck support</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+            
+                  <a href="#" class="va">View all pillows <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="mcol">
+                  <div class="chead">
+                    <span class="ctitle"><span class="dot"></span> Bedsheets</span>
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/b2.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Organic Cotton Fitted</span>
+                      <span class="mi-meta">100% organic</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/b1.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Organic Cotton Flat</span>
+                      <span class="mi-meta">Breathable weave</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="va">View all bedsheets <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- KIDS -->
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kids</a>
+          <div class="dropdown-menu mega-menu mega-sm">
+            <div class="mega-inner">
+              <div class="mega-top">
+                <span class="mega-top-label">Little Sleepers</span>
+                <a href="#">Shop kids collection <i class="bi bi-arrow-right"></i></a>
+              </div>
+              <div class="mega-cols two">
+                <div class="mcol">
+                  <div class="chead">
+                    <span class="ctitle"><span class="dot"></span> Pillows</span>
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/p4.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Kids Standard Pillow</span>
+                      <span class="mi-meta">Soft & safe</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/p3.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Kids Contour Pillow</span>
+                      <span class="mi-meta">Growing support</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="va">View all <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="mcol">
+                  <div class="chead">
+                    <span class="ctitle"><span class="dot"></span> Bedsheets</span>
+                  </div>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/b1.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Kids Bedsheets</span>
+                      <span class="mi-meta">Soft cotton</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="mi">
+                    <img class="mi-img" src="img/b2.png" alt="">
+                    <div class="mi-body">
+                      <span class="mi-name">Kids Bedsheets Two</span>
+                      <span class="mi-meta">Fun prints</span>
+                    </div>
+                    <i class="bi bi-chevron-right mi-arrow"></i>
+                  </a>
+                  <a href="#" class="va">View all <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nearby Stores</a></li>
+      </ul>
+
+      <div class="nav-icons d-flex align-items-center gap-1 ms-lg-3">
+        <a href="#" title="Search"><i class="bi bi-search"></i></a>
+        <a href="#" title="Account"><i class="bi bi-person"></i></a>
+        <a href="#" title="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
