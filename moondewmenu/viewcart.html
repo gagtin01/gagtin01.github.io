@@ -1522,6 +1522,17 @@ color: #000;
     }
 
 }
+
+.dropdown-arrow {
+    border: 0;
+    background: transparent;
+    padding: 0 5px;
+    margin-left: -8px;
+}
+
+.dropdown-arrow::after {
+    margin-left: 0;
+}
 </style>
 </head>
 <body>
@@ -1554,10 +1565,18 @@ color: #000;
 
         <!-- ==================== MATTRESSES ==================== -->
         <li class="nav-item dropdown mega-dropdown">
-          <a class="nav-link dropdown-toggle" href="index2.html" role="button"
-             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <!-- Mattresses link -->
+        <a class="nav-link" href="index2.html" style="display: inline-flex;   padding-right: 5px !important;">
             Mattresses
-          </a>
+        </a>
+
+        <!-- Dropdown arrow -->
+        <button class="nav-link dropdown-toggle dropdown-arrow" style="display: inline-block;  margin: 0px !important;  padding: 0px !important;"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false">
+        </button>
 
           <div class="dropdown-menu">
             <div class="mega-content">
