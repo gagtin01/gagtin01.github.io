@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Header + Mega Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    :root {
+      --nav-height: 76px;
+      --header-bg: #ffffff; /* Change this to your exact header background color */
+      --mega-bg: #ffffff;
+      --accent: #222222;
+      --orgainq: #3a683f;
+      --eloris: #204c97;
+      --opula: #75002a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      margin: 0;
+      padding-top: var(--nav-height);
+    }
+
+    /* ================= HEADER ================= */
+    .navbar-custom {
+      min-height: var(--nav-height);
+      background: #f4e391;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      padding: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+    }
+
+    .navbar-custom > .container-fluid {
+      max-width: 1220px;
+      min-height: var(--nav-height);
+      padding: 0 28px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin-right: 28px;
+      padding: 0;
+    }
+
+    .header-logo {
+      width: 150px;
+      height: auto;
+      max-height: 80px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .navbar-collapse {
+      align-items: center;
+    }
+
+    /* Center the complete navigation */
+    .main-navigation {
+      flex: 1 1 auto;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .navbar-custom .nav-link {
+	font-family: "Barlow Condensed", sans-serif;
+      color: #3b6840;
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: .01em;
+      padding: 25px 13px !important;
+      position: relative;
+      white-space: nowrap;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .nav-link.active {
+      color: var(--accent);
+    }
+
+    .navbar-custom .nav-link::after {
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .navbar-custom .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      right: 13px;
+      bottom: 15px;
+      height: 2px;
+      background: currentColor;
+      transform: scaleX(1);
+    }
+
+    /* Right-side Font Awesome icons */
+    .navbar-icons {
+      margin-left: 25px !important;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .navbar-icons .nav-link {
+      font-size: 17px;
+      padding: 20px 10px !important;
+      color: #222;
+    }
+
+    .navbar-icons .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .navbar-icons .nav-link::after {
+      display: none;
+    }
+
+    /* ================= MEGA DROPDOWN ================= */
+    .mega-dropdown {
+      position: static;
+    }
+
+    .mega-dropdown .dropdown-menu {
+	font-family: "Barlow Condensed", sans-serif;
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      border: none;
+      border-radius: 0;
+      border-top: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid #e9ecef;
+      background: var(--mega-bg);
+      padding: 30px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .mega-dropdown:hover > .dropdown-menu,
+      .mega-dropdown .dropdown-menu.show {
+        display: block;
+      }
+
+      .mega-dropdown:hover > .nav-link {
+        color: var(--accent);
+      }
+
+      .mega-dropdown .dropdown-menu:hover {
+        display: block;
+      }
+    }
+
+    .mega-content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 25px;
+    }
+
+    .section-title {
+      font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: #041e42;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+
+    }
+
+    .shop-type-list,
+    .size-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .shop-type-list li {
+      margin-bottom: 8px;
+    }
+
+    .shop-type-list a {
+      color: #222;
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 500;
+      display: inline-block;
+      padding: 5px 0;
+      transition: color .2s ease;
+      cursor: pointer;
+    }
+
+    /* Requested brand hover colours */
+    .shop-type-list a[data-panel="orgainq"]:hover,
+    .shop-type-list a[data-panel="orgainq"].active {
+      color: var(--orgainq);
+    }
+
+    .shop-type-list a[data-panel="eloris"]:hover,
+    .shop-type-list a[data-panel="eloris"].active {
+      color: var(--eloris);
+    }
+
+    .shop-type-list a[data-panel="opula"]:hover,
+    .shop-type-list a[data-panel="opula"].active {
+      color: var(--opula);
+    }
+
+    .shop-type-list a:not([data-panel="orgainq"]):not([data-panel="eloris"]):not([data-panel="opula"]):hover,
+    .shop-type-list a:not([data-panel="orgainq"]):not([data-panel="eloris"]):not([data-panel="opula"]).active {
+      color: #2c5f39;
+    }
+
+    .size-panel { display: none; }
+    .size-panel.active { display: block; }
+
+    .size-list li { margin-bottom: 5px; }
+
+    .size-list a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color .2s ease;
+    }
+
+    .size-list a:hover {
+      color: #041e42;
+    }
+
+    /* Collection image panels */
+    .image-panel {
+      display: none;
+      width: 100%;
+      max-width: 290px;
+      aspect-ratio: 4 / 3;
+      border-radius: 4px;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+   
+    }
+
+    .image-panel.active {
+      display: flex;
+    }
+
+    .collection-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+	  border-radius:15px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.3;
+
+    }
+
+    .img-orgainq .image-placeholder { color: var(--orgainq); }
+    .img-eloris .image-placeholder { color: var(--eloris); }
+    .img-opula .image-placeholder { color: var(--opula); }
+
+    .img-kids-age .image-placeholder { color: #c71585; background:#ffe4e1; }
+    .img-kids-type .image-placeholder { color: #c71585; background:#f5d0e0; }
+    .img-kids-feat .image-placeholder { color: #c71585; background:#ffd6e0; }
+    .img-acc-prot .image-placeholder { color: #4b0082; background:#e6e6fa; }
+    .img-acc-pill .image-placeholder { color: #4b0082; background:#d8bfd8; }
+    .img-acc-bed .image-placeholder { color: #4b0082; background:#e0e0ff; }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 991.98px) {
+      .navbar-custom {
+        min-height: auto;
+        padding: 8px 0;
+      }
+
+      body {
+        padding-top: 64px;
+      }
+
+      .navbar-custom > .container-fluid {
+        min-height: auto;
+        padding: 0 16px;
+      }
+
+      .header-logo {
+        width: 130px;
+        max-height: 48px;
+      }
+
+      .navbar-toggler {
+        margin-left: auto;
+        padding: 7px 9px;
+      }
+
+      .navbar-collapse {
+        padding-top: 10px;
+      }
+
+      .main-navigation {
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .navbar-custom .nav-link {
+        padding: 12px 8px !important;
+      }
+
+      .navbar-custom .nav-link.active::after {
+        left: 8px;
+        right: 8px;
+        bottom: 5px;
+      }
+
+      .navbar-icons {
+        margin-left: 0 !important;
+        padding-top: 8px;
+      }
+
+      .mega-dropdown .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        border: none;
+        box-shadow: none;
+        background: #f7f7f7;
+        padding: 18px 0;
+        display: none;
+      }
+
+      .mega-dropdown .dropdown-menu.show {
+        display: block;
+      }
+
+      .mega-content {
+        padding: 0 16px;
+      }
+
+      .section-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .shop-type-list a {
+        font-size: 15px;
+        padding: 7px 0;
+      }
+
+      .size-list a {
+        font-size: 14px;
+      }
+
+      .image-panel {
+        max-width: 260px;
+        margin: 10px auto 0;
+      }
+
+      .mega-content .row > [class*="col-"] {
+        margin-bottom: 8px;
+      }
+    }
+	
+	.best-seller {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b3157;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 5px 8px 4px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+	font-family: Arial;
+    margin-left: 20px;
+}
+
+    /* ================= HYBRID RANGE SECTION ================= */
+    .hybrid-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 52px 20px 65px;
+      color: #041e42;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hybrid-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .hybrid-heading h2 {
+      margin: 0 0 10px;
+      color: #041e42;
+      font-size: 43px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .hybrid-heading p {
+      margin: 0;
+      color: #041e42;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .hybrid-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .hybrid-card-wrap {
+      min-width: 0;
+    }
+
+    .hybrid-card {
+      background: #f1f1f1;
+      border-radius: 11px;
+      overflow: hidden;
+    }
+
+    .hybrid-image {
+      position: relative;
+      height: 223px;
+      background: #ddd;
+      overflow: hidden;
+    }
+
+    .hybrid-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hybrid-badge {
+      position: absolute;
+      top: 11px;
+      left: 10px;
+      background: #fff;
+      color: #041e42;
+      border-radius: 14px;
+      padding: 5px 9px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .hybrid-card-content {
+      padding: 11px 10px 16px;
+      min-height: 293px;
+    }
+
+    .hybrid-card-content h3 {
+      margin: 0 0 10px;
+      color: #041e42;
+      font-size: 22px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .hybrid-card-content p {
+      margin: 0 0 8px;
+      color: #173b68;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .hybrid-price {
+      margin-top: 16px !important;
+      margin-bottom: 2px !important;
+      color: #041e42 !important;
+    }
+
+    .hybrid-price strong {
+      font-weight: 700;
+    }
+
+    .hybrid-note {
+      font-size: 12px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .hybrid-view {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 80px;
+      height: 45px;
+      padding: 0 20px;
+      background: #3a683f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 0;
+      transition: background .2s ease;
+    }
+
+    .hybrid-view:hover {
+      background: #315836;
+      color: #fff;
+    }
+
+    .hybrid-perfect {
+      padding-top: 20px;
+    }
+
+    .hybrid-perfect h4 {
+      color: #041e42;
+      margin: 0 0 13px;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .hybrid-perfect ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hybrid-perfect li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 9px;
+      color: #50677e;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .hybrid-perfect li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #159447;
+      font-weight: 700;
+    }
+
+    @media (max-width: 991.98px) {
+      .hybrid-section {
+        padding: 40px 16px 50px;
+      }
+
+      .hybrid-heading h2 {
+        font-size: 34px;
+      }
+
+      .hybrid-heading p {
+        font-size: 20px;
+      }
+
+      .hybrid-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  <div class="container-fluid">
+
+    <!-- Logo: replace images/logo.png with your supplied logo filename -->
+    <a class="navbar-brand" href="index.html" aria-label="Home">
+      <img src="img/Logo1.png" alt="Logo" class="header-logo">
+    </a>
+
+    <button class="navbar-toggler border-0 shadow-none" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+
+      <ul class="navbar-nav main-navigation mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+
+        <!-- ==================== MATTRESSES ==================== -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Mattresses
+          </a>
+
+          <div class="dropdown-menu">
+            <div class="mega-content">
+              <div class="row g-4">
+                <div class="col-12 col-lg-3">
+                  <div class="section-title">Shop by Brand</div>
+                  <ul class="shop-type-list" data-group="mattresses">
+                    <li><a href="#" data-panel="orgainq" class="active">Orgainq</a> <span class="best-seller">BEST SELLER</span></li>
+                    <li><a href="#" data-panel="eloris">Eloris</a>  <span class="best-seller">BEST SELLER</span></li>
+                    <li><a href="#" data-panel="opula">Opula</a> </li>
+                  </ul>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                  <div class="section-title">Shop by Size</div>
+
+                  <div class="size-panel active" data-panel="orgainq" data-group="mattresses">
+                    <ul class="size-list">
+                      <li><a href="#">Ortho Latex Mattress</a></li>
+                      <li><a href="#">Serene Latex Mattress</a></li>
+                      <li><a href="#">Refresh Latex Series</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="size-panel" data-panel="eloris" data-group="mattresses">
+                    <ul class="size-list">
+                      <li><a href="#">Mellow Soft Series</a></li>
+                      <li><a href="#">Elite Memory Series</a></li>
+                      <li><a href="#">HyLatex Series</a></li>
+                      <li><a href="#">Ortho Back Series</a></li>
+                      <li><a href="#">Alpha Latex Series</a></li>
+                      <li><a href="#">Bliss Memory Series</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="size-panel" data-panel="opula" data-group="mattresses">
+                    <ul class="size-list">
+                      <li><a href="#">Opula Ortho Plus</a></li>
+                      <li><a href="#">Opula Dual Comfort</a></li>
+                      <li><a href="#">Opula Natural Latex</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-5 d-flex justify-content-lg-end">
+                  <!-- Replace these image paths with your collection images -->
+                  <div class="image-panel active img-orgainq" data-panel="orgainq" data-group="mattresses">
+                    <img class="collection-image" src="img/orgainq-collection.jpg" alt="Orgainq Collection">                    
+                  </div>
+
+                  <div class="image-panel img-eloris" data-panel="eloris" data-group="mattresses">
+                    <img class="collection-image" src="img/eloris-collection.jpg" alt="Eloris Collection">
+                 
+                  </div>
+
+                  <div class="image-panel img-opula" data-panel="opula" data-group="mattresses">
+                    <img class="collection-image" src="img/opula-collection.jpg" alt="Opula Collection">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ==================== KIDS RANGE ==================== -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Kids Range
+          </a>
+          <div class="dropdown-menu">
+            <div class="mega-content">
+              <div class="row g-4">
+                <div class="col-12 col-lg-3">
+                  <div class="section-title">Shop by Category</div>
+                  <ul class="shop-type-list" data-group="kids">
+                    <li><a href="#" data-panel="kids-age" class="active">Pillows</a></li>
+                    <li><a href="#" data-panel="kids-type">Mattresses</a></li>
+                    <li><a href="#" data-panel="kids-feat">Toppers</a></li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <div class="section-title">Options</div>
+                  <div class="size-panel active" data-panel="kids-age" data-group="kids">
+                    <ul class="size-list">
+                      <li><a href="#">Kids Standard Pillow</a></li><li><a href="#">Kids Contour Pillow</a></li>
+
+                    </ul>
+                  </div>
+                  <div class="size-panel" data-panel="kids-type" data-group="kids">
+                    <ul class="size-list">
+                      <li><a href="#">Kids Ortho Mattress</a></li><li><a href="#">Kids Soft Foam</a></li>
+                      <li><a href="#">Kids Waterproof</a></li><li><a href="#">Bunk Bed Mattresses</a></li>
+                    </ul>
+                  </div>
+                  <div class="size-panel" data-panel="kids-feat" data-group="kids">
+                    <ul class="size-list">
+                      <li><a href="#">Best Seller – Soft Cloud</a></li>
+                      <li><a href="#">New Arrival – Cool Kids</a></li>
+                      <li><a href="#">Limited – Cartoon Series</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-5 d-flex justify-content-lg-end">
+                  <div class="image-panel active img-kids-age" data-panel="kids-age" data-group="kids"> <img class="collection-image" src="img/kid-pillow.jpg">       </div>
+                  <div class="image-panel img-kids-type" data-panel="kids-type" data-group="kids"> <img class="collection-image" src="img/kid-mat.jpg"></div>
+                  <div class="image-panel img-kids-feat" data-panel="kids-feat" data-group="kids"><img class="collection-image" src="img/kid-top.jpg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ==================== ACCESSORIES ==================== -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Accessories
+          </a>
+          <div class="dropdown-menu">
+            <div class="mega-content">
+              <div class="row g-4">
+                <div class="col-12 col-lg-3">
+                  <div class="section-title">Shop by Category</div>
+                  <ul class="shop-type-list" data-group="accessories">
+                    <li><a href="#" data-panel="acc-prot" class="active">Pillows</a></li>
+                    <li><a href="#" data-panel="acc-pill">Bedsheets</a></li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <div class="section-title">Products</div>
+                  <div class="size-panel active" data-panel="acc-prot" data-group="accessories">
+                    <ul class="size-list">
+                      <li><a href="#">Green Latex Standard Pillow</a></li><li><a href="#">Green Latex Half Pillow</a></li>
+                      <li><a href="#">Green Latex Contour Pillow</a></li><li><a href="#">Eco Latex Standard Pillow</a></li>
+					  <li><a href="#">Eco Latex Contour Pillow</a></li>
+                    </ul>
+                  </div>
+                  <div class="size-panel" data-panel="acc-pill" data-group="accessories">
+                    <ul class="size-list">
+                      <li><a href="#">100% Organic Cotton Fitted Bedsheet</a></li><li><a href="#">100% Organic Cotton Flat Bedsheet</a></li>
+                   
+                    </ul>
+                  </div>
+               
+                </div>
+                <div class="col-12 col-lg-5 d-flex justify-content-lg-end">
+                  <div class="image-panel active img-acc-prot" data-panel="acc-prot" data-group="accessories"><img class="collection-image" src="img/pillow.jpg"> </div>
+                  <div class="image-panel img-acc-pill" data-panel="acc-pill" data-group="accessories"><img class="collection-image" src="img/bedsheet.jpg"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nearby Stores</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+      </ul>
+
+      <!-- Font Awesome icons -->
+      <ul class="navbar-nav navbar-icons flex-row">
+        <li class="nav-item">
+          <a class="nav-link" href="#" title="Search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" title="Account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" title="Cart" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- ================= HYBRID MATTRESS RANGE ================= -->
+<section class="hybrid-section">
+  <div class="hybrid-heading">
+    <h2>What matters to you most?</h2>
+    <p>Know more about how this mattress performs on the aspects you care most deeply about.</p>
+  </div>
+
+  <div class="hybrid-grid">
+
+    <div class="hybrid-card-wrap">
+      <div class="hybrid-card">
+        <div class="hybrid-image">
+          <img src="img/bedsheet.jpg" alt="Hybrid Range">
+          <span class="hybrid-badge">Built for comfort</span>
+        </div>
+        <div class="hybrid-card-content">
+          <h3>Mellow Soft Duo Mattress</h3>
+          <p>Medium-firm feel</p>
+          <p>Titanium alloy microsprings (all ranges)</p>
+          <p>Up to 1,900 springs</p>
+          <p>5 layers / 25cm depth</p>
+          <p>Zoned CertiPUR<sup>®</sup> foam base</p>
+          <p class="hybrid-price">From <strong>£549</strong> Or <strong>£14.75</strong> monthly<sup>ⓘ</sup></p>
+          <p class="hybrid-note">From based on a single mattress</p>
+          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+        </div>
+      </div>
+      <div class="hybrid-perfect">
+        <h4>This range is perfect for...</h4>
+        <ul>
+          <li>Signature Simba tech at a lower price</li>
+          <li>Cushioned support for all sleep positions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hybrid-card-wrap">
+      <div class="hybrid-card">
+        <div class="hybrid-image">
+          <img src="img/bedsheet.jpg" alt="Premium Hybrid Range">
+          <span class="hybrid-badge">Built for balanced comfort</span>
+        </div>
+        <div class="hybrid-card-content">
+          <h3>Refresh Latex Duo Mattress</h3>
+          <p>Medium-firm / plush feel</p>
+          <p>Cooling Stratos<sup>®</sup> tech &amp; HeatRelease<sup>™</sup></p>
+          <p>Up to 7,300 springs</p>
+          <p>11 layers / 34cm depth</p>
+          <p>Zoned SupportCore<sup>™</sup> sprung base</p>
+          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
+          <p class="hybrid-note">From based on a single mattress</p>
+          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+        </div>
+      </div>
+      <div class="hybrid-perfect">
+        <h4>This range is perfect for...</h4>
+        <ul>
+          <li>Best cooling, comfort and innovation</li>
+          <li>Five-star, luxury hotel feel at home</li>
+          <li>Ultimate support for all sleep positions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hybrid-card-wrap">
+      <div class="hybrid-card">
+        <div class="hybrid-image">
+          <img src="img/bedsheet.jpg" alt="Natural Hybrid Range">
+          <span class="hybrid-badge">Built for adaptive comfort</span>
+        </div>
+        <div class="hybrid-card-content">
+          <h3>Elite Memory Duo Mattress</h3>
+          <p>Medium-firm / plush feel</p>
+          <p>Luxurious bamboo options &amp; British wool</p>
+          <p>Up to 6,700 springs</p>
+          <p>12 layers / 32cm depth</p>
+          <p>Zoned CoreMax<sup>™</sup> sprung base</p>
+          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
+          <p class="hybrid-note">From based on a single mattress</p>
+          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+        </div>
+      </div>
+      <div class="hybrid-perfect">
+        <h4>This range is perfect for...</h4>
+        <ul>
+          <li>The most sustainable option</li>
+          <li>Those who like a more traditional feel</li>
+          <li>The comfort feel of wool over foam</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+ 
+  <div class="hybrid-grid" style="margin-top:50px;">
+
+    <div class="hybrid-card-wrap">
+      <div class="hybrid-card">
+        <div class="hybrid-image">
+          <img src="img/bedsheet.jpg" alt="Hybrid Range">
+          <span class="hybrid-badge">Built for comfort</span>
+        </div>
+        <div class="hybrid-card-content">
+          <h3>Mellow Soft Duo Mattress</h3>
+          <p>Medium-firm feel</p>
+          <p>Titanium alloy microsprings (all ranges)</p>
+          <p>Up to 1,900 springs</p>
+          <p>5 layers / 25cm depth</p>
+          <p>Zoned CertiPUR<sup>®</sup> foam base</p>
+          <p class="hybrid-price">From <strong>£549</strong> Or <strong>£14.75</strong> monthly<sup>ⓘ</sup></p>
+          <p class="hybrid-note">From based on a single mattress</p>
+          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+        </div>
+      </div>
+      <div class="hybrid-perfect">
+        <h4>This range is perfect for...</h4>
+        <ul>
+          <li>Signature Simba tech at a lower price</li>
+          <li>Cushioned support for all sleep positions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hybrid-card-wrap">
+      <div class="hybrid-card">
+        <div class="hybrid-image">
+          <img src="img/bedsheet.jpg" alt="Premium Hybrid Range">
+          <span class="hybrid-badge">Built for balanced comfort</span>
+        </div>
+        <div class="hybrid-card-content">
+          <h3>Refresh Latex Duo Mattress</h3>
+          <p>Medium-firm / plush feel</p>
+          <p>Cooling Stratos<sup>®</sup> tech &amp; HeatRelease<sup>™</sup></p>
+          <p>Up to 7,300 springs</p>
+          <p>11 layers / 34cm depth</p>
+          <p>Zoned SupportCore<sup>™</sup> sprung base</p>
+          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
+          <p class="hybrid-note">From based on a single mattress</p>
+          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+        </div>
+      </div>
+      <div class="hybrid-perfect">
+        <h4>This range is perfect for...</h4>
+        <ul>
+          <li>Best cooling, comfort and innovation</li>
+          <li>Five-star, luxury hotel feel at home</li>
+          <li>Ultimate support for all sleep positions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hybrid-card-wrap">
+      <div class="hybrid-card">
+        <div class="hybrid-image">
+          <img src="img/bedsheet.jpg" alt="Natural Hybrid Range">
+          <span class="hybrid-badge">Built for adaptive comfort</span>
+        </div>
+        <div class="hybrid-card-content">
+          <h3>Elite Memory Duo Mattress</h3>
+          <p>Medium-firm / plush feel</p>
+          <p>Luxurious bamboo options &amp; British wool</p>
+          <p>Up to 6,700 springs</p>
+          <p>12 layers / 32cm depth</p>
+          <p>Zoned CoreMax<sup>™</sup> sprung base</p>
+          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
+          <p class="hybrid-note">From based on a single mattress</p>
+          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+        </div>
+      </div>
+      <div class="hybrid-perfect">
+        <h4>This range is perfect for...</h4>
+        <ul>
+          <li>The most sustainable option</li>
+          <li>Those who like a more traditional feel</li>
+          <li>The comfort feel of wool over foam</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  /**
+   * Universal panel switcher for all mega menus
+   * Works on both mouseenter (desktop) and click (mobile)
+   */
+  function switchPanel(group, panel) {
+    // Update active link in that group
+    document.querySelectorAll(`.shop-type-list[data-group="${group}"] a`).forEach(a => {
+      a.classList.toggle('active', a.dataset.panel === panel);
+    });
+
+    // Size / options panels
+    document.querySelectorAll(`.size-panel[data-group="${group}"]`).forEach(el => {
+      el.classList.toggle('active', el.dataset.panel === panel);
+    });
+
+    // Image panels
+    document.querySelectorAll(`.image-panel[data-group="${group}"]`).forEach(el => {
+      el.classList.toggle('active', el.dataset.panel === panel);
+    });
+  }
+
+  // Desktop: hover
+  document.querySelectorAll('.shop-type-list a').forEach(link => {
+    link.addEventListener('mouseenter', function () {
+      if (window.innerWidth >= 992) {
+        switchPanel(this.closest('[data-group]').dataset.group, this.dataset.panel);
+      }
+    });
+
+    // Mobile / touch: click
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      switchPanel(this.closest('[data-group]').dataset.group, this.dataset.panel);
+    });
+  });
+
+  // Prevent Bootstrap from closing mega menu when clicking inside on mobile
+  document.querySelectorAll('.mega-dropdown .dropdown-menu').forEach(menu => {
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('.shop-type-list a')) {
+        e.stopPropagation();
+      }
+    });
+  });
+</script>
+</body>
+</html>
