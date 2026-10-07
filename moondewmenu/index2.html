@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moondew menu</title>
+  <title>Website Header + Mega Menu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
@@ -412,7 +412,7 @@
 
     .hybrid-heading h2 {
       margin: 0 0 10px;
-      color: #041e42;
+      color: #6d6d6d;
       font-size: 43px;
       line-height: 1.1;
       font-weight: 700;
@@ -420,25 +420,39 @@
 
     .hybrid-heading p {
       margin: 0;
-      color: #041e42;
+      color: #6d6d6d;
       font-size: 24px;
       line-height: 1.35;
     }
 
+    /* Slider wrapper */
+    .hybrid-slider-wrap {
+      position: relative;
+      padding: 0 50px;
+    }
+
+    .hybrid-slider-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
     .hybrid-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
       gap: 22px;
+      transition: transform 0.4s ease;
+      will-change: transform;
     }
 
     .hybrid-card-wrap {
       min-width: 0;
+      flex: 0 0 calc((100% - 44px) / 3);
     }
 
     .hybrid-card {
       background: #f1f1f1;
       border-radius: 11px;
       overflow: hidden;
+      height: 100%;
     }
 
     .hybrid-image {
@@ -459,8 +473,8 @@
       position: absolute;
       top: 11px;
       left: 10px;
-      background: #fff;
-      color: #041e42;
+      background: #f4e391;
+      color: #3b6840;
       border-radius: 14px;
       padding: 5px 9px;
       font-size: 12px;
@@ -476,7 +490,7 @@
 
     .hybrid-card-content h3 {
       margin: 0 0 10px;
-      color: #041e42;
+      color:#333;
       font-size: 22px;
       line-height: 1.15;
       font-weight: 700;
@@ -484,7 +498,7 @@
 
     .hybrid-card-content p {
       margin: 0 0 8px;
-      color: #173b68;
+      color: #777;
       font-size: 14px;
       line-height: 1.35;
     }
@@ -492,7 +506,7 @@
     .hybrid-price {
       margin-top: 16px !important;
       margin-bottom: 2px !important;
-      color: #041e42 !important;
+      color: #333 !important;
     }
 
     .hybrid-price strong {
@@ -562,6 +576,47 @@
       font-weight: 700;
     }
 
+    /* Arrow buttons */
+    .hybrid-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid #d0d0d0;
+      background: #fff;
+      color: #3a683f;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .hybrid-arrow:hover {
+      background: #3a683f;
+      color: #fff;
+      border-color: #3a683f;
+    }
+
+    .hybrid-arrow:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .hybrid-arrow-prev {
+      left: 0;
+    }
+
+    .hybrid-arrow-next {
+      right: 0;
+    }
+
     @media (max-width: 991.98px) {
       .hybrid-section {
         padding: 40px 16px 50px;
@@ -575,10 +630,16 @@
         font-size: 20px;
       }
 
+      .hybrid-slider-wrap {
+        padding: 0 40px;
+      }
+
+      .hybrid-card-wrap {
+        flex: 0 0 100%;
+      }
+
       .hybrid-grid {
-        grid-template-columns: 1fr;
-        max-width: 520px;
-        margin: 0 auto;
+        gap: 16px;
       }
     }
 
@@ -804,180 +865,151 @@
     <p>Know more about how this mattress performs on the aspects you care most deeply about.</p>
   </div>
 
-  <div class="hybrid-grid">
+  <div class="hybrid-slider-wrap">
+    <button class="hybrid-arrow hybrid-arrow-prev" type="button" aria-label="Previous" id="hybridPrev">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
-    <div class="hybrid-card-wrap">
-      <div class="hybrid-card">
-        <div class="hybrid-image">
-          <img src="img/bedsheet.jpg" alt="Hybrid Range">
-          <span class="hybrid-badge">Built for comfort</span>
+    <div class="hybrid-slider-viewport">
+      <div class="hybrid-grid" id="hybridGrid">
+
+        <!-- Card 1 -->
+        <div class="hybrid-card-wrap">
+          <div class="hybrid-card">
+            <div class="hybrid-image">
+              <img src="https://storage.googleapis.com/livoncomforts-images/668d80b0-8468-434e-9fd0-1dd6943f029b-product-1" alt="Mellow Soft Duo Mattress">
+              <span class="hybrid-badge">Built for comfort</span>
+            </div>
+            <div class="hybrid-card-content">
+              <h3>Mellow Soft Duo Mattress</h3>
+              <p>Medium-firm feel</p>
+              <p>Titanium alloy microsprings (all ranges)</p>
+              <p>Up to 1,900 springs</p>
+              <p>5 layers / 25cm depth</p>
+              <p>Zoned CertiPUR<sup>&reg;</sup> foam base</p>
+              <p class="hybrid-price">From <strong>&pound;549</strong> Or <strong>&pound;14.75</strong> monthly<sup>&#9432;</sup></p>
+              <p class="hybrid-note">From based on a single mattress</p>
+              <a href="viewcart.html" class="hybrid-view">VIEW</a>
+            </div>
+          </div>
         </div>
-        <div class="hybrid-card-content">
-          <h3>Mellow Soft Duo Mattress</h3>
-          <p>Medium-firm feel</p>
-          <p>Titanium alloy microsprings (all ranges)</p>
-          <p>Up to 1,900 springs</p>
-          <p>5 layers / 25cm depth</p>
-          <p>Zoned CertiPUR<sup>®</sup> foam base</p>
-          <p class="hybrid-price">From <strong>£549</strong> Or <strong>£14.75</strong> monthly<sup>ⓘ</sup></p>
-          <p class="hybrid-note">From based on a single mattress</p>
-          <a href="viewcart.html" class="hybrid-view">VIEW</a>
+
+        <!-- Card 2 -->
+        <div class="hybrid-card-wrap">
+          <div class="hybrid-card">
+            <div class="hybrid-image">
+              <img src="https://storage.googleapis.com/livoncomforts-images/031c4d31-8293-41e1-a3e6-577dd2d684e3-product-1780987691496-1-Ortho%20Latex_A.jpg" alt="Refresh Latex Duo Mattress">
+              <span class="hybrid-badge">Built for balanced comfort</span>
+            </div>
+            <div class="hybrid-card-content">
+              <h3>Refresh Latex Duo Mattress</h3>
+              <p>Medium-firm / plush feel</p>
+              <p>Cooling Stratos<sup>&reg;</sup> tech & HeatRelease<sup>&trade;</sup></p>
+              <p>Up to 7,300 springs</p>
+              <p>11 layers / 34cm depth</p>
+              <p>Zoned SupportCore<sup>&trade;</sup> sprung base</p>
+              <p class="hybrid-price">From <strong>&pound;899</strong> Or <strong>&pound;24.16</strong> monthly<sup>&#9432;</sup></p>
+              <p class="hybrid-note">From based on a single mattress</p>
+              <a href="viewcart.html" class="hybrid-view">VIEW</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="hybrid-perfect">
-        <h4>This range is perfect for...</h4>
-        <ul>
-          <li>Signature Simba tech at a lower price</li>
-          <li>Cushioned support for all sleep positions</li>
-        </ul>
+
+        <!-- Card 3 -->
+        <div class="hybrid-card-wrap">
+          <div class="hybrid-card">
+            <div class="hybrid-image">
+              <img src="https://storage.googleapis.com/livoncomforts-images/ac1dee79-051e-4b3c-859d-d96aee2c67cd-product-1" alt="Elite Memory Duo Mattress">
+              <span class="hybrid-badge">Built for adaptive comfort</span>
+            </div>
+            <div class="hybrid-card-content">
+              <h3>Elite Memory Duo Mattress</h3>
+              <p>Medium-firm / plush feel</p>
+              <p>Luxurious bamboo options & British wool</p>
+              <p>Up to 6,700 springs</p>
+              <p>12 layers / 32cm depth</p>
+              <p>Zoned CoreMax<sup>&trade;</sup> sprung base</p>
+              <p class="hybrid-price">From <strong>&pound;899</strong> Or <strong>&pound;24.16</strong> monthly<sup>&#9432;</sup></p>
+              <p class="hybrid-note">From based on a single mattress</p>
+              <a href="viewcart.html" class="hybrid-view">VIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 (new) -->
+        <div class="hybrid-card-wrap">
+          <div class="hybrid-card">
+            <div class="hybrid-image">
+              <img src="https://storage.googleapis.com/livoncomforts-images/221d11e6-68c6-4c6d-9662-5134d0b3b077-product-1" alt="Ortho Latex Duo Mattress">
+              <span class="hybrid-badge">Built for support</span>
+            </div>
+            <div class="hybrid-card-content">
+              <h3>Ortho Latex Duo Mattress</h3>
+              <p>Firm feel</p>
+              <p>Natural latex comfort layer</p>
+              <p>Up to 2,400 springs</p>
+              <p>7 layers / 28cm depth</p>
+              <p>Zoned latex support core</p>
+              <p class="hybrid-price">From <strong>&pound;649</strong> Or <strong>&pound;17.45</strong> monthly<sup>&#9432;</sup></p>
+              <p class="hybrid-note">From based on a single mattress</p>
+              <a href="viewcart.html" class="hybrid-view">VIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 (new) -->
+        <div class="hybrid-card-wrap">
+          <div class="hybrid-card">
+            <div class="hybrid-image">
+              <img src="https://storage.googleapis.com/livoncomforts-images/88dcd662-9987-4ef9-86ec-ddfd84f92a19-product-1781093325883-1-Elite%20Memory_A.jpg" alt="Serene Latex Duo Mattress">
+              <span class="hybrid-badge">Built for cooling</span>
+            </div>
+            <div class="hybrid-card-content">
+              <h3>Serene Latex Duo Mattress</h3>
+              <p>Medium-soft feel</p>
+              <p>Open-cell latex & airflow channels</p>
+              <p>Up to 3,100 springs</p>
+              <p>8 layers / 30cm depth</p>
+              <p>Breathable fabric cover</p>
+              <p class="hybrid-price">From <strong>&pound;749</strong> Or <strong>&pound;20.15</strong> monthly<sup>&#9432;</sup></p>
+              <p class="hybrid-note">From based on a single mattress</p>
+              <a href="viewcart.html" class="hybrid-view">VIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 (new) -->
+        <div class="hybrid-card-wrap">
+          <div class="hybrid-card">
+            <div class="hybrid-image">
+              <img src="img/bedsheet.jpg" alt="Bliss Memory Duo Mattress">
+              <span class="hybrid-badge">Built for luxury</span>
+            </div>
+            <div class="hybrid-card-content">
+              <h3>Bliss Memory Duo Mattress</h3>
+              <p>Plush feel</p>
+              <p>Memory foam top & gel infusion</p>
+              <p>Up to 5,200 springs</p>
+              <p>10 layers / 33cm depth</p>
+              <p>Pressure-relief contour layers</p>
+              <p class="hybrid-price">From <strong>&pound;999</strong> Or <strong>&pound;26.90</strong> monthly<sup>&#9432;</sup></p>
+              <p class="hybrid-note">From based on a single mattress</p>
+              <a href="viewcart.html" class="hybrid-view">VIEW</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="hybrid-card-wrap">
-      <div class="hybrid-card">
-        <div class="hybrid-image">
-          <img src="img/bedsheet.jpg" alt="Premium Hybrid Range">
-          <span class="hybrid-badge">Built for balanced comfort</span>
-        </div>
-        <div class="hybrid-card-content">
-          <h3>Refresh Latex Duo Mattress</h3>
-          <p>Medium-firm / plush feel</p>
-          <p>Cooling Stratos<sup>®</sup> tech &amp; HeatRelease<sup>™</sup></p>
-          <p>Up to 7,300 springs</p>
-          <p>11 layers / 34cm depth</p>
-          <p>Zoned SupportCore<sup>™</sup> sprung base</p>
-          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
-          <p class="hybrid-note">From based on a single mattress</p>
-          <a href="viewcart.html" class="hybrid-view">VIEW</a>
-        </div>
-      </div>
-      <div class="hybrid-perfect">
-        <h4>This range is perfect for...</h4>
-        <ul>
-          <li>Best cooling, comfort and innovation</li>
-          <li>Five-star, luxury hotel feel at home</li>
-          <li>Ultimate support for all sleep positions</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="hybrid-card-wrap">
-      <div class="hybrid-card">
-        <div class="hybrid-image">
-          <img src="img/bedsheet.jpg" alt="Natural Hybrid Range">
-          <span class="hybrid-badge">Built for adaptive comfort</span>
-        </div>
-        <div class="hybrid-card-content">
-          <h3>Elite Memory Duo Mattress</h3>
-          <p>Medium-firm / plush feel</p>
-          <p>Luxurious bamboo options &amp; British wool</p>
-          <p>Up to 6,700 springs</p>
-          <p>12 layers / 32cm depth</p>
-          <p>Zoned CoreMax<sup>™</sup> sprung base</p>
-          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
-          <p class="hybrid-note">From based on a single mattress</p>
-          <a href="viewcart.html" class="hybrid-view">VIEW</a>
-        </div>
-      </div>
-      <div class="hybrid-perfect">
-        <h4>This range is perfect for...</h4>
-        <ul>
-          <li>The most sustainable option</li>
-          <li>Those who like a more traditional feel</li>
-          <li>The comfort feel of wool over foam</li>
-        </ul>
-      </div>
-    </div>
-
+    <button class="hybrid-arrow hybrid-arrow-next" type="button" aria-label="Next" id="hybridNext">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
 
- 
-  <div class="hybrid-grid" style="margin-top:50px;">
-
-    <div class="hybrid-card-wrap">
-      <div class="hybrid-card">
-        <div class="hybrid-image">
-          <img src="img/bedsheet.jpg" alt="Hybrid Range">
-          <span class="hybrid-badge">Built for comfort</span>
-        </div>
-        <div class="hybrid-card-content">
-          <h3>Mellow Soft Duo Mattress</h3>
-          <p>Medium-firm feel</p>
-          <p>Titanium alloy microsprings (all ranges)</p>
-          <p>Up to 1,900 springs</p>
-          <p>5 layers / 25cm depth</p>
-          <p>Zoned CertiPUR<sup>®</sup> foam base</p>
-          <p class="hybrid-price">From <strong>£549</strong> Or <strong>£14.75</strong> monthly<sup>ⓘ</sup></p>
-          <p class="hybrid-note">From based on a single mattress</p>
-          <a href="viewcart.html" class="hybrid-view">VIEW</a>
-        </div>
-      </div>
-      <div class="hybrid-perfect">
-        <h4>This range is perfect for...</h4>
-        <ul>
-          <li>Signature Simba tech at a lower price</li>
-          <li>Cushioned support for all sleep positions</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="hybrid-card-wrap">
-      <div class="hybrid-card">
-        <div class="hybrid-image">
-          <img src="img/bedsheet.jpg" alt="Premium Hybrid Range">
-          <span class="hybrid-badge">Built for balanced comfort</span>
-        </div>
-        <div class="hybrid-card-content">
-          <h3>Refresh Latex Duo Mattress</h3>
-          <p>Medium-firm / plush feel</p>
-          <p>Cooling Stratos<sup>®</sup> tech &amp; HeatRelease<sup>™</sup></p>
-          <p>Up to 7,300 springs</p>
-          <p>11 layers / 34cm depth</p>
-          <p>Zoned SupportCore<sup>™</sup> sprung base</p>
-          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
-          <p class="hybrid-note">From based on a single mattress</p>
-          <a href="viewcart.html" class="hybrid-view">VIEW</a>
-        </div>
-      </div>
-      <div class="hybrid-perfect">
-        <h4>This range is perfect for...</h4>
-        <ul>
-          <li>Best cooling, comfort and innovation</li>
-          <li>Five-star, luxury hotel feel at home</li>
-          <li>Ultimate support for all sleep positions</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="hybrid-card-wrap">
-      <div class="hybrid-card">
-        <div class="hybrid-image">
-          <img src="img/bedsheet.jpg" alt="Natural Hybrid Range">
-          <span class="hybrid-badge">Built for adaptive comfort</span>
-        </div>
-        <div class="hybrid-card-content">
-          <h3>Elite Memory Duo Mattress</h3>
-          <p>Medium-firm / plush feel</p>
-          <p>Luxurious bamboo options &amp; British wool</p>
-          <p>Up to 6,700 springs</p>
-          <p>12 layers / 32cm depth</p>
-          <p>Zoned CoreMax<sup>™</sup> sprung base</p>
-          <p class="hybrid-price">From <strong>£899</strong> Or <strong>£24.16</strong> monthly<sup>ⓘ</sup></p>
-          <p class="hybrid-note">From based on a single mattress</p>
-          <a href="viewcart.html" class="hybrid-view">VIEW</a>
-        </div>
-      </div>
-      <div class="hybrid-perfect">
-        <h4>This range is perfect for...</h4>
-        <ul>
-          <li>The most sustainable option</li>
-          <li>Those who like a more traditional feel</li>
-          <li>The comfort feel of wool over foam</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
+</section>
+<section class="after-product-section" aria-label="Future content section" >
+  <img class="collection-image" src="img/fullimage.jpg" alt="Eloris Collection" style="border-radius:0px;">
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -1025,6 +1057,57 @@
       }
     });
   });
+
+  /* ================= HYBRID CARD SLIDER ================= */
+  (function () {
+    const grid = document.getElementById('hybridGrid');
+    const prevBtn = document.getElementById('hybridPrev');
+    const nextBtn = document.getElementById('hybridNext');
+    if (!grid || !prevBtn || !nextBtn) return;
+
+    const cards = grid.querySelectorAll('.hybrid-card-wrap');
+    let currentIndex = 0;
+
+    function getVisibleCount() {
+      return window.innerWidth <= 991.98 ? 1 : 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getVisibleCount());
+    }
+
+    function updateSlider() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+      const gapPx = window.innerWidth <= 991.98 ? 16 : 22;
+      if (cards.length) {
+        const cardWidth = cards[0].offsetWidth;
+        const shift = currentIndex * (cardWidth + gapPx);
+        grid.style.transform = `translateX(-${shift}px)`;
+      }
+
+      prevBtn.disabled = currentIndex <= 0;
+      nextBtn.disabled = currentIndex >= maxIndex;
+    }
+
+    prevBtn.addEventListener('click', function () {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    });
+
+    nextBtn.addEventListener('click', function () {
+      if (currentIndex < getMaxIndex()) {
+        currentIndex++;
+        updateSlider();
+      }
+    });
+
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+  })();
 </script>
 </body>
 </html>
