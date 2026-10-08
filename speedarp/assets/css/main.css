@@ -5055,7 +5055,20 @@ ol {
     width: 130px;
   }
   .header .button {
-    display: none;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 12px;
+    order: 2;
+  }
+  .header .navbar-toggler {
+    order: 3;
+  }
+  .header .button .btn,
+  .header .navbar-area.sticky .button .btn {
+    width: auto;
+    padding: 8px 14px;
+    font-size: 13px;
+    white-space: nowrap;
   }
   .header .navbar-area .navbar-nav .nav-item a {
     padding: 10px 10px;
@@ -5629,7 +5642,20 @@ ol {
     width: 120px;
   }
   .header .button {
-    display: none;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 12px;
+    order: 2;
+  }
+  .header .navbar-toggler {
+    order: 3;
+  }
+  .header .button .btn,
+  .header .navbar-area.sticky .button .btn {
+    width: auto;
+    padding: 8px 14px;
+    font-size: 13px;
+    white-space: nowrap;
   }
   .header .navbar-area .navbar-nav .nav-item a {
     padding: 10px 10px;
