@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moondew – Premium Mega Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f8f6f2;
+      overflow-x: hidden;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background: #F5E8C7;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      z-index: 1002;
+    }
+
+    .logo-box {
+      width: 46px;
+      height: 46px;
+      border: 2px solid #2d5a3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-text {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #2d5a3d;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .logo-r {
+      position: absolute;
+      top: -7px;
+      right: -9px;
+      font-size: 9px;
+      color: #2d5a3d;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+
+    .nav > li { position: relative; }
+
+    .nav > li > a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 26px 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav > li > a:hover,
+    .nav > li:hover > a {
+      color: #2d5a3d;
+      background: rgba(255,255,255,0.45);
+    }
+
+    .nav > li > a .arrow {
+      font-size: 9px;
+      transition: transform 0.2s;
+    }
+
+    .nav > li:hover > a .arrow {
+      transform: rotate(180deg);
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-shrink: 0;
+      z-index: 1002;
+    }
+
+    .header-icons a {
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .header-icons a:hover { color: #2d5a3d; }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: #2d5a3d;
+      color: white;
+      font-size: 10px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    /* ========== MEGA MENU ========== */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: #fff;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.14);
+      border-radius: 0 0 12px 12px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0;
+      min-width: 980px;
+      z-index: 999;
+      overflow: hidden;
+    }
+
+    /* 3-color top border matching brands */
+    .mega-menu::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(
+        to right,
+        #3a683f 0%,
+        #3a683f 33.33%,
+        #204c97 33.33%,
+        #204c97 66.66%,
+        #6e0125 66.66%,
+        #6e0125 100%
+      );
+    }
+
+    .mega-menu-inner {
+      padding: 24px 28px 18px;
+    }
+
+    .nav > li:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .mega-columns {
+      display: grid;
+      gap: 28px;
+    }
+
+    .mega-columns.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .mega-columns.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .mega-col {
+      padding: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mega-col .col-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+      min-height: 22px;
+    }
+
+    .mega-col .col-logo {
+      width: 60px;
+      height: 18px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .mega-col .col-logo-placeholder {
+      width: 60px;
+      height: 18px;
+      border-radius: 3px !important;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+
+    }
+
+    .mega-col h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mega-col.organiq h3,
+    .mega-col.organic h3 { color: #3a683f; }
+    .mega-col.eloris h3  { color: #204c97; }
+    .mega-col.opula h3   { color: #6e0125; }
+    .mega-col.hybrid h3  { color: #5a4a3a; }
+    .mega-col.kids h3,
+    .mega-col.bedsheets h3 { color: #333; }
+
+    .mega-col .col-desc {
+      font-size: 11.5px;
+      font-style: italic;
+      color: #6b6b6b;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      line-height: 1.35;
+    }
+
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 3px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge.sale { background: #e74c3c; }
+    .badge.hot  { background: #e74c3c; }
+
+    .product-card {
+      display: flex;
+      gap: 12px;
+      padding: 9px 6px;
+      margin: 0 -6px 3px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .product-card:hover {
+      background: #f8f8f8;
+    }
+
+    .mega-col.organiq .product-card:hover h4 { color: #3a683f; }
+    .mega-col.eloris .product-card:hover h4  { color: #204c97; }
+    .mega-col.opula .product-card:hover h4   { color: #6e0125; }
+    .mega-col.organic .product-card:hover h4 { color: #3a683f; }
+    .mega-col.hybrid .product-card:hover h4  { color: #5a4a3a; }
+
+    .product-card img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: #eee;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .product-info h4 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+
+    .product-info p {
+      font-size: 11.5px;
+      font-style: italic;
+      color: #777;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* View All – bottom of each column, right aligned */
+    .col-view-all {
+      display: block;
+      text-align: right;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid #eee;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mega-col.organiq .col-view-all { color: #3a683f; }
+    .mega-col.eloris .col-view-all  { color: #204c97; }
+    .mega-col.opula .col-view-all   { color: #6e0125; }
+    .mega-col.organic .col-view-all { color: #3a683f; }
+    .mega-col.hybrid .col-view-all  { color: #5a4a3a; }
+    .mega-col.kids .col-view-all,
+    .mega-col.bedsheets .col-view-all { color: #2d5a3d; }
+
+    .col-view-all:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== MOBILE ========== */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      z-index: 1002;
+      position: relative;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #1a1a1a;
+      margin: 5px auto;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      padding-top: 70px;
+    }
+
+    .mobile-menu.open { transform: translateX(0); }
+
+    .mobile-nav {
+      list-style: none;
+      padding: 12px 0 80px;
+    }
+
+    .mobile-nav > li { border-bottom: 1px solid #f0f0f0; }
+
+    .mobile-nav > li > a,
+    .mobile-nav > li > .mobile-parent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 22px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 15.5px;
+      font-weight: 500;
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .mobile-parent .arrow {
+      font-size: 11px;
+      transition: transform 0.25s;
+    }
+
+    .mobile-parent.active .arrow { transform: rotate(180deg); }
+
+    .mobile-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background: #fafafa;
+    }
+
+    .mobile-submenu.open { max-height: 4000px; }
+
+    .mobile-submenu-inner { padding: 10px 18px 20px; }
+
+    .mobile-group {
+      margin-bottom: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .mobile-group:last-of-type { border-bottom: none; }
+
+    .mobile-group .col-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .mobile-group .col-logo-placeholder {
+      width: 60px;
+      height: 18px;
+      background: #eee;
+      border-radius: 3px;
+      flex-shrink: 0;
+      font-size: 8px;
+      color: #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-group h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-group.organiq h4,
+    .mobile-group.organic h4 { color: #3a683f; }
+    .mobile-group.eloris h4  { color: #204c97; }
+    .mobile-group.opula h4   { color: #6e0125; }
+    .mobile-group.hybrid h4  { color: #5a4a3a; }
+
+    .mobile-group .col-desc {
+      font-size: 11.5px;
+      font-style: italic;
+      color: #6b6b6b;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .mobile-product {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .mobile-product:last-child { border-bottom: none; }
+
+    .mobile-product img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .mobile-product h5 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .mobile-product p {
+      font-size: 11.5px;
+      font-style: italic;
+      color: #777;
+      line-height: 1.35;
+    }
+
+    .mobile-col-view-all {
+      display: block;
+      text-align: right;
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mobile-group.organiq .mobile-col-view-all { color: #3a683f; }
+    .mobile-group.eloris .mobile-col-view-all  { color: #204c97; }
+    .mobile-group.opula .mobile-col-view-all   { color: #6e0125; }
+    .mobile-group.organic .mobile-col-view-all { color: #3a683f; }
+    .mobile-group.hybrid .mobile-col-view-all  { color: #5a4a3a; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      .nav > li > a { font-size: 13px; padding: 26px 10px; }
+      .mega-menu { min-width: 820px; }
+    }
+
+    @media (max-width: 980px) {
+      .nav { display: none; }
+      .mobile-toggle { display: block; }
+      .header-inner { padding: 0 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .header-icons { gap: 14px; }
+      .logo-box { width: 42px; height: 42px; }
+      .logo-text { font-size: 9.5px; }
+    }
+	
+	
+	a.brandtitle:link{
+	text-decoration:none;}
+		a.brandtitle:visited{
+	text-decoration:none;}
+		a.brandtitle:hover{
+	text-decoration:underline;
+	color:#000; }
+	.badge .hot : hover {text-decoration:none !important;}
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-box">
+        <div class="logo-text">MOON<br>DEW</div>
+        <span class="logo-r">®</span>
+      </div>
+    </a>
+
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+
+      <!-- MATTRESSES -->
+      <li>
+        <a href="#">Mattresses <span class="arrow">▼</span></a>
+        <div class="mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-columns cols-3">
+
+              <!-- Organiq -->
+              <div class="mega-col organiq">
+                <a href="#" class="brandtitle"><div class="col-header">
+                  <div class="col-logo-placeholder"><img src="img/org.jpg" style="border-radius:3px;"></div>
+                  <h3>Organiq <span class="badge hot" style="text-decoration:none !important;" >Best Seller</span></h3>
+                </div></a>
+                <div class="col-desc">Natural latex comfort for pure, restorative sleep.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=150&h=150&fit=crop" alt="Ortho Latex">
+                  <div class="product-info">
+                    <h4>Ortho Latex Mattress</h4>
+                    <p>Built for those who prefer extra firm natural support with balanced comfort.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=150&h=150&fit=crop" alt="Serene Latex">
+                  <div class="product-info">
+                    <h4>Serene Latex Mattress</h4>
+                    <p>Built for those who prefer softer comfort without losing support.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=150&h=150&fit=crop" alt="Refresh Latex">
+                  <div class="product-info">
+                    <h4>Refresh Latex Series</h4>
+                    <p>Built for those who prefer balanced comfort with firmer natural support.</p>
+                  </div>
+                </a>
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+
+              <!-- Eloris -->
+              <div class="mega-col eloris">
+                <div class="col-header">
+                  <div class="col-logo-placeholder"><img src="img/elo.jpg" style="border-radius:3px;"></div>
+                  <h3>Eloris </h3>
+                </div>
+                <div class="col-desc">Adaptive comfort engineered for deeper rest.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=150&h=150&fit=crop" alt="Mellow Soft">
+                  <div class="product-info">
+                    <h4>Mellow Soft Series</h4>
+                    <p>Built for those who prefer comfort that gently holds the body.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=150&h=150&fit=crop" alt="Elite Memory">
+                  <div class="product-info">
+                    <h4>Elite Memory Series</h4>
+                    <p>Built for those who prefer adaptive comfort with minimal partner disturbance.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=150&h=150&fit=crop" alt="HyLatex">
+                  <div class="product-info">
+                    <h4>HyLatex Series</h4>
+                    <p>Built for those who prefer naturally responsive comfort with balanced support.</p>
+                  </div>
+                </a>
+      
+   
+             
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+
+              <!-- Opula -->
+              <div class="mega-col opula">
+                <div class="col-header">
+                  <div class="col-logo-placeholder"><img src="img/opu.jpg" style="border-radius:3px;"></div>
+                  <h3>Opula</h3>
+                </div>
+                <div class="col-desc">Premium natural support with refined comfort.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=150&h=150&fit=crop" alt="Ortho Latex">
+                  <div class="product-info">
+                    <h4>Ortho Latex Mattress</h4>
+                    <p>Built for those who prefer extra firm natural support with balanced comfort.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=150&h=150&fit=crop" alt="Serene Latex">
+                  <div class="product-info">
+                    <h4>Serene Latex Mattress</h4>
+                    <p>Built for those who prefer softer comfort without losing support.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=150&h=150&fit=crop" alt="Refresh Latex">
+                  <div class="product-info">
+                    <h4>Refresh Latex Series</h4>
+                    <p>Built for those who prefer balanced comfort with firmer natural support.</p>
+                  </div>
+                </a>
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- PILLOWS -->
+      <li>
+        <a href="#">Pillows <span class="arrow">▼</span></a>
+        <div class="mega-menu">
+          <div class="mega-menu-inner">
+            <div class="mega-columns cols-2">
+
+              <div class="mega-col organic">
+                <div class="col-header">
+                  <div class="col-logo-placeholder"><img src="img/org.jpg" style="border-radius:3px;"></div>
+                  <h3>Organic</h3>
+                </div>
+                <div class="col-desc">Pure natural latex for healthier sleep.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=150&h=150&fit=crop" alt="Standard Pillow">
+                  <div class="product-info">
+                    <h4>Standard Pillow</h4>
+                    <p>Built for those who prefer classic pillow comfort with the responsive support of natural latex.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=150&h=150&fit=crop" alt="Contour Pillow">
+                  <div class="product-info">
+                    <h4>Contour Pillow</h4>
+                    <p>Built for those who seek ergonomic neck support and deeper restorative sleep.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=150&h=150&fit=crop" alt="Moon Pillow">
+                  <div class="product-info">
+                    <h4>Moon Pillow</h4>
+                    <p>Built for targeted comfort wherever your body needs support.</p>
+                  </div>
+                </a>
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+
+              <div class="mega-col hybrid">
+                <div class="col-header">
+                  <div class="col-logo-placeholder"><img src="img/hyb.jpg" style="border-radius:3px;"></div>
+                  <h3>Hybrid <span class="badge sale">SALE</span></h3>
+                </div>
+                <div class="col-desc">Responsive foam with organic covers.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=150&h=150&fit=crop" alt="HR Foam">
+                  <div class="product-info">
+                    <h4>HR Foam Pillow With Organic Cover</h4>
+                    <p>Built for those who prefer classic pillow comfort with responsive and long-lasting support.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=150&h=150&fit=crop" alt="Memory Foam">
+                  <div class="product-info">
+                    <h4>Memory Foam Pillow With Organic Cover</h4>
+                    <p>Built for those who prefer classic pillow comfort with responsive and long-lasting support.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=150&h=150&fit=crop" alt="Cool Gel">
+                  <div class="product-info">
+                    <h4>Cool Gel Pillow With Organic Cover</h4>
+                    <p>Built for those who prefer classic pillow comfort with responsive and long-lasting support.</p>
+                  </div>
+                </a>
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="https://moondew-dev.novatales.com/toppers/toppers/ad9ec0de-23bb-4c9e-bb6a-0eb4746d403b">Toppers</a></li>
+
+      <li>
+        <a href="#">Kids Range <span class="arrow">▼</span></a>
+        <div class="mega-menu" style="min-width: 420px;">
+          <div class="mega-menu-inner">
+            <div class="mega-columns cols-1">
+              <div class="mega-col kids">
+                <div class="col-header">
+                  <h3>Pillows</h3>
+                </div>
+                <div class="col-desc">Gentle support for growing bodies.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=150&h=150&fit=crop" alt="Kids Standard">
+                  <div class="product-info">
+                    <h4>Kids Standard Pillow</h4>
+                    <p>Built for everyday comfort and support through the growing years.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=150&h=150&fit=crop" alt="Kids Contour">
+                  <div class="product-info">
+                    <h4>Kids Contour Pillow</h4>
+                    <p>Built for healthy sleep posture through the growing years.</p>
+                  </div>
+                </a>
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="#">Accessories <span class="arrow">▼</span></a>
+        <div class="mega-menu" style="min-width: 460px;">
+          <div class="mega-menu-inner">
+            <div class="mega-columns cols-1">
+              <div class="mega-col bedsheets">
+                <div class="col-header">
+                  <h3>Bedsheets</h3>
+                </div>
+                <div class="col-desc">100% organic cotton for a luxurious feel.</div>
+
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=150&h=150&fit=crop" alt="Fitted">
+                  <div class="product-info">
+                    <h4>100% Organic Cotton Fitted Bedsheet</h4>
+                    <p>Form-fitted bedsheets for exceptional fit and a luxurious sleep experience.</p>
+                  </div>
+                </a>
+                <a href="#" class="product-card">
+                  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=150&h=150&fit=crop" alt="Flat">
+                  <div class="product-info">
+                    <h4>100% Organic Cotton Flat Bedsheet</h4>
+                    <p>Everyday luxury for exceptional comfort, durability, and sustainability.</p>
+                  </div>
+                </a>
+                <a href="#" class="col-view-all">View All →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#">Rest Healthie</a></li>
+      <li><a href="https://moondew-dev.novatales.com/contact-us">Contact</a></li>
+      <li><a href="https://moondew-dev.novatales.com/store-visit">Store Locator</a></li>
+      <li><a href="https://moondew-dev.novatales.com/shop">Shop</a></li>
+    </ul>
+
+    <div class="header-icons">
+      <a href="#" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </a>
+      <a href="#" aria-label="Account">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="#" aria-label="Cart">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+
+    <button class="mobile-toggle" aria-label="Open menu" id="mobileToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE -->
+<nav class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav">
+    <li><a href="https://moondew-dev.novatales.com/">Home</a></li>
+    <li><a href="https://moondew-dev.novatales.com/about">About</a></li>
+
+    <li>
+      <button class="mobile-parent" data-target="mattresses">Mattresses <span class="arrow">▼</span></button>
+      <div class="mobile-submenu" id="mattresses">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group organiq">
+            <div class="col-header">
+              <div class="col-logo-placeholder">LOGO</div>
+              <h4>Organiq</h4>
+            </div>
+            <div class="col-desc">Natural latex comfort for pure, restorative sleep.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&h=120&fit=crop" alt="">
+              <div><h5>Ortho Latex Mattress</h5><p>Extra firm natural support with balanced comfort.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=120&h=120&fit=crop" alt="">
+              <div><h5>Serene Latex Mattress</h5><p>Softer comfort without losing support.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=120&h=120&fit=crop" alt="">
+              <div><h5>Refresh Latex Series</h5><p>Balanced comfort with firmer natural support.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all">View All →</a>
+          </div>
+          <div class="mobile-group eloris">
+            <div class="col-header">
+              <div class="col-logo-placeholder">LOGO</div>
+              <h4>Eloris <span class="badge hot">HOT</span></h4>
+            </div>
+            <div class="col-desc">Adaptive comfort engineered for deeper rest.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=120&h=120&fit=crop" alt="">
+              <div><h5>Mellow Soft Series</h5><p>Comfort that gently holds the body.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0552?w=120&h=120&fit=crop" alt="">
+              <div><h5>Elite Memory Series</h5><p>Adaptive comfort with minimal partner disturbance.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=120&h=120&fit=crop" alt="">
+              <div><h5>HyLatex Series</h5><p>Naturally responsive comfort with balanced support.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=120&h=120&fit=crop" alt="">
+              <div><h5>Ortho Back Series</h5><p>Firm support that keeps the body aligned.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=120&h=120&fit=crop" alt="">
+              <div><h5>Alpha Latex Series</h5><p>Rest that heals naturally.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1616627561839-074385245ff6?w=120&h=120&fit=crop" alt="">
+              <div><h5>Bliss Memory Series</h5><p>Adaptive comfort that keeps the body aligned.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all">View All →</a>
+          </div>
+          <div class="mobile-group opula">
+            <div class="col-header">
+              <div class="col-logo-placeholder">LOGO</div>
+              <h4>Opula</h4>
+            </div>
+            <div class="col-desc">Premium natural support with refined comfort.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&h=120&fit=crop" alt="">
+              <div><h5>Ortho Latex Mattress</h5><p>Extra firm natural support with balanced comfort.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=120&h=120&fit=crop" alt="">
+              <div><h5>Serene Latex Mattress</h5><p>Softer comfort without losing support.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=120&h=120&fit=crop" alt="">
+              <div><h5>Refresh Latex Series</h5><p>Balanced comfort with firmer natural support.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all">View All →</a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <button class="mobile-parent" data-target="pillows">Pillows <span class="arrow">▼</span></button>
+      <div class="mobile-submenu" id="pillows">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group organic">
+            <div class="col-header">
+              <div class="col-logo-placeholder">LOGO</div>
+              <h4>Organic</h4>
+            </div>
+            <div class="col-desc">Pure natural latex for healthier sleep.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=120&h=120&fit=crop" alt="">
+              <div><h5>Standard Pillow</h5><p>Classic comfort with responsive natural latex support.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&h=120&fit=crop" alt="">
+              <div><h5>Contour Pillow</h5><p>Ergonomic neck support and deeper restorative sleep.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=120&h=120&fit=crop" alt="">
+              <div><h5>Moon Pillow</h5><p>Targeted comfort wherever your body needs support.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all">View All →</a>
+          </div>
+          <div class="mobile-group hybrid">
+            <div class="col-header">
+              <div class="col-logo-placeholder">LOGO</div>
+              <h4>Hybrid <span class="badge sale">SALE</span></h4>
+            </div>
+            <div class="col-desc">Responsive foam with organic covers.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0552?w=120&h=120&fit=crop" alt="">
+              <div><h5>HR Foam Pillow With Organic Cover</h5><p>Classic comfort with responsive long-lasting support.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=120&h=120&fit=crop" alt="">
+              <div><h5>Memory Foam Pillow With Organic Cover</h5><p>Classic comfort with responsive long-lasting support.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=120&h=120&fit=crop" alt="">
+              <div><h5>Cool Gel Pillow With Organic Cover</h5><p>Classic comfort with responsive long-lasting support.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all">View All →</a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="https://moondew-dev.novatales.com/toppers/toppers/ad9ec0de-23bb-4c9e-bb6a-0eb4746d403b">Toppers</a></li>
+
+    <li>
+      <button class="mobile-parent" data-target="kids">Kids Range <span class="arrow">▼</span></button>
+      <div class="mobile-submenu" id="kids">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group">
+            <h4>Pillows</h4>
+            <div class="col-desc">Gentle support for growing bodies.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=120&h=120&fit=crop" alt="">
+              <div><h5>Kids Standard Pillow</h5><p>Everyday comfort and support through the growing years.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=120&h=120&fit=crop" alt="">
+              <div><h5>Kids Contour Pillow</h5><p>Healthy sleep posture through the growing years.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all" style="color:#2d5a3d">View All →</a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <button class="mobile-parent" data-target="accessories">Accessories <span class="arrow">▼</span></button>
+      <div class="mobile-submenu" id="accessories">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group">
+            <h4>Bedsheets</h4>
+            <div class="col-desc">100% organic cotton for a luxurious feel.</div>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=120&h=120&fit=crop" alt="">
+              <div><h5>100% Organic Cotton Fitted Bedsheet</h5><p>Form-fitted for exceptional fit and a luxurious sleep experience.</p></div>
+            </a>
+            <a href="#" class="mobile-product">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=120&h=120&fit=crop" alt="">
+              <div><h5>100% Organic Cotton Flat Bedsheet</h5><p>Everyday luxury for comfort, durability, and sustainability.</p></div>
+            </a>
+            <a href="#" class="mobile-col-view-all" style="color:#2d5a3d">View All →</a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="#">Rest Healthie</a></li>
+    <li><a href="https://moondew-dev.novatales.com/contact-us">Contact</a></li>
+    <li><a href="https://moondew-dev.novatales.com/store-visit">Store Locator</a></li>
+    <li><a href="https://moondew-dev.novatales.com/shop">Shop</a></li>
+  </ul>
+</nav>
+
+<div style="padding: 50px 24px; max-width: 860px; margin: 0 auto; color: #555; line-height: 1.7;">
+  
+</div>
+
+<script>
+  const toggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mobile-parent').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const submenu = document.getElementById(targetId);
+      const isOpen = submenu.classList.contains('open');
+
+      document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
+      document.querySelectorAll('.mobile-parent').forEach(b => b.classList.remove('active'));
+
+      if (!isOpen) {
+        submenu.classList.add('open');
+        btn.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moondew – Warehouse Style Mega Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background: #F5E8C7;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+      z-index: 1002;
+    }
+
+    .logo-box {
+      width: 46px;
+      height: 46px;
+      border: 2px solid #2d5a3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-text {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #2d5a3d;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .logo-r {
+      position: absolute;
+      top: -7px;
+      right: -9px;
+      font-size: 9px;
+      color: #2d5a3d;
+    }
+
+    /* Desktop Navigation */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav > li {
+      position: relative;
+    }
+
+    .nav > li > a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 26px 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav > li > a:hover,
+    .nav > li:hover > a {
+      color: #2d5a3d;
+      background: rgba(255,255,255,0.4);
+    }
+
+    .nav > li > a .arrow {
+      font-size: 9px;
+      transition: transform 0.2s;
+    }
+
+    .nav > li:hover > a .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Icons */
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-shrink: 0;
+      z-index: 1002;
+    }
+
+    .header-icons a {
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .header-icons a:hover {
+      color: #2d5a3d;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: #2d5a3d;
+      color: white;
+      font-size: 10px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    /* ========== MEGA MENU ========== */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #fff;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border-radius: 0 0 6px 6px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.22s ease;
+      padding: 24px 28px 16px;
+      min-width: 920px;
+      z-index: 999;
+    }
+
+    .nav > li:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .mega-columns {
+      display: grid;
+      gap: 24px;
+    }
+
+    .mega-columns.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .mega-columns.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+    /* Column with light background */
+    .mega-col {
+      padding: 16px 18px;
+      border-radius: 6px;
+    }
+
+    <!-- .mega-col.organiq { -->
+      <!-- background: #f0f7f1; /* light green */ -->
+    <!-- } -->
+    <!-- .mega-col.eloris { -->
+      <!-- background: #eef3fa; /* light blue */ -->
+    <!-- } -->
+    <!-- .mega-col.opula { -->
+      <!-- background: #f9eef2; /* light pink/red */ -->
+    <!-- } -->
+    <!-- .mega-col.organic { -->
+      <!-- background: #f0f7f1; -->
+    <!-- } -->
+    .mega-col.hybrid {
+      background: #f7f5f0;
+    }
+    .mega-col.kids,
+    .mega-col.bedsheets {
+      background: #f7f7f7;
+    }
+
+    /* Column title */
+    .mega-col h3 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      padding-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: none;
+    }
+
+    .mega-col.organiq h3,
+    .mega-col.organic h3 { color: #3a683f; }
+    .mega-col.eloris h3 { color: #204c97; }
+    .mega-col.opula h3 { color: #6e0125; }
+    .mega-col.hybrid h3 { color: #5a4a3a; }
+    .mega-col.kids h3,
+    .mega-col.bedsheets h3 { color: #333; }
+
+    /* Small italic line under heading */
+    .mega-col .col-desc {
+      font-size: 11.5px;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      line-height: 1.35;
+    }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge.sale { background: #e74c3c; }
+    .badge.hot  { background: #e74c3c; }
+
+    /* List style with › arrows */
+    .mega-list {
+      list-style: none;
+    }
+
+    .mega-list > li {
+      position: relative;
+      margin-bottom: 2px;
+    }
+
+    .mega-list > li > a {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 6px 0;
+      text-decoration: none;
+      color: #555;
+      font-size: 13.5px;
+      transition: color 0.15s;
+      line-height: 1.35;
+    }
+
+    .mega-list > li > a:hover {
+      color: #2d5a3d;
+    }
+
+    .mega-list > li > a .arrow-icon {
+      color: #bbb;
+      font-size: 12px;
+      line-height: 1.4;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .mega-list > li > a:hover .arrow-icon {
+      color: #2d5a3d;
+    }
+
+    .mega-list > li > a .item-content {
+      flex: 1;
+    }
+
+    .mega-list > li > a .item-title {
+      display: block;
+      font-weight: 550;
+      color: inherit;
+    }
+	
+
+    .mega-list > li > a .item-tagline {
+      display: block;
+      font-size: 11.5px;
+      font-style: italic;
+      color: #888;
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    /* Nested flyout */
+    .mega-list > li .nested {
+      position: absolute;
+      left: calc(100% + 4px);
+      top: -8px;
+      background: #fff;
+      box-shadow: 3px 3px 18px rgba(0,0,0,0.12);
+      border-radius: 4px;
+      min-width: 160px;
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.15s ease;
+      z-index: 20;
+    }
+
+    .mega-list > li:hover > .nested {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .nested a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      text-decoration: none;
+      color: #555;
+      font-size: 13.5px;
+      transition: all 0.12s;
+    }
+
+    .nested a:hover {
+      background: #f7f4eb;
+      color: #2d5a3d;
+    }
+
+    .nested a .arrow-icon {
+      color: #bbb;
+      font-size: 12px;
+    }
+
+    /* Bottom bar with View All */
+    .mega-footer {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: #888;
+    }
+
+    .mega-footer-left {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .mega-footer a {
+      color: #2d5a3d;
+      text-decoration: none;
+    }
+
+    .mega-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .view-all {
+      font-weight: 600;
+      color: #2d5a3d !important;
+      white-space: nowrap;
+    }
+
+    .view-all:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== MOBILE ========== */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      z-index: 1002;
+      position: relative;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #1a1a1a;
+      margin: 5px auto;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      padding-top: 70px;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav {
+      list-style: none;
+      padding: 12px 0 80px;
+    }
+
+    .mobile-nav > li {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .mobile-nav > li > a,
+    .mobile-nav > li > .mobile-parent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 22px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 15.5px;
+      font-weight: 500;
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .mobile-parent .arrow {
+      font-size: 11px;
+      transition: transform 0.25s;
+    }
+
+    .mobile-parent.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .mobile-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: #fafafa;
+    }
+
+    .mobile-submenu.open {
+      max-height: 3200px;
+    }
+
+    .mobile-submenu-inner {
+      padding: 8px 22px 18px;
+    }
+
+    .mobile-group {
+      margin-bottom: 20px;
+      padding: 14px;
+      border-radius: 6px;
+    }
+
+    .mobile-group.organiq { background: #f0f7f1; }
+    .mobile-group.eloris { background: #eef3fa; }
+    .mobile-group.opula { background: #f9eef2; }
+    .mobile-group.organic { background: #f0f7f1; }
+    .mobile-group.hybrid { background: #f7f5f0; }
+
+    .mobile-group h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-group.organiq h4,
+    .mobile-group.organic h4 { color: #3a683f; }
+    .mobile-group.eloris h4 { color: #204c97; }
+    .mobile-group.opula h4 { color: #6e0125; }
+    .mobile-group.hybrid h4 { color: #5a4a3a; }
+
+    .mobile-group .col-desc {
+      font-size: 11.5px;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .mobile-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 9px 0;
+      text-decoration: none;
+      color: #444;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .mobile-item:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-item .arrow-icon {
+      color: #bbb;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .mobile-item .item-title {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 2px;
+    }
+
+    .mobile-item .item-tagline {
+      font-size: 12px;
+      font-style: italic;
+      color: #777;
+      line-height: 1.35;
+    }
+
+    .mobile-view-all {
+      display: block;
+      text-align: right;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #2d5a3d;
+      text-decoration: none;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      .nav { gap: 0; }
+      .nav > li > a { font-size: 13px; padding: 26px 10px; }
+      .mega-menu { min-width: 800px; padding: 20px 22px 14px; }
+    }
+
+    @media (max-width: 980px) {
+      .nav { display: none; }
+      .mobile-toggle { display: block; }
+      .header-inner { padding: 0 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .header-icons { gap: 14px; }
+      .logo-box { width: 42px; height: 42px; }
+      .logo-text { font-size: 9.5px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a href="https://moondew-dev.novatales.com/" class="logo">
+      <div class="logo-box">
+        <div class="logo-text">MOON<br>DEW</div>
+        <span class="logo-r">®</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav">
+      <li><a href="https://moondew-dev.novatales.com/">Home</a></li>
+      <li><a href="https://moondew-dev.novatales.com/about">About</a></li>
+
+      <!-- ========== MATTRESSES ========== -->
+      <li>
+        <a href="#">Mattresses <span class="arrow">▼</span></a>
+        <div class="mega-menu">
+          <div class="mega-columns cols-3">
+
+            <!-- Organiq -->
+            <div class="mega-col organic">
+              <h3>Organiq</h3>
+              <div class="col-desc">Natural latex comfort for pure, restorative sleep.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Ortho Latex Mattress</span>
+                      <span class="item-tagline">Built for those who prefer extra firm natural support with balanced comfort.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Serene Latex Mattress</span>
+                      <span class="item-tagline">Built for those who prefer softer comfort without losing support.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Refresh Latex Series</span>
+                      <span class="item-tagline">Built for those who prefer balanced comfort with firmer natural support.</span>
+                    </span>
+                  </a>
+                  <div class="nested">
+                    <a href="#"><span class="arrow-icon">›</span> Refresh Soft</a>
+                    <a href="#"><span class="arrow-icon">›</span> Refresh Medium</a>
+                    <a href="#"><span class="arrow-icon">›</span> Refresh Firm</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Eloris -->
+            <div class="mega-col eloris">
+              <h3>Eloris <span class="badge hot">HOT</span></h3>
+              <div class="col-desc">Adaptive comfort engineered for deeper rest.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Mellow Soft Series</span>
+                      <span class="item-tagline">Built for those who prefer comfort that gently holds the body.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Elite Memory Series</span>
+                      <span class="item-tagline">Built for those who prefer adaptive comfort with minimal partner disturbance.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">HyLatex Series</span>
+                      <span class="item-tagline">Built for those who prefer naturally responsive comfort with balanced support.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Ortho Back Series</span>
+                      <span class="item-tagline">Built for those who prefer firm support that keeps the body aligned.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Alpha Latex Series</span>
+                      <span class="item-tagline">Built for those who want their rest to heal naturally.</span>
+                    </span>
+                  </a>
+                  <div class="nested">
+                    <a href="#"><span class="arrow-icon">›</span> Alpha Soft</a>
+                    <a href="#"><span class="arrow-icon">›</span> Alpha Medium</a>
+                    <a href="#"><span class="arrow-icon">›</span> Alpha Firm</a>
+                  </div>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Bliss Memory Series</span>
+                      <span class="item-tagline">Built for those who prefer adaptive comfort that keeps the body aligned.</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Opula -->
+            <div class="mega-col opula">
+              <h3>Opula</h3>
+              <div class="col-desc">Premium natural support with refined comfort.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Ortho Latex Mattress</span>
+                      <span class="item-tagline">Built for those who prefer extra firm natural support with balanced comfort.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Serene Latex Mattress</span>
+                      <span class="item-tagline">Built for those who prefer softer comfort without losing support.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Refresh Latex Series</span>
+                      <span class="item-tagline">Built for those who prefer balanced comfort with firmer natural support.</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="mega-footer">
+            <div class="mega-footer-left">
+              <span>INFO</span> › 
+              <a href="#">All Mattresses</a> › 
+              <a href="#">Organiq</a> › 
+              <a href="#">Eloris</a> › 
+              <a href="#">Opula</a>
+            </div>
+            <a href="#" class="view-all">View All →</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- ========== PILLOWS ========== -->
+      <li>
+        <a href="#">Pillows <span class="arrow">▼</span></a>
+        <div class="mega-menu">
+          <div class="mega-columns cols-2">
+
+            <div class="mega-col ">
+              <h3>Organic</h3>
+              <div class="col-desc">Pure natural latex for healthier sleep.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Standard Pillow</span>
+                      <span class="item-tagline">Built for those who prefer classic pillow comfort with the responsive support of natural latex.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Contour Pillow</span>
+                      <span class="item-tagline">Built for those who seek ergonomic neck support and deeper restorative sleep.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Moon Pillow</span>
+                      <span class="item-tagline">Built for targeted comfort wherever your body needs support.</span>
+                    </span>
+                  </a>
+                  <div class="nested">
+                    <a href="#"><span class="arrow-icon">›</span> Moon Soft</a>
+                    <a href="#"><span class="arrow-icon">›</span> Moon Medium</a>
+                    <a href="#"><span class="arrow-icon">›</span> Moon Firm</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mega-col ">
+              <h3>Hybrid <span class="badge sale">SALE</span></h3>
+              <div class="col-desc">Responsive foam with organic covers.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">HR Foam Pillow With Organic Cover</span>
+                      <span class="item-tagline">Built for those who prefer classic pillow comfort with responsive and long-lasting support.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Memory Foam Pillow With Organic Cover</span>
+                      <span class="item-tagline">Built for those who prefer classic pillow comfort with responsive and long-lasting support.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Cool Gel Pillow With Organic Cover</span>
+                      <span class="item-tagline">Built for those who prefer classic pillow comfort with responsive and long-lasting support.</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="mega-footer">
+            <div class="mega-footer-left">
+              <span>INFO</span> › 
+              <a href="#">All Pillows</a> › 
+              <a href="#">Organic</a> › 
+              <a href="#">Hybrid</a>
+            </div>
+            <a href="#" class="view-all">View All →</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#">Toppers</a></li>
+
+      <!-- ========== KIDS RANGE ========== -->
+      <li>
+        <a href="#">Kids Range <span class="arrow">▼</span></a>
+        <div class="mega-menu" style="min-width: 400px;">
+          <div class="mega-columns cols-1">
+            <div class="mega-col ">
+              <h3>Pillows</h3>
+              <div class="col-desc">Gentle support for growing bodies.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Kids Standard Pillow</span>
+                      <span class="item-tagline">Built for everyday comfort and support through the growing years.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">Kids Contour Pillow</span>
+                      <span class="item-tagline">Built for healthy sleep posture through the growing years.</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mega-footer">
+            <div class="mega-footer-left">
+              <span>INFO</span> › <a href="#">Kids Range</a> › <a href="#">Pillows</a>
+            </div>
+            <a href="#" class="view-all">View All →</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- ========== ACCESSORIES ========== -->
+      <li>
+        <a href="#">Accessories <span class="arrow">▼</span></a>
+        <div class="mega-menu" style="min-width: 440px;">
+          <div class="mega-columns cols-1">
+            <div class="mega-col">
+              <h3>Bedsheets</h3>
+              <div class="col-desc">100% organic cotton for a luxurious feel.</div>
+              <ul class="mega-list">
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">100% Organic Cotton Fitted Bedsheet</span>
+                      <span class="item-tagline">Form-fitted bedsheets for exceptional fit and a luxurious sleep experience.</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="arrow-icon">›</span>
+                    <span class="item-content">
+                      <span class="item-title">100% Organic Cotton Flat Bedsheet</span>
+                      <span class="item-tagline">Everyday luxury for exceptional comfort, durability, and sustainability.</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mega-footer">
+            <div class="mega-footer-left">
+              <span>INFO</span> › <a href="#">Accessories</a> › <a href="#">Bedsheets</a>
+            </div>
+            <a href="#" class="view-all">View All →</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#">Rest Healthie</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Store Locator</a></li>
+      <li><a href="#">Shop</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="header-icons">
+      <a href="#" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </a>
+      <a href="#" aria-label="Account">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="#" aria-label="Cart">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button class="mobile-toggle" aria-label="Open menu" id="mobileToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== MOBILE MENU ========== -->
+<nav class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+
+    <!-- Mattresses -->
+    <li>
+      <button class="mobile-parent" data-target="mattresses">
+        Mattresses <span class="arrow">▼</span>
+      </button>
+      <div class="mobile-submenu" id="mattresses">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group organiq">
+            <h4>Organiq</h4>
+            <div class="col-desc">Natural latex comfort for pure, restorative sleep.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Ortho Latex Mattress</div>
+                <div class="item-tagline">Built for those who prefer extra firm natural support with balanced comfort.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Serene Latex Mattress</div>
+                <div class="item-tagline">Built for those who prefer softer comfort without losing support.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Refresh Latex Series</div>
+                <div class="item-tagline">Built for those who prefer balanced comfort with firmer natural support.</div>
+              </span>
+            </a>
+          </div>
+          <div class="mobile-group eloris">
+            <h4>Eloris <span class="badge hot">HOT</span></h4>
+            <div class="col-desc">Adaptive comfort engineered for deeper rest.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Mellow Soft Series</div>
+                <div class="item-tagline">Built for those who prefer comfort that gently holds the body.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Elite Memory Series</div>
+                <div class="item-tagline">Built for those who prefer adaptive comfort with minimal partner disturbance.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">HyLatex Series</div>
+                <div class="item-tagline">Built for those who prefer naturally responsive comfort with balanced support.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Ortho Back Series</div>
+                <div class="item-tagline">Built for those who prefer firm support that keeps the body aligned.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Alpha Latex Series</div>
+                <div class="item-tagline">Built for those who want their rest to heal naturally.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Bliss Memory Series</div>
+                <div class="item-tagline">Built for those who prefer adaptive comfort that keeps the body aligned.</div>
+              </span>
+            </a>
+          </div>
+          <div class="mobile-group opula">
+            <h4>Opula</h4>
+            <div class="col-desc">Premium natural support with refined comfort.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Ortho Latex Mattress</div>
+                <div class="item-tagline">Built for those who prefer extra firm natural support with balanced comfort.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Serene Latex Mattress</div>
+                <div class="item-tagline">Built for those who prefer softer comfort without losing support.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Refresh Latex Series</div>
+                <div class="item-tagline">Built for those who prefer balanced comfort with firmer natural support.</div>
+              </span>
+            </a>
+          </div>
+          <a href="#" class="mobile-view-all">View All →</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Pillows -->
+    <li>
+      <button class="mobile-parent" data-target="pillows">
+        Pillows <span class="arrow">▼</span>
+      </button>
+      <div class="mobile-submenu" id="pillows">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group organic">
+            <h4>Organic</h4>
+            <div class="col-desc">Pure natural latex for healthier sleep.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Standard Pillow</div>
+                <div class="item-tagline">Built for those who prefer classic pillow comfort with the responsive support of natural latex.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Contour Pillow</div>
+                <div class="item-tagline">Built for those who seek ergonomic neck support and deeper restorative sleep.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Moon Pillow</div>
+                <div class="item-tagline">Built for targeted comfort wherever your body needs support.</div>
+              </span>
+            </a>
+          </div>
+          <div class="mobile-group hybrid">
+            <h4>Hybrid <span class="badge sale">SALE</span></h4>
+            <div class="col-desc">Responsive foam with organic covers.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">HR Foam Pillow With Organic Cover</div>
+                <div class="item-tagline">Built for those who prefer classic pillow comfort with responsive and long-lasting support.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Memory Foam Pillow With Organic Cover</div>
+                <div class="item-tagline">Built for those who prefer classic pillow comfort with responsive and long-lasting support.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Cool Gel Pillow With Organic Cover</div>
+                <div class="item-tagline">Built for those who prefer classic pillow comfort with responsive and long-lasting support.</div>
+              </span>
+            </a>
+          </div>
+          <a href="#" class="mobile-view-all">View All →</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="#">Toppers</a></li>
+
+    <!-- Kids -->
+    <li>
+      <button class="mobile-parent" data-target="kids">
+        Kids Range <span class="arrow">▼</span>
+      </button>
+      <div class="mobile-submenu" id="kids">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group">
+            <h4>Pillows</h4>
+            <div class="col-desc">Gentle support for growing bodies.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Kids Standard Pillow</div>
+                <div class="item-tagline">Built for everyday comfort and support through the growing years.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">Kids Contour Pillow</div>
+                <div class="item-tagline">Built for healthy sleep posture through the growing years.</div>
+              </span>
+            </a>
+          </div>
+          <a href="#" class="mobile-view-all">View All →</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Accessories -->
+    <li>
+      <button class="mobile-parent" data-target="accessories">
+        Accessories <span class="arrow">▼</span>
+      </button>
+      <div class="mobile-submenu" id="accessories">
+        <div class="mobile-submenu-inner">
+          <div class="mobile-group">
+            <h4>Bedsheets</h4>
+            <div class="col-desc">100% organic cotton for a luxurious feel.</div>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">100% Organic Cotton Fitted Bedsheet</div>
+                <div class="item-tagline">Form-fitted bedsheets for exceptional fit and a luxurious sleep experience.</div>
+              </span>
+            </a>
+            <a href="#" class="mobile-item">
+              <span class="arrow-icon">›</span>
+              <span>
+                <div class="item-title">100% Organic Cotton Flat Bedsheet</div>
+                <div class="item-tagline">Everyday luxury for exceptional comfort, durability, and sustainability.</div>
+              </span>
+            </a>
+          </div>
+          <a href="#" class="mobile-view-all">View All →</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="#">Rest Healthie</a></li>
+    <li><a href="https://moondew-dev.novatales.com/contact-us">Contact</a></li>
+    <li><a href="https://moondew-dev.novatales.com/store-visit">Store Locator</a></li>
+    <li><a href="https://moondew-dev.novatales.com/shop">Shop</a></li>
+  </ul>
+</nav>
+
+<!-- Demo content -->
+<div style="padding: 50px 24px; max-width: 860px; margin: 0 auto; color: #555; line-height: 1.7;">
+  <h1 style="margin-bottom: 12px; color: #1a1a1a;">Updated Mega Menu</h1>
+  <p>Changes applied:</p>
+  <ul style="margin: 12px 0 20px 20px;">
+    <li>Small italic line under Organiq / Eloris / Opula</li>
+    <li>“View All →” at bottom-right of every dropdown</li>
+    <li>Heading colors: Organiq <code>#3a683f</code>, Eloris <code>#204c97</code>, Opula <code>#6e0125</code></li>
+    <li>Light background tints for the three columns</li>
+  </ul>
+</div>
+
+<script>
+  const toggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mobile-parent').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const submenu = document.getElementById(targetId);
+      const isOpen = submenu.classList.contains('open');
+
+      document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
+      document.querySelectorAll('.mobile-parent').forEach(b => b.classList.remove('active'));
+
+      if (!isOpen) {
+        submenu.classList.add('open');
+        btn.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
