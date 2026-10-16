@@ -82,7 +82,7 @@
 .features-layout {
     display: grid;
     grid-template-columns: 240px 1fr;
-    gap: 56px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -140,16 +140,18 @@
 }
 
 .features-nav a.is-active {
-    color: var(--brand);
-    border-left-color: var(--brand);
-    font-weight: 700;
+   color: #0d6efd;
+    border-left-color: #0d6efd;
+    background-color: #eef5ff;
 }
 
-.features-nav a.is-active em {
+/* .features-nav a.is-active em {
     background: var(--brand);
     color: #fff;
+} */
+.toc-card a:hover {
+    color: #0d6efd;
 }
-
 .features-nav-cta {
     background: var(--brand);
     border-radius: 10px;
@@ -197,7 +199,7 @@
 
 .feature-block {
     scroll-margin-top: 110px;
-    padding-bottom: 64px;
+    padding-bottom: 10px;
     margin-bottom: 8px;
     border-bottom: 1px solid var(--line);
 	padding-top:0px;
@@ -211,7 +213,7 @@
     display: flex;
     gap: 20px;
     align-items: baseline;
-    margin-bottom: 30px;
+   
 }
 
 .feature-block-index {

@@ -209,14 +209,14 @@
         .pricing-table th {
             background: #173f5f;
             color: #fff;
-            padding: 18px 20px;
+            padding: 6px 18px;
             font-size: 15px;
             font-weight: 600;
             border: 0;
         }
 
         .pricing-table td {
-            padding: 18px 20px;
+            padding: 6px 18px;
             vertical-align: middle;
             border-color: #e5edf2;
             font-size: 14px;
@@ -318,3 +318,178 @@
                 border-radius: 12px;
             }
         }
+
+/* ========== Expanded plan view (click Get Started) ========== */
+#pricingCardsRow {
+    transition: opacity 0.2s ease;
+}
+
+#pricingCardsRow.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pricing-expanded {
+    margin-top: 10px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.pricing-expanded.show {
+    display: block;
+    opacity: 1;
+}
+
+.pricing-expanded.hiding {
+    display: block;
+    opacity: 0;
+}
+
+.pricing-expanded-inner {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(27, 70, 95, 0.12);
+    border: 1px solid #e4edf2;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-expanded-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #4dabf7;
+}
+
+.pricing-expanded-inner.plan-email::before { background: #4dabf7; }
+.pricing-expanded-inner.plan-fax::before { background: #8b5cf6; }
+.pricing-expanded-inner.plan-forms::before { background: #20c997; }
+
+.pricing-close-btn {
+    position: absolute;
+      top: 9px;
+    right: 28px;
+    z-index: 10;
+    background: transparent;
+    border: 0px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #063c6a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pricing-close-btn:hover {
+    background:transparent;
+    color: #4dabf7;
+}
+
+.pricing-expanded-left {
+    padding: 40px 30px 35px;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid #eef2f6;
+}
+
+.pricing-expanded-left .pricing-logo-wrap {
+    margin-bottom: 12px;
+}
+
+.pricing-expanded-left .pricing-logo {
+
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+
+.pricing-expanded-left .pricing-title {
+    font-size: 23px;
+    font-weight: 600;
+    color: #172033;
+    margin-bottom: 3px;
+}
+
+.pricing-expanded-left .pricing-subtitle {
+    font-size: 13px;
+    color: #8a94a6;
+    margin-bottom: 28px;
+}
+
+.pricing-expanded-left .price-circle {
+    width: 140px;
+    height: 140px;
+    border: 1px dashed;
+    border-radius: 50%;
+    margin: 0 auto 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-expanded-left.plan-email .price-circle { border-color: #4dabf7; }
+.pricing-expanded-left.plan-fax .price-circle { border-color: #8b5cf6; }
+.pricing-expanded-left.plan-forms .price-circle { border-color: #20c997; }
+
+.pricing-expanded-left .price {
+    display: flex;
+    align-items: baseline;
+    color: #172033;
+}
+
+.pricing-expanded-left .currency { font-size: 14px; margin-right: 3px; }
+.pricing-expanded-left .amount { font-size: 34px; font-weight: 600; line-height: 1; }
+.pricing-expanded-left .month { font-size: 12px; color: #7d8796; margin-left: 2px; }
+
+.pricing-expanded-left .pricing-details {
+    min-height: auto;
+    font-size: 14px;
+    line-height: 2.05;
+    color: #303846;
+    margin-bottom: 20px;
+}
+
+.pricing-expanded-left .pricing-details p { margin: 0; }
+
+.pricing-expanded-left .pricing-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pricing-expanded-left.plan-email .pricing-btn { background: #4dabf7; }
+.pricing-expanded-left.plan-fax .pricing-btn { background: #8b5cf6; }
+.pricing-expanded-left.plan-forms .pricing-btn { background: #20c997; }
+
+.pricing-expanded-left .pricing-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    filter: brightness(90%);
+}
+
+.pricing-expanded-right {
+    padding: 24px 20px 20px;
+}
+
+@media (max-width: 991px) {
+    .pricing-expanded-left {
+        border-right: none;
+        border-bottom: 1px solid #eef2f6;
+        padding-bottom: 30px;
+    }
+    .pricing-close-btn {
+        top: 12px;
+        right: 12px;
+    }
+}

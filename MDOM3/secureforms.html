@@ -28,7 +28,24 @@
   <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/secureforms.css" rel="stylesheet">
+<style>
+         body {
+   background-image:
+        linear-gradient(
+            rgba(6, 60, 106, 0.80) 0%,
+            rgba(255, 255, 255, 0.95) 55%,
+            rgba(255, 255, 255, 1) 100%
+        ),
+        url("assets/img/features.jpg");
 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+        }
+	section{background: transparent;}
+ 
+</style>
 </head>
 
 <body class="starter-page-page">
@@ -107,10 +124,10 @@
     </div>
   </header>
 
-  <main class="main hipaa-page-main">
+  <main class="main hipaa-page-main" style="background:transparent !important;">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
+    <div class="page-title light-background" >
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
@@ -119,12 +136,13 @@
           </ol>
         </nav>		
       </div>
-	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; padding:0px; border-bottom:0px;">
+	   <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="hipaa-intro-inner" style="max-width:100%;">
-          <span class="eyebrow"><i class="bi bi-shield-lock-fill"></i> HIPAA Compliant &amp; 256-bit SSL Encrypted</span>
-          <h1>Secure Forms</h1>
-          <p style="max-width:100%">Secure Online Patient Forms</p>
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
+       <span class="eyebrow"><i class="bi bi-shield-lock-fill"></i> HIPAA Compliant &amp; 256-bit SSL Encrypted</span>
+          <h1 style="margin-bottom: 0px;   margin-top: 0px; text-shadow:1px 1px 1px rgba(255,255,255,1);">Features - HIPAA Email
+Secure Forms</h1>
+        <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;">Secure Online Patient Forms</p>
         </div>
       </div>
     </section>
@@ -151,25 +169,29 @@
 
           <!-- Sticky section index -->
           <aside class="hipaa-nav">
-            <span class="hipaa-nav-label">On This Page</span>
-            <ul>
-              <li><a href="#overview">Overview</a></li>
-              <li><a href="#free-setup">Free Setup</a></li>
-              <li><a href="#forms-we-build">Forms We Build</a></li>
-              <li><a href="#how-it-works">How It Works</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#pricing-samples">Pricing &amp; Samples</a></li>
-              <li><a href="#getting-started">Getting Started</a></li>
-            </ul>
+           <div class="card shadow-sm toc-card ">
+<div class="card-header bg-white fw-bold px-3">
+           On this page
+</div>
+        <div class="features-nav card-body py-2" style="padding:5px 15px !important;">
+          <a href="#overview">Overview</a>
+              <a href="#free-setup">Free Setup</a>
+              <a href="#forms-we-build">Forms We Build</a>
+              <a href="#how-it-works">How It Works</a>
+              <a href="#features">Features</a>
+              <a href="#pricing-samples">Pricing &amp; Samples</a>
+              <a href="#getting-started">Getting Started</a>
+        </div>
 
             <div class="hipaa-nav-cta">
               <p>Ready to add a secure form to your website?</p>
               <a href="index.html#pricing" class="hipaa-nav-btn">View Plans &amp; Price <i class="bi bi-arrow-right"></i></a>
             </div>
+            </div>
           </aside>
 
           <!-- Content -->
-          <div class="hipaa-content">
+          <div class=" card shadow-sm qa-card p-3">
 
             <div id="overview" class="hipaa-block">
               <div class="hipaa-block-head">

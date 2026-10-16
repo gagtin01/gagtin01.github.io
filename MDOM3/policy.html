@@ -28,7 +28,26 @@
   <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/policy.css" rel="stylesheet">
+  <style>
+       body {
+   background-image:
+        linear-gradient(
+            rgba(6, 60, 106, 0.80) 0%,
+            rgba(255, 255, 255, 0.95) 55%,
+            rgba(255, 255, 255, 1) 100%
+        ),
+        url("assets/img/features.jpg");
 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+        }
+	section{background: transparent;}
+   
+
+
+  </style>
 </head>
 
 <body class="starter-page-page">
@@ -110,7 +129,7 @@
   <main class="main policy-page-main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
+   <div class="page-title light-background" style="background:transparent !important;">
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
@@ -119,12 +138,12 @@
           </ol>
         </nav>		
       </div>
-	    <section class="policy-intro" style="text-align:left; background-color:transparent !important; padding:0px; border-bottom:0px;">
+	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="policy-intro-inner" style="max-width:100%;">
-          <span class="eyebrow"><i class="bi bi-shield-check"></i> Your information stays yours</span>
-          <h1>Privacy Policy</h1>
-          <p style="max-width:100%">How MD OfficeMail collects, uses, and protects your personal information.</p>
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
+       <span class="eyebrow"><i class="bi bi-shield-check"></i> Your information stays yours</span>
+          <h1 style="margin-bottom: 0px;   margin-top: 0px; text-shadow:1px 1px 1px rgba(255,255,255,1);">Privacy Policy</h1>
+           <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;">How MD OfficeMail collects, uses, and protects your personal information.</p>
         </div>
       </div>
     </section>
@@ -153,23 +172,28 @@
 
           <!-- Sticky section index -->
           <aside class="policy-nav">
-            <span class="policy-nav-label">On This Page</span>
-            <ul>
-              <li><a href="#commitment">Our Commitment</a></li>
-              <li><a href="#scope">Information We Collect</a></li>
-              <li><a href="#usage">How We Use It</a></li>
-              <li><a href="#aggregate">Aggregate Data</a></li>
-              <li><a href="#sharing">Information Sharing</a></li>
-              <li><a href="#security">Data Security</a></li>
-              <li><a href="#children">Children's Privacy</a></li>
-              <li><a href="#access">Accessing Your Info</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-
+            <div class="card shadow-sm toc-card ">
+           <div class="card-header bg-white fw-bold px-3">
+           On this page
+</div>
+            <div class=" policy-nav card-body py-2" style="padding:5px 15px !important;">
+              <span class="features-nav">
+              <a href="#commitment">Our Commitment</a></li>
+            <a href="#scope">Information We Collect</a></li>
+              <a href="#usage">How We Use It</a></li>
+              <a href="#aggregate">Aggregate Data</a></li>
+              <a href="#sharing">Information Sharing</a></li>
+              <a href="#security">Data Security</a></li>
+              <a href="#children">Children's Privacy</a></li>
+              <a href="#access">Accessing Your Info</a></li>
+              <a href="#contact">Contact Us</a></li>
+</span>
+            </div>
+</div>
           </aside>
 
           <!-- Content -->
-          <div class="policy-content">
+          <div class="policy-content card shadow-sm  qa-card p-3">
 
             <div id="commitment" class="policy-block">
               <div class="policy-block-head">

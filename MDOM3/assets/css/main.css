@@ -610,10 +610,12 @@ body.scrolled .header .header-container {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
+  margin-top: 60px;
+    background: transparent;
 }
 
 .footer .footer-top {
@@ -808,9 +810,9 @@ font-family: 'Cosmos BQ';
 --------------------------------------------------------------*/
 .page-title {
   color: #fff;
-  background-image: linear-gradient(rgba(6,60,106,0.8), rgba(255,255,255,1)),
-        url("../img/features.jpg");
-  padding: 150px 0 60px 0;
+  /* background-image: linear-gradient(rgba(6,60,106,0.8), rgba(255,255,255,1)),
+        url("../img/features.jpg"); */
+  padding: 132px 0 30px 0;
   text-align: center;
   position: relative;
 }
@@ -821,6 +823,17 @@ font-family: 'Cosmos BQ';
   margin-bottom: 10px;
 }
 
+.page-title-new h1{
+  margin-bottom: 0px !important;
+    margin-top: 30px !important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1) !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    color: #36343a !important;
+}
+.page-title-new{
+  
+}
 .page-title .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
@@ -1737,10 +1750,7 @@ text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
     transition:.4s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 20px 50px rgba(0,0,0,.12)!important;
-}
+
 
 h5{
     color:#16325c;
@@ -1806,7 +1816,6 @@ h5{
     transition:all .3s ease;
     text-decoration:none;
     color:inherit;
-    cursor:pointer;
 }
 
 .email-feature-card:hover{

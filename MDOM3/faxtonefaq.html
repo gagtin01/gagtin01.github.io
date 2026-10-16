@@ -173,6 +173,24 @@
         }
 		
 
+       body {
+   background-image:
+        linear-gradient(
+            rgba(6, 60, 106, 0.80) 0%,
+            rgba(255, 255, 255, 0.95) 55%,
+            rgba(255, 255, 255, 1) 100%
+        ),
+        url("assets/img/features.jpg");
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+        }
+	section{background: transparent;}
+   .feature-block{ padding-bottom: 0px;}
+
+
 </style>
 </head>
 
@@ -267,7 +285,7 @@
   <main class="main hipaa-page-main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
+    <div class="page-title light-background" style="background:transparent !important;">
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
@@ -277,10 +295,11 @@
           </ol>
         </nav>		
       </div>
-	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; padding-bottom:0px;">
+	     <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="hipaa-intro-inner">
-		<h1>FAQ</h1>
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
+       
+          <h1 style="margin-bottom: 0px;   margin-top: 30px; text-shadow:1px 1px 1px rgba(255,255,255,1);">FAQ</h1>
              </div>
       </div>
     </section>
@@ -299,21 +318,21 @@
         <div class="features-layout">
 
           <aside class="features-nav">
-            <span class="features-nav-label">On this page</span>
-            <ul>
-                    <li><a href="#security">Set-up & Free Trial <em>8</em></a></li>
-                    <li><a href="#usability">Security & Compliance <em>14</em></a></li>
-                    <li><a href="#other">How we can help <em>5</em></a></li>
-            </ul>
-
+           <div class="card shadow-sm toc-card ">
+<div class="card-header bg-white fw-bold px-3">On this page</div>
+            <a href="#security">Set-up & Free Trial <em>8</em></a>
+                    <a href="#usability">Security & Compliance <em>14</em></a>
+                  <a href="#other">How we can help <em>5</em></a>
+            
        
             <div class="features-nav-cta" >
               <p>Questions about HIPAA compliance for your practice?</p>
               <a href="#" class="features-nav-btn" style="padding:8px 0px;">Talk to us</a>
             </div>
+            </div>
           </aside>
 
-          <div class="features-content">
+          <div class="features-content card shadow-sm mb-4 qa-card p-3">
 
         <section id="security" class="feature-block">
             <header class="feature-block-head">
@@ -325,7 +344,7 @@
             <div class="feature-rows">
 <!-- first tab -->
 
-<section id="faq" class="faq-section" style="padding:0px;">          
+<section id="faq" class="faq-section">          
           <div class="accordion custom-accordion" id="howItWorksFaq">
 
             <div class="accordion-item">
@@ -451,7 +470,7 @@ With your subscription you will get 25 bonus "Transmission Credits". To purchase
                 </div>
             </header>
             <div class="feature-rows">
-        <section id="faq" class="faq-section" style="padding:0px;">          
+        <section id="faq" class="faq-section" >          
           <div class="accordion custom-accordion" id="Compliance">
 
             <div class="accordion-item">
@@ -525,7 +544,7 @@ In case of Faxtone users who are not using MDOfficeMail email account, Fax to em
 			   The HITECH legislation is Title XIII of the 2009 American Recovery and Reinvestment act, and can be found here: <a href="http://www.gpo.gov/fdsys/pkg/BILLS-111hr1enr/pdf/BILLS-111hr1enr.pdf" target="_blank">BILLS-111hr1enr.pdf</a>  
               </div>
             </div>
-
+</div>
 
     <div class="accordion-item">
               <h2 class="accordion-header">
@@ -640,7 +659,7 @@ While using email to fax, you can send email messages with large attachments, up
                 </div>
             </header>
             <div class="feature-rows">             
-                <section id="faq" class="faq-section" style="padding:0px;">          
+                <section id="faq" class="faq-section" >          
           <div class="accordion custom-accordion" id="Compliance2">
 
             <div class="accordion-item">

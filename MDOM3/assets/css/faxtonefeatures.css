@@ -13,9 +13,9 @@
     --panel: #FFFFFF;
 }
 
-.features-page-main {
+/* .features-page-main {
     background: linear-gradient(rgba(255, 255, 255, 1), rgba(245, 248, 250, 0.8));
-}
+} */
 
 /* =========================
    INTRO
@@ -58,7 +58,7 @@
 .features-body-inner {
     display: grid;
     grid-template-columns: 220px 1fr;
-    gap: 56px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -107,6 +107,12 @@
     color: #063c6a;
     border-left-color: #063c6a;
     font-weight: 700;
+    
+}
+section, .section {
+
+    padding: 15px 0;
+
 }
 
 
@@ -116,7 +122,7 @@
 
 .feature-block {
     scroll-margin-top: 110px;
-    padding-bottom: 46px;
+    padding-bottom: 15px;
     margin-bottom: 8px;
     border-bottom: 1px solid var(--line);
 }
@@ -141,7 +147,7 @@
 }
 
 .feature-item {
-    padding: 16px 0;
+    padding: 5px 0;
     border-top: 1px solid var(--line);
 }
 

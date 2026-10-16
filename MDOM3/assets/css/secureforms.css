@@ -41,7 +41,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--verified);
+    color: #fff;
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 14px;
@@ -51,14 +51,14 @@
     font-size: 16px;
 }
 
-.hipaa-intro h1 {
+/* .hipaa-intro h1 {
     font-family: "Poppins", sans-serif;
     color: var(--ink);
     font-size: 38px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 16px;
-}
+} */
 
 .hipaa-intro p {
     color: #2E4256 !important;
@@ -76,12 +76,13 @@
 
 .hipaa-body {
     padding: 56px 0 20px;
+	padding-top: 0px !important;
 }
 
 .hipaa-layout {
     display: grid;
     grid-template-columns: 240px 1fr;
-    gap: 56px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -181,7 +182,7 @@
 
 .hipaa-block {
     scroll-margin-top: 110px;
-    padding-bottom: 56px;
+    padding-bottom: 15px;
     margin-bottom: 8px;
     border-bottom: 1px solid var(--line);
 	padding-top: 0px;
@@ -322,7 +323,7 @@
 .hipaa-row {
     display: flex;
     gap: 16px;
-    padding: 20px 0;
+    padding: 10px 0;
     border-top: 1px solid var(--line);
 }
 

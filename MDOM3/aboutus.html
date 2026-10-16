@@ -29,10 +29,26 @@
     <link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/mdomhipaa.css" rel="stylesheet">
 	<link href="assets/css/mdomaboutus.css" rel="stylesheet">
-<style>
-  
+  <style>
+       body {
+   background-image:
+        linear-gradient(
+            rgba(6, 60, 106, 0.80) 0%,
+            rgba(255, 255, 255, 0.95) 55%,
+            rgba(255, 255, 255, 1) 100%
+        ),
+        url("assets/img/features.jpg");
 
-</style>
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+        }
+	section{background: transparent;}
+   
+
+
+  </style>
 </head>
 
 <body class="starter-page-page">
@@ -126,7 +142,7 @@
   <main class="main hipaa-page-main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
+    <div class="page-title light-background" style="background:transparent !important;">
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
@@ -135,11 +151,11 @@
           </ol>
         </nav>		
       </div>
-	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px;">
+	   <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="hipaa-intro-inner" style="max-width:100%;">
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
        
-          <h1>About Us</h1>
+          <h1 style="margin-bottom: 0px;   margin-top: 30px; text-shadow:1px 1px 1px rgba(255,255,255,1);">About Us</h1>
       
         </div>
       </div>
@@ -152,7 +168,7 @@
         <!-- Who we are -->
 		
 
-    <section class="about-page" style="padding-top:0px;">
+    <section class="about-page" style="padding-top:0px;" >
 	<div class="container  about-container"> 
         <section id="story" class="about-section" style="padding:0px;">
           <div class="about-section-head">
@@ -185,7 +201,7 @@ Over the past 15 years, our HIPAA compliant email service has been created, impr
   
 
         <!-- Why MDOM -->
-        <section id="why" class="about-section" style="padding-top:40px; padding-left:0px; padding-right:0px; background-color:transparent;">
+        <section id="why" class="about-section " style="padding-top:40px; padding-left:0px; padding-right:0px; background-color:transparent;">
           <div class="about-section-head">
           
              <span class="tag-pill">Our Outlook</span>

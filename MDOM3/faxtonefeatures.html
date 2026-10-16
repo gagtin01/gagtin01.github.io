@@ -29,6 +29,26 @@
     <link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/faxtonefeatures.css" rel="stylesheet">
 
+  <style>
+       body {
+   background-image:
+        linear-gradient(
+            rgba(6, 60, 106, 0.80) 0%,
+            rgba(255, 255, 255, 0.95) 55%,
+            rgba(255, 255, 255, 1) 100%
+        ),
+        url("assets/img/features.jpg");
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+        }
+	section{background: transparent;}
+   
+
+
+  </style>
 </head>
 
 <body class="starter-page-page">
@@ -121,7 +141,7 @@
   <main class="main features-page-main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
+    <div class="page-title light-background" style="background:transparent !important;">
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
@@ -131,12 +151,13 @@
           </ol>
         </nav>
       </div>
-	      <section class="features-intro" style="text-align:left;">
+	      <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="features-intro-inner">
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
        
-          <h1>Features - Faxtone</h1>
-          <p style="max-width:100%">User-friendly and secure features that make Faxtone a pleasure-to-use HIPAA Fax service.</p>
+          <h1 style="margin-bottom: 0px;   margin-top: 30px; text-shadow:1px 1px 1px rgba(255,255,255,1);">Features - Faxtone</h1>
+          <p style="max-width:100%"> <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;;">
+              User-friendly and secure features that make Faxtone a pleasure-to-use HIPAA Fax service.</p>
         </div>
       </div>
     </section><!-- /Intro -->
@@ -144,21 +165,26 @@
 
     <!-- Features Body -->
     <section class="features-body">
-      <div class="container features-body-inner">
+      <div class="container features-body-inner ">
 
-        <aside class="features-nav">
-          <span class="features-nav-label">On this page</span>
+        <aside class="features-nav ">
+         
+           <div class="card shadow-sm toc-card ">
+<div class="card-header bg-white fw-bold px-3"> On this page</div>
+<div class="p-3">
           <a href="#getting-started">Getting Started</a>
           <a href="#sending-receiving">Sending &amp; Receiving</a>
           <a href="#accounts-users">Accounts &amp; Users</a>
           <a href="#security-compliance">Security &amp; Compliance</a>
           <a href="#organization-delivery">Organization &amp; Delivery</a>
           <a href="#customization-extras">Customization &amp; Extras</a>
+        </div>
+        </div>
         </aside>
 
-        <div class="feature-blocks">
-
-          <section class="feature-block" id="getting-started" style="padding-top:0px;">
+        <div class="feature-blocks  ">
+<div class="card shadow-sm  p-3">
+          <section class="feature-block " id="getting-started" style="padding-top:0px;">
             <h2>Getting Started</h2>
             <div class="feature-list">
               <div class="feature-item"><p>Clean, easy to use Faxtone Web portal.</p></div>
@@ -218,7 +244,7 @@
               <div class="feature-item"><p><strong>Add digital signature to your fax message!</strong> Copy the saved image of your signature, copy and paste it on to the cover-sheet. It is that easy!</p></div>
             </div>
           </section>
-
+</div>
         </div><!-- /.feature-blocks -->
       </div>
     </section><!-- /Features Body -->

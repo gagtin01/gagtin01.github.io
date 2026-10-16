@@ -18,10 +18,6 @@
     --muted: #5b6b7a;
 }
 
-.hipaa-page-main {
-    background: var(--paper);
-}
-
 
 /* =========================
    INTRO BAND
@@ -51,23 +47,8 @@
     font-size: 16px;
 }
 
-.hipaa-intro h1 {
-    font-family: "Poppins", sans-serif;
-    color: var(--ink);
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 16px;
-}
 
-.hipaa-intro p {
-    color: #2E4256 !important;
- font-size: 18px;
-    line-height: 1.7;
-    margin: 0;
-    font-style: italic;
-    font-weight: 400;
-}
+
 
 
 /* =========================
@@ -81,7 +62,7 @@
 .hipaa-layout {
     display: grid;
     grid-template-columns: 240px 1fr;
-    gap: 56px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -125,13 +106,13 @@
 }
 
 .hipaa-nav a:hover {
-    color: var(--brand);
+    color:#0d6efd;
 }
 
 .hipaa-nav a.is-active {
-    color: var(--brand);
-    border-left-color: var(--brand);
-    font-weight: 700;
+  color: #0d6efd;
+    border-left-color: #0d6efd;
+    background-color: #eef5ff;
 }
 
 .hipaa-nav-cta {
@@ -181,7 +162,7 @@
 
 .hipaa-block {
     scroll-margin-top: 110px;
-    padding-bottom: 56px;
+    padding-bottom: 15px;
     margin-bottom: 8px;
     border-bottom: 1px solid var(--line);
 	padding-top: 0px;

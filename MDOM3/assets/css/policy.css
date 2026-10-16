@@ -17,10 +17,19 @@
     --line: #e1e8ee;
     --muted: #5b6b7a;
 }
-
-.policy-page-main {
-    background: var(--paper);
+.hipaa-intro .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 14px;
 }
+
+/* .policy-page-main {
+    background: var(--paper);
+} */
 
 
 /* =========================
@@ -76,12 +85,13 @@
 
 .policy-body {
     padding: 56px 0 20px;
+	    padding-top: 0px !important;
 }
 
 .policy-layout {
     display: grid;
     grid-template-columns: 240px 1fr;
-    gap: 56px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -113,15 +123,17 @@
 }
 
 .policy-nav a {
+  
     display: block;
     padding: 9px 0 9px 16px;
     margin-left: -2px;
-    border-left: 2px solid transparent;
+    border-left: 2px solid #e1e8ee;
     color: var(--ink);
     font-size: 14.5px;
     font-weight: 500;
     text-decoration: none;
     transition: all .2s ease;
+
 }
 
 .policy-nav a:hover {

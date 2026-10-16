@@ -65,9 +65,9 @@
 
         /* Accordion */
 
-        .custom-accordion {
+        /* .custom-accordion {
           margin: 0 auto;
-        }
+        } */
 
         .custom-accordion .accordion-item {
             border: 1px solid #e4e7ec;
@@ -167,7 +167,15 @@
 
         }
 		
-
+body {
+    background-image: linear-gradient(rgba(6, 60, 106, 0.80) 0%, rgba(255, 255, 255, 0.95) 55%, rgba(255, 255, 255, 1) 100%), url(assets/img/features.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+	section{background: transparent;}
+   
 </style>
 </head>
 
@@ -262,35 +270,42 @@
   <main class="main hipaa-page-main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
-      <div class="container">
+    <div class="page-title light-background" style="background: transparent !important;">
+         <div class="container">
         <nav class="breadcrumbs">
           <ol>
              <li><a href="index.html">Home</a></li>
-            <li ><a href="index.html#mousedown">MDOfficeMail</a></li>
+             <li><a href="index.html#mousedown">MDOfficeMail</a></li>
             <li class="current">How It Works</li>
           </ol>
         </nav>		
       </div>
-	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; padding-bottom:0px;">
+   <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="hipaa-intro-inner">
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
        
-          <h1>How It Works</h1>
-          <p style="max-width:100%">How HIPAA Email from MDOfficeMail Works</p>
+          <h1 style="margin-bottom: 0px;   margin-top: 30px; text-shadow:1px 1px 1px rgba(255,255,255,1);">How It Works
+
+</h1>
+          <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;;">
+            How HIPAA Email from MDOfficeMail Works
+          </p>
         </div>
       </div>
     </section>
+
+    
+	 
     </div><!-- End Page Title -->
 
 
 
     <!-- Index + content -->
-    <section class="how-page" style="padding-top:0px;">
+    <section class="" style="padding-top:0px; ">
       <div class="container how-container">
 
         <!-- Lede -->
-        <div class="how-lede">
+        <div class="how-lede card shadow-sm p-3">
 		
 		<p>Majority of healthcare providers and patients use free email service or the one provided by the internet or web hosting service provider. Connection to most of these services is standard, unencrypted/unsecured (HTTP) and the servers may not be secure. Meaning any sensitive information like PHI sent using these email services can be intercepted and stolen.</p>
 
@@ -308,7 +323,7 @@
         </div>
 
         <!-- Other Outstanding Facilities & Features -->
-        <section id="features" class="how-section" style="padding-left: 0px;    padding-right: 0px; background-color:transparent;">
+        <section id="features" class="how-section card shadow-sm" >
           <div class="how-section-head">
             <h2>Other Outstanding Facilities &amp; Features</h2>
           </div>
@@ -416,7 +431,7 @@
         </section>
 
         <!-- Sender / Recipient flow -->
-        <section id="flow" class="how-section">
+        <section id="flow" class="how-section card shadow-sm">
           <div class="how-section-head">
             <span class="tag-pill">The Flow</span>
             <h2>Security at both ends: SSL &amp; MDVault</h2>
@@ -479,7 +494,7 @@
         </section>
 
         <!-- Crypt-n-Send -->
-        <section id="cryptnsend" class="how-section">
+        <section id="cryptnsend" class="how-section card shadow-sm">
           <div class="how-section-head">
             <span class="tag-pill">Already on Gmail or Yahoo?</span>
             <h2>How Crypt-n-Send works</h2>
@@ -504,8 +519,8 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="faq-section" style="padding-top:8px;">
-          <div class="faq-title" style="text-align:left; margin-bottom:26px;">
+        <section id="faq" class="faq-section card shadow-sm" style="padding-top:8px;">
+          <div class="faq-title" style="text-align:left; margin-bottom:10px;">
             <span>Quick Questions</span>
             <h2 style="font-size:24px;">Still wondering how it works?</h2>
           </div>

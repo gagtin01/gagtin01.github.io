@@ -165,7 +165,15 @@
             }
 
         }
-		
+		body {
+    background-image: linear-gradient(rgba(6, 60, 106, 0.80) 0%, rgba(255, 255, 255, 0.95) 55%, rgba(255, 255, 255, 1) 100%), url(assets/img/features.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+	section{background: transparent;}
+   
 
 </style>
 </head>
@@ -261,7 +269,7 @@
   <main class="main hipaa-page-main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
+    <div class="page-title light-background" style="background: transparent !important;">
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
@@ -271,12 +279,16 @@
           </ol>
         </nav>		
       </div>
-	    <section class="hipaa-intro" style="text-align:left; background-color:transparent !important;">
+	  <section class="hipaa-intro" style="text-align:left; background-color:transparent !important; border-bottom:0px !important; padding:0px !important;">
       <div class="container">
-        <div class="hipaa-intro-inner">
+        <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
        
-          <h1>HIPAA Email Compliance</h1>
-          <p style="max-width:100%">Protected Health Information (PHI) deserves more than a password. Here's what HIPAA and the HITECH Act actually require for email, and exactly how MDOfficeMail meets every one of those requirements.</p>
+          <h1 style="margin-bottom: 0px;   margin-top: 30px; text-shadow:1px 1px 1px rgba(255,255,255,1);">HIPAA Email Compliance
+
+</h1>
+          <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;">
+           Protected Health Information (PHI) deserves more than a password. Here's what HIPAA and the HITECH Act actually require for email, and exactly how MDOfficeMail meets every one of those requirements.
+          </p>
         </div>
       </div>
     </section>
@@ -285,7 +297,7 @@
 
 
     <!-- Index + content -->
-    <section class="hipaa-body">
+    <section class="hipaa-body" style="padding:5px 15px !important;">
       <div class="container">
 
         <!-- Mobile section pills -->
@@ -296,16 +308,16 @@
           <a href="#faq">FAQ</a>
         </nav>
 
-        <div class="hipaa-layout">
+        <div class="hipaa-layout " >
 
-          <aside class="hipaa-nav">
-            <span class="hipaa-nav-label">On this page</span>
-            <ul>
-              <li><a href="#phi">Protected Health Information</a></li>
-              <li><a href="#safeguards">Technical Safeguards</a></li>
-              <li><a href="#compliance">How We're Compliant</a></li>
-              <li><a href="#faq">FAQ</a></li>
-            </ul>
+          <aside class="hipaa-nav card shadow-sm">
+            <span class="card-header bg-white fw-bold px-3">On this page</span>
+            <div class=" card-body py-2" style="padding:5px 15px !important;">
+           <a href="#phi">Protected Health Information</a>
+              <a href="#safeguards">Technical Safeguards</a>
+              <a href="#compliance">How We're Compliant</a>
+              <a href="#faq">FAQ</a>
+            </div>
 
             <div class="hipaa-nav-cta" >
               <p>Questions about HIPAA compliance for your practice?</p>
@@ -313,7 +325,7 @@
             </div>
           </aside>
 
-          <div class="hipaa-content">
+          <div class="hipaa-content card shadow-sm p-3">
 
             <!-- 01: PHI -->
             <section id="phi" class="hipaa-block">
