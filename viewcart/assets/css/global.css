@@ -2721,3 +2721,38 @@ body.page-viewcart {
     transform: none;
   }
 }
+
+
+/* ===== Features tab ===== */
+.features-wrap { max-width: 100%; }
+.features-title { font-size: 1.6rem; font-weight: 400; margin-bottom: .25rem; }
+.features-sub { font-size: .8rem; color: #555; margin-bottom: 1.5rem; }
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 2.5rem;
+}
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.feature-img { flex: 0 0 240px; }
+.feature-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.feature-text { flex: 1 1 auto; min-width: 0; }
+.feature-text h4 { font-size: 20px; font-weight: 500; color: #1a2e1a; margin: 0 0 .4rem; }
+.feature-text p { font-size: 18px; line-height: 1.5; color: #444; margin: 0; }
+@media (max-width: 991px) {
+  .features-list { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+@media (max-width: 575px) {
+  .feature-row { gap: 1rem; }
+  .feature-img { flex-basis: 120px; }
+  .feature-img img { border-radius: 10px; }
+}

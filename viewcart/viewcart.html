@@ -879,7 +879,10 @@ background:#ffffff;
   <div class="container">
     <ul class="nav product-tabs-nav" id="productTabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="tab-details" data-bs-toggle="tab" data-bs-target="#pane-details" type="button" role="tab" aria-controls="pane-details" aria-selected="true">Product Details</button>
+        <button class="nav-link active" id="tab-features" data-bs-toggle="tab" data-bs-target="#pane-features" type="button" role="tab" aria-controls="pane-features" aria-selected="true">Features</button>
+      </li>
+	    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab-details" data-bs-toggle="tab" data-bs-target="#pane-details" type="button" role="tab" aria-controls="pane-details" aria-selected="false">Product Details</button>
       </li>
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="tab-specs" data-bs-toggle="tab" data-bs-target="#pane-specs" type="button" role="tab" aria-controls="pane-specs" aria-selected="false">Specifications</button>
@@ -895,8 +898,44 @@ background:#ffffff;
 
     <div class="tab-content product-tabs-content" id="productTabsContent">
 
+  <div class="tab-pane fade show active" id="pane-features" role="tabpanel" aria-labelledby="tab-features">
+        <div class="features-wrap">
+          <h3 class="tab-content-title features-title">Why you&rsquo;ll love the Ortho Latex Mattress</h3>
+          <p class="features-sub">Four reasons customers wake up feeling lighter.</p>
+          <div class="features-list">
+          <div class="feature-row">
+            <div class="feature-img"><img src="img/feature-1.jpg" alt="Firm orthopedic support - bedroom with green walls" loading="lazy"></div>
+            <div class="feature-text">
+              <h4>Firm orthopedic support</h4>
+              <p>High-density organic latex gives stable, responsive support that helps keep your spine in a neutral position and eases morning stiffness.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-img"><img src="img/feature-2.jpg" alt="Naturally breathable - mattress in a bright bedroom" loading="lazy"></div>
+            <div class="feature-text">
+              <h4>Naturally breathable</h4>
+              <p>Open-cell latex lets air flow through the mattress, releasing trapped heat so the surface stays cooler through the night.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-img"><img src="img/feature-3.jpg" alt="Hypoallergenic by nature - mattress close-up" loading="lazy"></div>
+            <div class="feature-text">
+              <h4>Hypoallergenic by nature</h4>
+              <p>Organic latex naturally resists dust mites, microbes and allergens, supporting a cleaner and healthier sleep environment.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-img"><img src="img/feature-4.jpg" alt="Even weight distribution - mattress in a calm bedroom" loading="lazy"></div>
+            <div class="feature-text">
+              <h4>Even weight distribution</h4>
+              <p>Dense latex construction spreads body weight evenly, reducing pressure build-up on shoulders, hips and lower back.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
       <!-- Product Details -->
-      <div class="tab-pane fade show active" id="pane-details" role="tabpanel" aria-labelledby="tab-details">
+      <div class="tab-pane fade" id="pane-details" role="tabpanel" aria-labelledby="tab-details">
         <div class="row g-4">
           <div class="col-lg-7">
             <h3 class="tab-content-title">About the Ortho Latex Mattress</h3>
@@ -1010,7 +1049,15 @@ background:#ffffff;
     </div>
   </div>
 </section>
-
+<section>
+<div class="container">
+    <div class="text-center mt-5">
+      <h2 class="faq-title">Mattress Firmness Scale</h2>
+      <p class="faq-subtitle">Find your perfect balance of comfort and support</p>
+    </div>
+<img src="img/Firmness.jpg" alt="Orthopedic Mattress" style="width:100%">
+</div>
+</section>
 <!-- ========== YOU MAY ALSO LIKE ========== -->
 <section class="also-like-section py-5">
   <div class="container">
