@@ -6,13 +6,19 @@
         radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.10), transparent 35%),
         radial-gradient(circle at 50% 100%, rgba(32, 201, 151, 0.08), transparent 40%),
         linear-gradient(135deg, #f8fbff 0%, #ffffff 50%, #faf8ff 100%);
+}
 
-    min-height: 100vh;
+.pricing-col[data-plan] {
+    cursor: pointer;
+}
+
+.pricing-col[data-plan]:focus-visible .pricing-card {
+    outline: 3px solid #173f5f;
+    outline-offset: 3px;
 }
 
 .pricing-card {
     background: #fff;
-    min-height: 515px;
     padding: 50px 35px 45px;
     text-align: center;
     border-radius: 8px;
@@ -493,3 +499,12 @@
         right: 12px;
     }
 }
+/* Expanded pricing: the left plan card returns to the plan chooser. */
+.pricing-expanded-left[role="button"] { cursor: pointer; }
+.pricing-expanded-left[role="button"]:focus-visible { outline: 2px solid #204b97; outline-offset: -5px; }
+.pricing-expanded-left .pricing-btn { display:inline-block; margin-top:125px; padding:10px 28px; border:0; border-radius:4px; color:#fff; text-decoration:none; font-weight:600; background:#0d6efd; cursor:pointer; }
+.pricing-expanded-left.plan-email .pricing-btn { background:#4dabf7; }
+.pricing-expanded-left.plan-fax .pricing-btn { background:#8b5cf6; }
+.pricing-expanded-left.plan-forms .pricing-btn { background:#20c997; }
+.pricing-expanded-left .pricing-btn:hover { filter:brightness(.95); color:#fff; }
+@media (max-width:991px) { .pricing-expanded-left .pricing-btn { margin-top:35px; } }

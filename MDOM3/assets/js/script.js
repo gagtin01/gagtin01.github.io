@@ -102,11 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
             subtitle: "Plan Starting from",
             amount: "1.79",
             amountUnit: "/year",
-            details: [
-                "1–4 mail accounts",
-                "with annual payment",
-                "with monthly payment - $1.99/mo"
-            ],
             className: "plan-email"
         },
         fax: {
@@ -115,11 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
             subtitle: "Plan Starting from",
             amount: "4.50",
             amountUnit: "/year",
-            details: [
-                "1 Fax line + free email",
-                "with annual payment",
-                "monthly payment - $5.00/mo"
-            ],
             className: "plan-fax"
         },
         forms: {
@@ -128,11 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
             subtitle: "Plan Starting from",
             amount: "10.80",
             amountUnit: "/year",
-            details: [
-                "requires email account",
-                "with annual payment",
-                "monthly/quarterly - $12.00/mo"
-            ],
             className: "plan-forms"
         }
     };
@@ -140,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const pricingCardsRow = document.getElementById("pricingCardsRow");
     const pricingExpanded = document.getElementById("pricingExpanded");
     const expandedLeft = document.getElementById("expandedLeft");
-    const pricingCloseBtn = document.getElementById("pricingCloseBtn");
     const expandedInner = document.querySelector(".pricing-expanded-inner");
 
     function showTableForPlan(planKey) {
@@ -160,10 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
             expandedInner.className = "pricing-expanded-inner " + data.className;
         }
 
-        const detailsHtml = data.details.map(function (line) {
-            return "<p>" + line + "</p>";
-        }).join("");
-
         var unit = data.amountUnit || "/mo";
         expandedLeft.innerHTML =
             '<div class="pricing-logo-wrap">' +
@@ -177,8 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     '<span class="month">' + unit + '</span>' +
                 '</div>' +
             '</div>' +
-            '<div class="pricing-details">' + detailsHtml + '</div>' +
-            '<a href="#" class="pricing-btn">Get Started</a>';
+            '<a href="https://mdofficemail.com/subscriptions/orderservices.aspx" target="_blank" rel="noopener noreferrer" class="pricing-btn" data-pricing-signup>Sign Up</a>';
     }
 
     function expandPlan(planKey) {
@@ -228,18 +207,38 @@ document.addEventListener("DOMContentLoaded", function () {
         // no scroll — stay exactly where the user is
     }
 
-    document.querySelectorAll(".pricing-btn[data-plan]").forEach(function (btn) {
-        btn.addEventListener("click", function (e) {
-            e.preventDefault();
+    // Make the entire pricing card clickable (no separate Get Started button).
+    document.querySelectorAll(".pricing-col[data-plan]").forEach(function (card) {
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.addEventListener("click", function () {
             const plan = this.getAttribute("data-plan");
             if (plan) expandPlan(plan);
         });
+        card.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                const plan = this.getAttribute("data-plan");
+                if (plan) expandPlan(plan);
+            }
+        });
     });
 
-    if (pricingCloseBtn) {
-        pricingCloseBtn.addEventListener("click", function (e) {
-            e.preventDefault();
+    // Clicking the selected plan card on the left returns to the three plan cards.
+    if (expandedLeft) {
+        expandedLeft.addEventListener("click", function (e) {
+            if (e.target.closest("[data-pricing-signup]")) return;
             collapsePlan();
+        });
+        expandedLeft.setAttribute("role", "button");
+        expandedLeft.setAttribute("tabindex", "0");
+        expandedLeft.setAttribute("aria-label", "Return to pricing plans");
+        expandedLeft.addEventListener("keydown", function (e) {
+            if (e.target.closest("[data-pricing-signup]")) return;
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                collapsePlan();
+            }
         });
     }
 
