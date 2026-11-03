@@ -2855,7 +2855,7 @@ font-size:20px;
 
     display:flex;
 
-    width:calc(220px * 12);
+    width:calc(220px * 120);
 
     animation:scrollLogo 80s linear infinite;
 gap:40px;
