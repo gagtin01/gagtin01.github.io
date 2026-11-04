@@ -1,0 +1,202 @@
+/* ==========================================================
+   MDofficeMail — Customization page
+   Reuses color tokens + .hipaa-intro / .hipaa-cta / .how-lede /
+   .how-section-head / .how-stat from mdomhipaa.css and
+   mdomhowitworks.css (both load before this file).
+========================================================== */
+.titlebadge{
+	    flex: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #063c6a;
+    border-radius: 20px;
+    padding: 5px 13px;
+	margin-bottom:10px;
+	display: inline-block;
+}
+
+
+.cust-page {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(245, 248, 250, 0.8));
+    padding: 56px 0 10px;
+}
+
+.cust-container {
+  
+    margin: 0 auto;
+}
+
+
+/* =========================
+   "BEFORE / AFTER" EMAIL EXAMPLE
+========================= */
+
+.cust-example {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 8px 0 4px;
+    flex-wrap: wrap;
+}
+
+.cust-example-avatar {
+    flex: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cust-example-body {
+    flex: 1;
+    min-width: 240px;
+}
+
+.cust-example-body .label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.cust-example-body .addr {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    word-break: break-word;
+}
+
+.cust-example-body .addr .who {
+    color: var(--brand);
+}
+
+.cust-example-body p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ADD-ON GRID (domain plan branding)
+========================= */
+
+.cust-addons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.cust-addon {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.cust-addon i {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--brand);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.cust-addon span {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.5;
+    font-weight: 500;
+	margin-top: 6px;
+}
+
+.cust-price-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 13.5px;
+    color: var(--muted);
+}
+
+.cust-price-note strong {
+    font-family: "Poppins", sans-serif;
+    color: var(--brand);
+    font-size: 15px;
+}
+
+
+/* =========================
+   SUFFIX CHIPS
+========================= */
+
+.cust-suffixes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cust-suffix-chip {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brand-deep);
+    background: var(--verified-tint);
+    border: 1px solid #cfe7db;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 767px) {
+    .cust-page {
+        padding: 34px 0 10px;
+    }
+
+    .cust-example {
+        padding: 22px;
+    }
+
+    .cust-example-body .addr {
+        font-size: 18px;
+    }
+
+    .cust-addons {
+        grid-template-columns: 1fr;
+    }
+}
