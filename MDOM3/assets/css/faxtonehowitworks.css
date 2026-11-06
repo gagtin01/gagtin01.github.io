@@ -55,7 +55,7 @@
 
 .features-body-inner {
 display: grid;
-    grid-template-columns: 235px 1fr;
+    grid-template-columns: 240px 1fr;
     gap: 24px;
     align-items: start;
 }
@@ -114,10 +114,11 @@ display: grid;
 }
 
 .features-nav a.is-active {
-    color: #063c6a;
-    border-left-color: #063c6a;
-    font-weight: 700;
-    
+  color: #0d6efd !important;               /* use your theme color */
+  font-weight: 600 !important;
+  border-left: 3px solid #0d6efd !important;
+  padding-left: 10px;
+      background-color: #eef5ff;
 }
 
 

@@ -30,23 +30,33 @@
 	<link href="assets/css/faxtonefeatures.css" rel="stylesheet">
 
   <style>
-       body {
-   background-image:
-        linear-gradient(
-            rgba(6, 60, 106, 0.80) 0%,
-            rgba(255, 255, 255, 0.95) 55%,
-            rgba(255, 255, 255, 1) 100%
-        ),
+  body {
+      background-image:
+        linear-gradient(rgba(6, 60, 106, 0.80) 0%,
+          rgba(255, 255, 255, 0.95) 55%,
+          rgba(255, 255, 255, 1) 100%),
         url("assets/img/features.jpg");
 
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-        }
-	section{background: transparent;}
-   
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
 
+    section {
+      background: transparent;
+    }
+	
+	.on-this-page a.active,
+aside a.active {
+  color: #0d6efd !important;               /* use your theme color */
+  font-weight: 600 !important;
+  border-left: 3px solid #0d6efd !important;
+  padding-left: 10px;
+      background-color: #eef5ff;
+  
+}
+section[id], [id] { scroll-margin-top: 90px; } /* set to your header height */
 
   </style>
 </head>
@@ -156,7 +166,7 @@
         <div class="hipaa-intro-inner" style="max-width:100%; text-align:center;">
        
           <h1 style="margin-bottom: 0px;   margin-top: 30px; text-shadow:1px 1px 1px rgba(255,255,255,1);">Features - Faxtone</h1>
-          <p style="max-width:100%"> <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;;">
+          <p style="max-width:100%"> <p style="color: #fff !important;font-size: 18px;line-height: 1.7;margin: 0;font-style: italic;font-weight: 400;">
               User-friendly and secure features that make Faxtone a pleasure-to-use HIPAA Fax service.</p>
         </div>
       </div>
@@ -165,9 +175,9 @@
 
     <!-- Features Body -->
     <section class="features-body">
-      <div class="container features-body-inner ">
+      <div class="container features-body-inner">
 
-        <aside class="features-nav ">
+        <aside class="features-nav">
          
            <div class="card shadow-sm toc-card ">
 <div class="card-header bg-white fw-bold px-3"> On this page</div>
@@ -182,7 +192,7 @@
         </div>
         </aside>
 
-        <div class="feature-blocks  ">
+        <div class="feature-blocks">
 <div class="card shadow-sm  p-3">
           <section class="feature-block " id="getting-started" style="padding-top:0px;">
             <h2>Getting Started</h2>
@@ -324,25 +334,54 @@
 
   <!-- Features page: sidebar scroll-spy -->
   <script>
-    (function () {
-      var links = document.querySelectorAll('.features-nav a[href^="#"]');
-      var blocks = document.querySelectorAll('.feature-block');
-      if (!links.length || !blocks.length) return;
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('aside.features-nav a[href^="#"]'));
+    if (!links.length) return;
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var OFFSET = 130;          // header height + a little breathing room
+    var lock = false, lockTimer = null, current = null;
 
-      function onScroll() {
-        var pos = window.scrollY + 160;
-        var current = blocks[0].id;
-        blocks.forEach(function (b) {
-          if (b.offsetTop <= pos) current = b.id;
-        });
-        links.forEach(function (a) {
-          a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+    function setActive(id) {
+      if (id === current) return;
+      current = id;
+      links.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+
+    function onScroll() {
+      if (lock) return;
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      var id = sections[0] ? sections[0].id : null;
+      if (atBottom) {
+        id = sections[sections.length - 1].id;
+      } else {
+        sections.forEach(function (s) {
+          if (s && s.getBoundingClientRect().top <= OFFSET) id = s.id;
         });
       }
+      if (id) setActive(id);
+    }
 
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = this.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (!target) return;
+        setActive(id);                      // highlight exactly what was clicked
+        lock = true;                        // ignore scroll events while smooth-scrolling
+        clearTimeout(lockTimer);
+        lockTimer = setTimeout(function () { lock = false; }, 900);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
   </script>
 
 </body>

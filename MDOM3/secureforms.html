@@ -44,6 +44,14 @@
     background-repeat: no-repeat;
         }
 	section{background: transparent;}
+	.hipaa-nav a.is-active,
+	.hipaa-nav-mobile a.is-active {
+	  color: #063c6a !important;
+	  font-weight: 600 !important;
+	  border-left: 3px solid #063c6a !important;
+	  padding-left: 10px;
+	}
+	.hipaa-block[id] { scroll-margin-top: 110px; } /* header height */
  
 </style>
 </head>
@@ -488,22 +496,51 @@ Secure Forms</h1>
   <!-- Secure Forms page: sidebar scroll-spy -->
   <script>
     (function () {
-      var links = document.querySelectorAll('.hipaa-nav a[href^="#"], .hipaa-nav-mobile a[href^="#"]');
-      var blocks = document.querySelectorAll('.hipaa-block');
+      var links = Array.prototype.slice.call(document.querySelectorAll('.hipaa-nav a[href^="#"], .hipaa-nav-mobile a[href^="#"]'));
+      var blocks = Array.prototype.slice.call(document.querySelectorAll('.hipaa-block'));
       if (!links.length || !blocks.length) return;
+      var OFFSET = 140;                 // header height + breathing room
+      var lock = false, lockTimer = null, current = null;
 
-      function onScroll() {
-        var pos = window.scrollY + 160;
-        var current = blocks[0].id;
-        blocks.forEach(function (b) {
-          if (b.offsetTop <= pos) current = b.id;
-        });
+      function setActive(id) {
+        if (id === current) return;
+        current = id;
         links.forEach(function (a) {
-          a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
         });
       }
 
+      function onScroll() {
+        if (lock) return;
+        var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+        var id = blocks[0].id;
+        if (atBottom) {
+          id = blocks[blocks.length - 1].id;
+        } else {
+          blocks.forEach(function (b) {
+            if (b.getBoundingClientRect().top <= OFFSET) id = b.id;
+          });
+        }
+        setActive(id);
+      }
+
+      links.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = this.getAttribute('href').slice(1);
+          var target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          setActive(id);                // highlight exactly what was clicked
+          lock = true;
+          clearTimeout(lockTimer);
+          lockTimer = setTimeout(function () { lock = false; }, 900);
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
       window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
       onScroll();
     })();
   </script>

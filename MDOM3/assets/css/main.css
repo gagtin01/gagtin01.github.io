@@ -2192,8 +2192,7 @@ a:hover{
 
 
 body.scrolled .navmenu a {
-	margin-top:10px;
-	padding:18px 15px 9px 15px;
+	padding:9px 15px 9px 15px;
 }
 .scrolled .logotrans{
 	color:#fff;
@@ -2207,7 +2206,8 @@ body.scrolled .navmenu a {
 }
 
 .scrolled .navmenu li:hover>a, .navmenu .active, .navmenu .active:focus{
-	color:#cae7fd !important;
+	color:#fcb1b1 !important;
+	 background-color: #063c6a;
 }
 .logotrans{
 	  font-size: 32px;

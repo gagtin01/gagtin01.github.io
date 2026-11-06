@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>MDOM</title>
+  <title>MD OfficeMail</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -25,9 +25,124 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/pricing.css">
+  <link href="assets/css/main.css?v=20261106" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261106">
+	<link rel="stylesheet" href="assets/css/pricing.css?v=20261106">
+<style id="logo-slider-css">
+/* Client logo slider - compact spacing, larger logos, alternating rows */
+.clients-section {
+  background: #fff;
+  overflow: hidden;
+}
+
+.clients-section h2 {
+  color: #063c6a;
+  font-weight: 700;
+}
+
+.clients-section p {
+  margin-bottom: 0;
+}
+
+.logo-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 28px 0 38px;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 14px;
+  animation: scrollLogo 140s linear infinite;
+  will-change: transform;
+}
+
+.logo-slider:hover .logo-track,
+.logo-slider.is-paused .logo-track,
+.logo-track:hover {
+  animation-play-state: paused !important;
+}
+
+.logo-item {
+  box-sizing: border-box;
+  flex: 0 0 190px;
+  width: 190px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+/* Alternating raised/lowered logo positions */
+.logo-item:nth-child(odd) {
+  transform: translateY(-45px);
+}
+
+.logo-item:nth-child(even) {
+  transform: translateY(45px);
+}
+
+.logo-item img {
+  display: block;
+  max-width: 180px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: .92;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@keyframes scrollLogo {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .logo-slider {
+    padding: 22px 0 30px;
+  }
+
+  .logo-track {
+    gap: 8px;
+    animation-duration: 110s;
+  }
+
+  .logo-item {
+    flex-basis: 155px;
+    width: 155px;
+    height: 145px;
+    padding: 6px;
+  }
+
+  .logo-item:nth-child(odd) {
+    transform: translateY(-16px);
+  }
+
+  .logo-item:nth-child(even) {
+    transform: translateY(16px);
+  }
+
+  .logo-item img {
+    max-width: 145px;
+    max-height: 115px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
+}
+/* end client logo slider */
+</style>
 
 <script>
 
@@ -1228,19 +1343,19 @@ HIPAA Compliant Fax service with no hassles !!
       <div class="logo-slider">
         <div class="logo-track">
 		
-		<div class="logo-item"><img src="assets/img/client1.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client3.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client4.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client5.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client6.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client7.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client8.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client9.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client10.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client11.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client12.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client13.png" alt="Client 1" loading="lazy" decoding="async"></div>
-		<div class="logo-item"><img src="assets/img/client14.png" alt="Client 1" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/84.png" alt="Client84" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/85.png" alt="Client85" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/86.png" alt="Client86" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/87.png" alt="Client 87" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/88.png" alt="Client 88" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/89.png" alt="Client 89" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/90.png" alt="Client 90" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/91.png" alt="Client 91" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/92.png" alt="Client 92" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/93.png" alt="Client 93" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/94.png" alt="Client 94" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/95.png" alt="Client 95" loading="lazy" decoding="async"></div>
+		<div class="logo-item"><img src="clients/96.png" alt="Client 96" loading="lazy" decoding="async"></div>
 		        <div class="logo-item"><img src="clients/1.png" alt="Client 1" loading="lazy" decoding="async"></div>
                 <div class="logo-item"><img src="clients/2.png" alt="Client 2" loading="lazy" decoding="async"></div>
                 <div class="logo-item"><img src="clients/3.png" alt="Client 3" loading="lazy" decoding="async"></div>
@@ -1597,15 +1712,15 @@ HIPAA Compliant Fax service with no hassles !!
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-<script src="assets/js/script.js"></script>
+  <script src="assets/js/main.js?v=20261106"></script>
+<script src="assets/js/script.js?v=20261106"></script>
 
 
 
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
   const track = document.querySelector(".logo-track");
   if (track && !track.dataset.duplicated) {
     const originalItems = Array.from(track.children);
@@ -1618,7 +1733,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     track.dataset.duplicated = "true";
   }
-});
+  // Pause on hover / touch (fallback in case the CSS :hover rule is overridden)
+  const slider = document.querySelector(".logo-slider");
+  if (slider) {
+    const pause = () => slider.classList.add("is-paused");
+    const resume = () => slider.classList.remove("is-paused");
+    slider.addEventListener("mouseenter", pause);
+    slider.addEventListener("mouseleave", resume);
+    slider.addEventListener("touchstart", pause, { passive: true });
+    slider.addEventListener("touchend", resume);
+    slider.addEventListener("touchcancel", resume);
+  }
+})();
 </script>
 
 </body>
