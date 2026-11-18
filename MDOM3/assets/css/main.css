@@ -294,14 +294,12 @@ body.scrolled .header .header-container {
         0 0 0 2px rgba(6, 60, 106, 0.9),
         0 2px 8px rgba(255,255, 255, 0.2);
     transition: all 0.25s ease;
-
   position: relative;
   padding-top:10px;
   padding-bottom: 7px;
 }
 
-.header .logo {
-  
+.header .logo {  
   position: absolute;
   inset: 0 auto 0 0;
   padding: 0 20px;
